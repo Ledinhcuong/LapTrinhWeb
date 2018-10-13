@@ -73,6 +73,7 @@
 										<a class="nav-link" href="index">Home</a>
 									</li>
 									<li class="nav-item submenu dropdown">
+										
 										<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
 										<ul class="dropdown-menu">
 											<li class="nav-item">
@@ -144,8 +145,10 @@
 
 	
 
-	@yield('content');
+
+	@yield('content');  
 	
+
 	<!--================ start footer Area  =================-->
 	<footer class="footer-area section_gap">
 		<div class="container">
