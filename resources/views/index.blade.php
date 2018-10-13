@@ -100,7 +100,7 @@
 					<div class="col col1">
 						<div class="f_p_item">
 							<div class="f_p_img">
-								<img class="img-fluid" src="<?php echo $key['ImageProduct'] ?>" alt="<?php echo $key['NameProduct'] ?>">
+								<img class="img-fluid" src="<?php echo $key->ImageProduct ?>" alt="<?php echo $key->NameProduct?>">
 
 								<div class="p_icon">
 									<a href="#">
@@ -112,9 +112,9 @@
 								</div>
 							</div>
 							<a href="#">
-								<h4><?php echo $key['NameProduct'] ?></h4>
+								<h4><?php echo $key->NameProduct?></h4>
 							</a>
-							<h5><?php echo $key['Price'] ?></h5>
+							<h5><?php echo $key->Price ?></h5>
 						</div>
 					</div>
 				</div>
