@@ -2,19 +2,32 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller {
+
+
+	// Trả về giao diện
+	public function view($page = 'index')
+	{
+		return view($page);
+	}
+
 
 	/**
 	 * Trả về giao diên 
 	 *
 	 * @return Response
 	 */
-	public function index($page = 'index')
+	public function index()
 	{
-		return view($page);
+
+		// Thực hiện lấy cơ sở dữ liệu bảng product
+		$data=DB::table('Product')->get();
+		
+	
+		return view('index')->with('product', $data);;
 	}
 
 	/**
@@ -80,5 +93,7 @@ class ProjectController extends Controller {
 	{
 		//
 	}
+
+
 
 }
