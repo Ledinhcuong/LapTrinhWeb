@@ -27,7 +27,7 @@ class ProjectController extends Controller {
 		$data=DB::table('Product')->get();
 		
 	
-		return view('index')->with('product', $data);;
+		return view('index', ['product'=>$data]);
 	}
 
 	/**
