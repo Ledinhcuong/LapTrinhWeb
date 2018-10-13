@@ -1,4 +1,5 @@
 
+<!-- Nội Dung trang index -->
 
 @extends('master')
 @section('content')
