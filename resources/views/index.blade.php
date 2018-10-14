@@ -97,7 +97,8 @@
 					<?php 
 						foreach ($product as $key) {
 					?>
-					<div class="col col1">
+					<div class="col-md-3">
+						
 						<div class="f_p_item">
 							<div class="f_p_img">
 								<img class="img-fluid" src="<?php echo $key->ImageProduct ?>" alt="<?php echo $key->NameProduct?>">
@@ -116,16 +117,16 @@
 							</a>
 							<h5><?php echo $key->Price ?></h5>
 						</div>
+
 					</div>
+
 				</div>
 
 				<?php
 			}
 				?>
 
-				
 			
-
 				<div class="row">
 					<nav class="cat_page mx-auto" aria-label="Page navigation example">
 						<ul class="pagination">
