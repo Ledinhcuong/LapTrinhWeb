@@ -7,6 +7,10 @@ body {
 }
 
 */
+
+body {
+	font-family: 'Open Sans Condensed', sans-serif;
+}
 /* --------------------------------- Header -------------------------------------------*/
 .navbar-default {
 	border-radius: 0px;
@@ -33,11 +37,16 @@ body {
 /*----------------------------------- Suggestions -------------------------*/
 .Suggestions {
 	padding: 50px 0;
+	margin: 10px 0;
 }
 
 .title-Suggesstion {
 	font-size: 25px;
+	margin-bottom: 10px;
 }
+
+
+
 
 /*-------------------------------------Content -------------------------------------*/
 

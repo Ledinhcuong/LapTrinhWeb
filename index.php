@@ -1,13 +1,5 @@
 <?php
 
-spl_autoload_register(function ($class_name){
-	require "app/" .$class_name . ".php";
-});
-
-$software = new software();
-$phanMem = $software->layPhanMem(1);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +9,7 @@ $phanMem = $software->layPhanMem(1);
 	<title>Software</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<LINK REL="SHORTCUT ICON" href="public/images/mylogo.ico">
+	<link rel="stylesheet" href="public/font/OpenSansCondensed-Light.ttf">
 	<link rel="stylesheet" href="public/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="public/css/styles.css">
@@ -110,6 +103,116 @@ $phanMem = $software->layPhanMem(1);
 	<div class="container">
 		<div class="title-Suggesstion">
 			Được đề xuất cho bạn
+		</div>
+
+		<div class="content-suggest">
+			<div class="row">
+				
+				<div class="col-md-2">
+					<a href="#">
+						<div class="content-app">
+							<div class="icon-app-sg" style="text-align: center;">
+								<img src="public/images/controlcentericon.png" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
+							</div>
+							<div class="name-app-sg" style="margin-top: 10px; font-weight: bold; font-size: 18px; color: #000">
+								Ứng dụng 1
+							</div>
+							<div class="author-app-sg" >
+								Facebook inc
+							</div>
+						</div>
+					</a>
+					
+				</div>
+
+				<div class="col-md-2">
+					<a href="#">
+						<div class="content-app">
+							<div class="icon-app-sg" style="text-align: center;">
+								<img src="public/images/controlcentericon.png" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
+							</div>
+							<div class="name-app-sg" style="margin-top: 10px; font-weight: bold; font-size: 18px; color: #000">
+								Ứng dụng 1
+							</div>
+							<div class="author-app-sg" >
+								Facebook inc
+							</div>
+						</div>
+					</a>
+					
+				</div>
+
+				<div class="col-md-2">
+					<a href="#">
+						<div class="content-app">
+							<div class="icon-app-sg" style="text-align: center;">
+								<img src="public/images/controlcentericon.png" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
+							</div>
+							<div class="name-app-sg" style="margin-top: 10px; font-weight: bold; font-size: 18px; color: #000">
+								Ứng dụng 1
+							</div>
+							<div class="author-app-sg" >
+								Facebook inc
+							</div>
+						</div>
+					</a>
+					
+				</div>
+
+				<div class="col-md-2">
+					<a href="#">
+						<div class="content-app">
+							<div class="icon-app-sg" style="text-align: center;">
+								<img src="public/images/controlcentericon.png" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
+							</div>
+							<div class="name-app-sg" style="margin-top: 10px; font-weight: bold; font-size: 18px; color: #000">
+								Ứng dụng 1
+							</div>
+							<div class="author-app-sg" >
+								Facebook inc
+							</div>
+						</div>
+					</a>
+					
+				</div>
+
+				<div class="col-md-2">
+					<a href="#">
+						<div class="content-app">
+							<div class="icon-app-sg" style="text-align: center;">
+								<img src="public/images/controlcentericon.png" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
+							</div>
+							<div class="name-app-sg" style="margin-top: 10px; font-weight: bold; font-size: 18px; color: #000">
+								Ứng dụng 1
+							</div>
+							<div class="author-app-sg" >
+								Facebook inc
+							</div>
+						</div>
+					</a>
+					
+				</div>
+
+				<div class="col-md-2">
+					<a href="#">
+						<div class="content-app">
+							<div class="icon-app-sg" style="text-align: center;">
+								<img src="public/images/controlcentericon.png" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
+							</div>
+							<div class="name-app-sg" style="margin-top: 10px; font-weight: bold; font-size: 18px; color: #000">
+								Ứng dụng 1
+							</div>
+							<div class="author-app-sg" >
+								Facebook inc
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+				
+			</div>
+
 		</div>
 
 
