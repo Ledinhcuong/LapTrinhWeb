@@ -127,7 +127,7 @@ $phanMem = $software->layPhanMem(1);
 					Miễn phí
 				</div>
 				
-				<a href="#">
+				<a href="#" style="text-decoration: none;">
 					<span class="nut-tai-ve">
 						Tải xuống
 					</span>
@@ -161,8 +161,8 @@ $phanMem = $software->layPhanMem(1);
 
 			<div class="danhsach-image">
 				<div class="row">
-					<div class="col-md-3">
-						<img src="public/images/edge1.jpg" alt="edg1" class="img-responsive">
+					<div class="col-md-3" >
+						<img src="public/images/edge1.jpg" alt="edg1" class="img-responsive" onclick="showImage()">
 					</div>
 
 					<div class="col-md-3">
@@ -177,11 +177,11 @@ $phanMem = $software->layPhanMem(1);
 						<img src="public/images/edge4.jpg" alt="edg3" class="img-responsive">
 					</div>
 				</div>
-
 			</div>
 
-			<div class="show-image" style="display: none;">
-				
+			<div class="show-image" style="display: inline;">
+				<img src="public/images/controlcenter1.png" alt="image">
+				<button style="display: block;">Đóng</button>
 			</div>
 
 

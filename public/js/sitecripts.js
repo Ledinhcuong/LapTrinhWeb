@@ -1,12 +1,13 @@
 $(document).ready(function(){
 
 	getDay();
-	slide();
-	banner();
 	
-
+	
 });
 
+function showImage() {
+	
+}
 
 function getDay()
 {

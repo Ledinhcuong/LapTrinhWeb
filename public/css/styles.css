@@ -38,6 +38,14 @@ body {
 .Suggestions {
 	padding: 50px 0;
 	margin: 10px 0;
+
+
+}
+
+.Suggestions a{
+	text-decoration: none;
+
+	
 }
 
 .title-Suggesstion {
@@ -45,7 +53,15 @@ body {
 	margin-bottom: 10px;
 }
 
+.content-app:hover {
+	border: 0.5px solid #00c853;
 
+}
+
+
+.content-app {
+	padding: 15px;
+}
 
 
 /*-------------------------------------Content -------------------------------------*/
@@ -96,6 +112,12 @@ body {
 	border-color: #000;
 	border: 1px solid #2196f3;
 } 
+
+.app-background:hover {
+	background: #E0E0E0;
+	border: 1px solid #00c853;
+
+}
 
 .app-icon {
 	padding: 40px;
@@ -252,6 +274,9 @@ footer .container {
 
 }
 
+.nut-tai-ve:hover {
+	background: #000;
+}
 
 .title-ct {
 	font-size: 25px;

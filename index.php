@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<LINK REL="SHORTCUT ICON" href="public/images/mylogo.ico">
 	<link rel="stylesheet" href="public/font/OpenSansCondensed-Light.ttf">
-	<link rel="stylesheet" href="public/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="public/bootstrap-3.3.7-dist/css/bootstrap.min.css"> 
 	<link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="public/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="public/css/slider.css">
@@ -35,16 +35,11 @@
 					<a class="navbar-brand" href="index.html"><img src="public/images/mylogo.ico" alt="">
 						<b>Software</b></a>
 
-					</div>
+				</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
-					<!--
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-					</ul>
-				-->
+					
 
 				<ul class="nav navbar-nav navbar-right">
 					<!-- form tìm kiếm -->
