@@ -33,7 +33,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.html"><img src="public/images/mylogo.ico" alt="">
+					<a class="navbar-brand" href="index"><img src="public/images/mylogo.ico" alt="">
 						<b>Software</b></a>
 
 					</div>
