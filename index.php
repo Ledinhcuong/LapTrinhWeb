@@ -68,12 +68,20 @@
 							<img src="public/images/mylogo.ico" alt="">
 						</div>
 
+<<<<<<< HEAD
 						<ul>
 							<li><i style="color: #5751D9" class="fa fa-user-o" aria-hidden="true"></i> Tên tài khoản</li>
 							<li><i style="color: #5751D9"  class="fa fa-info-circle" aria-hidden="true"></i><a href="#">   Thông tin tài khoản</a></li>
 							<li><i style="color: #5751D9"   class="fa fa-sign-out" aria-hidden="true"></i><a href="#"> Đăng xuất</a> </li>
 						</ul>
 					</div>
+=======
+					<!-- Các chỉ mục -->
+					<li><a href="#" style="color: #5BC348"><i class="fa fa-android" aria-hidden="true"></i> Phần mềm</a></li>
+					<li><a href="#" style="color: #f44336"><i class="fa fa-gamepad"></i> Trò chơi</a></li>
+					<li><a href="https://www.facebook.com/LeDinhCuongPrime/" style="color: #3B5998"><i class="fa fa-facebook-official" aria-hidden="true"></i> Face</a></li>
+					<li><a href="login"><i class="fa fa-user"></i> Tài khoản</a></li>
+>>>>>>> a8bc906a56a3596fc466524a8dccdc6969bbd6f7
 
 				</div>
 
