@@ -2,6 +2,25 @@ $(document).ready(function(){
 
 	getDay();
 	
+	$(".float-button").click(function() {
+		
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 100) $('.float-button').fadeIn();
+			else $('#goTop').fadeOut();
+		});
+		$('.float-button').click(function () {
+			$('body,html').animate({scrollTop: 0}, 'slow');
+		});
+
+	});
+
+	$(".account").click(function() {
+		$('.menu-account').slideToggle(500);
+
+	});
+
+
+	
 	
 });
 

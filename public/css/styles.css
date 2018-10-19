@@ -183,15 +183,20 @@ body {
 .list-dm {
 	list-style: none;
 	padding-left: 0px;
+
 	
 }
 
 .list-dm li>a {
 	font-size: 22px;
 	color: #0067b8;
+	text-decoration: none;
 
 }
 
+.list-dm li>a:hover {
+	color: #4CDA64;
+}
 
 /*---------------------------------------------- other store -------------------------------------------*/
 
@@ -204,7 +209,7 @@ body {
 
 
 .other-store .row {
-	padding: 50px 0;
+	
 	background: #1565c0;
 	border-radius: 6px;
 	
@@ -216,6 +221,18 @@ body {
 	margin-top: 6px;
 }
 
+.store {
+	padding: 25px 0px;
+}
+
+.store:hover {
+	background: rgba(255, 255, 255, 0.2);
+
+}
+
+.store a {
+	text-decoration: none;
+}
 
 /*---------------------------------------------- footer ------------------------------------------------*/
 footer {
@@ -234,6 +251,62 @@ footer .container {
 	margin-bottom: 10px;
 }
 
+
+footer li>a {
+	text-decoration: none !important;
+	font-size: 20px; 
+}
+
+
+
+/*------------- float button -----------------------*/
+
+.float-button {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	background: #2962ff;
+	border: 1px solid #7A7574;
+	color: #fff;
+	padding: 10px 15px;
+}
+
+.float-button:hover {
+	background: #000;
+	color: #fff;
+}
+
+@media(min-width: 320px) and (max-width: 767px) {
+	.float-button {
+		display: none;
+	}
+}
+
+
+/*---------------- Menu --------------------------*/
+.menu-account {
+	padding: 40px 40px;
+	background: #e0e0e0;
+	display: inline-block;
+	position: absolute;
+	right: 18%;
+	display: none;
+}
+
+.background-menu >ul {
+	list-style: none;
+	padding-left: 0px;
+	font-size: 20px;
+}
+
+.background-menu >ul >li {
+	margin: 10px 0;
+}
+
+.background-menu >ul >li>a {
+	text-decoration: none;
+	color: #000;
+}
 
 /*----------------------------------------------- Css trang tri tiet ------------------------------------------*/
 
@@ -306,3 +379,22 @@ footer .container {
 	margin-bottom: 25px;
 }
 
+/*---------------------------------------------------------- css trang search ----------------------------------------*/
+.app-result {
+	text-align: center;
+}
+
+.total-result {
+	font-size: 25px;
+
+}
+
+.imge-resize {
+
+	max-width: 180px;
+	max-height: 180px;
+}
+
+.name-app-search {
+	font-size: 25px;
+}
