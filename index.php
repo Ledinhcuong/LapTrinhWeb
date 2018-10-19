@@ -54,7 +54,7 @@
 					<li><a href="#" style="color: #5BC348"><i class="fa fa-android" aria-hidden="true"></i> Phần mềm</a></li>
 					<li><a href="#" style="color: #f44336"><i class="fa fa-gamepad"></i> Trò chơi</a></li>
 					<li><a href="https://www.facebook.com/LeDinhCuongPrime/" style="color: #3B5998"><i class="fa fa-facebook-official" aria-hidden="true"></i> Face</a></li>
-					<li><a href="#"><i class="fa fa-user"></i> Tài khoản</a></li>
+					<li><a href="login"><i class="fa fa-user"></i> Tài khoản</a></li>
 
 					<li><a href="#" style="color: #6FA8FF"><i class="fa fa-bars" aria-hidden="true" ></i> Menu</a></li>
 
