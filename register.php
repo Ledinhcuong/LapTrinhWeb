@@ -89,6 +89,8 @@
         <!-- Blance -->
         <div class="blance" style="padding: 30px 0; position: static;" > </div>
 
+        <!-- Nội dung của form -->
+
         <div class="main">
 
             <section class="signup">
@@ -192,5 +194,6 @@
     <script src="public/js/register.js"></script>
 
 </body>
+
 </html>
 

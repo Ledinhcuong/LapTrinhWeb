@@ -1,3 +1,10 @@
+.main {
+  background-image: url(../images/kb4k4i7fddr11.jpg);
+  padding: 60px 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 /* @extend display-flex; */
 display-flex, .display-flex, .display-flex-center {
   display: flex;
@@ -137,15 +144,14 @@ body {
   color: #222;
   font-weight: 400;
   font-family: 'Montserrat';
-  background-image: url("../images/signup-bg.jpg");
-  background-repeat: no-repeat;
+  
   background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
   -ms-background-size: cover;
   background-position: center center;
-  padding: 115px 0; }
+ }
 
 
 .display-flex {
