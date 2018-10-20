@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="public/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="public/css/slider.css">
+	
 	<!--===============================================================================================-->
 		<link rel="stylesheet" type="text/css" href="public/vendor/animate/animate.css">
 	<!--===============================================================================================-->	
