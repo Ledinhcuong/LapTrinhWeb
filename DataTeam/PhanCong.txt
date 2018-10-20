@@ -1,2 +1,26 @@
-Phần làm của các thành viên sẽ sớm xuất hiện
-Cơ sở dữ liệu đang được làm
+Mọi người nếu có thắc mắc có thể gửi mail tới: ledinhcuongse@gmail.com
+
+-------------------------------------
+Nguyệt
+Thực hiện chức năng tìm kiếm từ khóa  có thể là tên ứng dụng, developer và thực hiện phân trang (Tại trang tìm kiếm). Và truyền id đến trang tri tiết.
+
+-------------------------------------
+Dũng
+Thực hiện laravel thực hiện các câu lệnh cho phép lưu dữ liệu từ form đăng ký lưu vào cơ sở dữ liệu.
+
+-----------------------------------
+Anh Phương
+Thực hiện đăng nhập bằng email và lưu NameUser vào section. Nếu người dùng đã đăng nhập thì sẽ xổ xuống menu tại index cho phép đăng xuất. Nếu chưa đăng nhập thì chuyển tới trang đăng nhập.
+
+Thực hiện lấy 10 ứng dụng download nhiều nhất tại index.
+
+Làm ứng dụng đề xuất lấy ngẫu 6 ứng dụng theo trang (Phần mềm hoặc Game).
+
+***********************************************************
+Mọi người có thể sử dụng Query tại ProjectController hoặc xây dựng phương thức khác để sử dụng
+
+
+
+
+
+

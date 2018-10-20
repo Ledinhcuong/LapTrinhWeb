@@ -18,6 +18,10 @@ class CreateApplicationTable extends Migration {
 			$table->integer('IdCategory')->unsigned();
 			$table->foreign('IdCategory')->references('IdCategory')->on('Category');
 
+			$table->integer('IdType')->unsigned();
+			$table->foreign('IdType')->references('IdType')->on('Types');
+
+
 			$table->increments('IdApplication');
 
 			$table->string('NameApp', 30);
@@ -36,7 +40,6 @@ class CreateApplicationTable extends Migration {
 			$table->float('Version', 8, 2);
 			$table->float('Size', 8, 2);
 			$table->string('SortDescription');
-
 
 
 

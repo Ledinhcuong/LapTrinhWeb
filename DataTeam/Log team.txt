@@ -1,2 +1,3 @@
      2010: Tạo cấu trúc master (Trừ login và register)
 1018 2010: Tạo cấu trúc bảng
+0206 2110: Thêm cơ sở dữ liệu bằng lệnh scheeder
