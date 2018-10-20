@@ -13,7 +13,7 @@ class CreateReviewsTable extends Migration {
 	 */
 	public function up()
 	{
-		/*
+		
 		Schema::create('Reviews', function (Blueprint $table) {
 
 			$table->integer('IdApplication')->unsigned();
@@ -29,7 +29,7 @@ class CreateReviewsTable extends Migration {
 
 
 
-		});*/
+		});
 	}
 
 	/**
