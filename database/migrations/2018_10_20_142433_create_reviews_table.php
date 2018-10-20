@@ -13,7 +13,23 @@ class CreateReviewsTable extends Migration {
 	 */
 	public function up()
 	{
-		
+		/*
+		Schema::create('Reviews', function (Blueprint $table) {
+
+			$table->integer('IdApplication')->unsigned();
+			$table->foreign('IdApplication')->references('IdApplication')->on('Application');
+
+			$table->integer('IdUser')->unsigned();
+			$table->foreign('IdUser')->references('IdUser')->on('Users');
+
+			$table->date('ReviewDate');
+
+			$table->string('ContentReview', 100);
+
+
+
+
+		});*/
 	}
 
 	/**
@@ -23,7 +39,7 @@ class CreateReviewsTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::dropIfExists('Reviews');
 	}
 
 }
