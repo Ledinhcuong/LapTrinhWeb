@@ -1,7 +1,9 @@
 <?
 foreach ($data as $post) {
-    echo $post->NameApp. "<br>";
+    echo $post->NameType. "<br>";
 }
+
+var_dump($data);
 
 
 ?>

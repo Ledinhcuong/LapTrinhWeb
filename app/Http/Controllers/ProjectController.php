@@ -14,17 +14,39 @@ class ProjectController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index($page ='index')
+	public function index($page = 'index')
 	{
 
-		// Sử dụng model
-		$data = Application::all();
 
-		// Sử dụng query
-		//$data = DB::table('Application')->get();
+		// Nếu dữ liệu trả về là trang index (Tri có một tham số truyền vào)
+		if($page == 'index') {
 
-		return view($page, ['data'=>$data]);
+
+			$data = DB::table('Application')
+			->join('Types', 'Application.IdType', '=' , 'Types.IdType')
+			->select('Application.*', 'Types.NameType')->where('IdCategory', 1)->get();
+
+
+			return view($page, ['data'=>$data]);
+
+		}
+
+		if ($page == 'game') {
+
+			$data = DB::table('Application')
+			->join('Types', 'Application.IdType', '=' , 'Types.IdType')
+			->select('Application.*', 'Types.NameType')->where('IdCategory', 2)->get();
+
+
+			return view('index', ['data'=>$data]);
+		}
+
+
+		// Các trang còn lại
+		return view($page);
+		
 	}
+
 
 	/**
 	 * Show the form for creating a new resource.

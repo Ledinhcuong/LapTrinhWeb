@@ -4,6 +4,7 @@
 
 Route::get('{page}', 'ProjectController@index');
 
+
 //Route::get('/', 'WelcomeController@index');
 
 
