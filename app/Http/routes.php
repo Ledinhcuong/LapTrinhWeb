@@ -2,7 +2,7 @@
 
 
 
-Route::get('/', 'ProjectController@index');
+Route::get('{page}', 'ProjectController@index');
 
 //Route::get('/', 'WelcomeController@index');
 

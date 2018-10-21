@@ -4,6 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Application;
+use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller {
 
@@ -12,9 +14,16 @@ class ProjectController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($page ='index')
 	{
-		return view('index');
+
+		// Sử dụng model
+		$data = Application::all();
+
+		// Sử dụng query
+		//$data = DB::table('Application')->get();
+
+		return view($page, ['data'=>$data]);
 	}
 
 	/**

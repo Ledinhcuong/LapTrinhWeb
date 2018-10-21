@@ -39,33 +39,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="public/images/mylogo.ico" alt="">
+                    <a class="navbar-brand" href="index"><img src="public/images/mylogo.ico" alt="">
                         <b>Software</b></a>
 
                     </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse navbar-ex1-collapse">
-
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <!-- form tìm kiếm -->
-                            <form class="navbar-form navbar-left" role="search">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Nhập tên phần mềm">
-                                </div>
-                                <button type="submit" class="btn btn-default" style="color: #4284F3"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form>
-
-                            <!-- Các chỉ mục -->
-                            <li><a href="#" style="color: #5BC348"><i class="fa fa-android" aria-hidden="true"></i> Phần mềm</a></li>
-                            <li><a href="#" style="color: #f44336"><i class="fa fa-gamepad"></i> Trò chơi</a></li>
-                            <li><a href="#" style="color: #3B5998"><i class="fa fa-facebook-official" aria-hidden="true"></i> Face</a></li>
-                            <li class="account"><a href="#"><i class="fa fa-user"></i> Tài khoản</a></li>
-
-
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
+                   
                 </div>
                 <div class="menu-account">
                     <div class="background-menu">

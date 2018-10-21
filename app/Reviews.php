@@ -4,6 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reviews extends Model {
 
-	//
+	protected $table = 'Reviews';
+	
 
 }

@@ -1,4 +1,10 @@
+<?
+foreach ($data as $post) {
+    echo $post->NameApp. "<br>";
+}
 
+
+?>
 
 @extends('master')
 @section('title', 'software')
