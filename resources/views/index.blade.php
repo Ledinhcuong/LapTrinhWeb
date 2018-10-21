@@ -1,9 +1,4 @@
-<?
-foreach ($data as $post) {
-    echo $post->NameType. "<br>";
-}
-
-var_dump($data);
+<?php
 
 
 ?>
@@ -20,10 +15,18 @@ var_dump($data);
 
 		<div class="slider-container">
 			<div class="slider">
-				<img src="public/images/banner page.jpg" class="img-responsive" title="Trang web chia sẽ ứng dụng hoàn toàn miễn phí"    />
-				<img src="public/images/banner 2.jpg"  class="img-responsive" title="Bạn sẽ tìm thấy trò chơi đang thịnh hành" />
-				<img src="public/images/banner 3.jpg" title="Hay truy cập trang thường xuyên để xem nhiều ứng dụng" />
-				<img src="public/images/banner page.jpg" title="Hết cái để nói rồi" />
+				<?php
+					foreach ($banner as $key) {
+						
+					
+				 ?>
+
+				<img src="public/images/<?php echo $key->ImageBanner ?>" class="img-responsive" title="<?php echo $key->ContentBanner ?>" />
+
+				<?php
+			}
+				?>
+			
 				<button type="button" onclick="getPrevImage()" class="btn" id="btnPrev">&lt;</button>
 				<button type="button" onclick="getNextImage()" class="btn" id="btnNext">&gt;</button>
 				<h1 id="titleSlider">Trang web chia sẽ ứng dụng hoàn toàn miễn phí</h1>
@@ -200,19 +203,25 @@ var_dump($data);
 							Top download
 						</div>
 						<ul style="list-style: none; padding-left: 20px;">
-							<li>
+
+							
+
+								<?php 
+								foreach ($topdown as $key) {
+								
+
+								?>
+								<li>
 								<a href="#">
-									<img src="public/images/edgeicon.png"  alt="icon-app" class="img-responsive" width="20px" height="20px" style="display: inline-block;"> Appstore
+									<img src="public/images/<?php echo $key->Icon ?>"  alt="<?php  echo $key->NameApp ?>" class="img-responsive" width="20px" height="20px" style="display: inline-block;"> <?php echo $key->NameApp ?>
 								</a>
+								</li>
 
-							</li>
-							<li>
-								<a href="#">
-									<img src="public/images/edgeicon.png"  alt="icon-app" class="img-responsive" width="20px" height="20px" style="display: inline-block;"> Appstore
-								</a>
+								<?php
+							}
+							?>
 
-							</li>
-
+							
 
 						</ul>
 
@@ -221,26 +230,6 @@ var_dump($data);
 				</div>
 
 
-				<!-- Mới cập nhật -->
-				<div class="list-app">
-					<div class="background-list">
-						<div class="title-app" style="padding: 10px 0; margin-bottom: 5px; padding-left: 20px; font-size: 25px; color: #008EFF">
-							Mới cập nhật
-						</div>
-
-						<ul style="list-style: none; padding-left: 20px;">
-
-							<li>
-								<a href="#">
-									<img src="public/images/edgeicon.png"  alt="icon-app" class="img-responsive" width="20px" height="20px" style="display: inline-block;"> Tên phần mềm
-								</a>
-
-							</li>	
-
-						</ul>
-
-					</div>
-				</div>
 
 			</div>
 
@@ -248,143 +237,36 @@ var_dump($data);
 			<div class="col-md-9">
 				<div class="row">
 
-					<div class="col-md-4">
-						<a href="#">
-							<div class="app">
-								<div class="app-background">
-									<div class="app-icon">
-										<img src="public/images/edgeicon.png" alt="app-icon" class="img-responsive">
-
-									</div>
-
-									<div class="app-detail">
-										<div class="name-app" style="font-size: 20px;">
-											<a href="#"> Microsoft edge </a>
-										</div>
-										<div class="detail">
-											<div class="tile-tyle">
-												Loại:
-											</div>
-											<div class="loai">
-												Trình duyệt
-											</div>
-
-											<div class="tile-tyle">
-												Mô tả:
-											</div>
-											<div class="motangan">
-												Trình duyệt trên di động có những tính năng mang tính đột phá
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-							</div>
-
-						</a>
-					</div>
+					<?php
+						foreach ($data as $key) {
+					 ?>
 
 					<div class="col-md-4">
 						<a href="#">
 							<div class="app">
 								<div class="app-background">
 									<div class="app-icon">
-										<img src="public/images/edgeicon.png" alt="app-icon" class="img-responsive">
+										<img src="public/images/<?php echo $key->Icon ?>" alt="<?php echo $key->NameApp ?>" class="img-responsive">
 
 									</div>
 
 									<div class="app-detail">
 										<div class="name-app" style="font-size: 20px;">
-											<a href="#"> Microsoft edge </a>
+											<a href="chitiet?<php echo $key->IdApplication ?>"> <?php echo $key->NameApp ?> </a>
 										</div>
 										<div class="detail">
 											<div class="tile-tyle">
 												Loại:
 											</div>
 											<div class="loai">
-												Trình duyệt
+												<?php echo $key->NameType ?>
 											</div>
 
 											<div class="tile-tyle">
 												Mô tả:
 											</div>
 											<div class="motangan">
-												Trình duyệt trên di động có những tính năng mang tính đột phá
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-							</div>
-
-						</a>
-					</div>
-
-					<div class="col-md-4">
-						<a href="#">
-							<div class="app">
-								<div class="app-background">
-									<div class="app-icon">
-										<img src="public/images/edgeicon.png" alt="app-icon" class="img-responsive">
-
-									</div>
-
-									<div class="app-detail">
-										<div class="name-app" style="font-size: 20px;">
-											<a href="#"> Microsoft edge </a>
-										</div>
-										<div class="detail">
-											<div class="tile-tyle">
-												Loại:
-											</div>
-											<div class="loai">
-												Trình duyệt
-											</div>
-
-											<div class="tile-tyle">
-												Mô tả:
-											</div>
-											<div class="motangan">
-												Trình duyệt trên di động có những tính năng mang tính đột phá
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-							</div>
-
-						</a>
-					</div>
-
-					<div class="col-md-4">
-						<a href="#">
-							<div class="app">
-								<div class="app-background">
-									<div class="app-icon">
-										<img src="public/images/edgeicon.png" alt="app-icon" class="img-responsive">
-
-									</div>
-
-									<div class="app-detail">
-										<div class="name-app" style="font-size: 20px;">
-											<a href="#"> Microsoft edge </a>
-										</div>
-										<div class="detail">
-											<div class="tile-tyle">
-												Loại:
-											</div>
-											<div class="loai">
-												Trình duyệt
-											</div>
-
-											<div class="tile-tyle">
-												Mô tả:
-											</div>
-											<div class="motangan">
-												Trình duyệt trên di động có những tính năng mang tính đột phá
+												<?php echo $key->SortDescription ?>
 											</div>
 
 										</div>
@@ -397,196 +279,10 @@ var_dump($data);
 					</div>
 
 
-					<div class="col-md-4">
-						<a href="#">
-							<div class="app">
-								<div class="app-background">
-									<div class="app-icon">
-										<img src="public/images/edgeicon.png" alt="app-icon" class="img-responsive">
-
-									</div>
-
-									<div class="app-detail">
-										<div class="name-app" style="font-size: 20px;">
-											<a href="#"> Microsoft edge </a>
-										</div>
-										<div class="detail">
-											<div class="tile-tyle">
-												Loại:
-											</div>
-											<div class="loai">
-												Trình duyệt
-											</div>
-
-											<div class="tile-tyle">
-												Mô tả:
-											</div>
-											<div class="motangan">
-												Trình duyệt trên di động có những tính năng mang tính đột phá
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-							</div>
-
-						</a>
-					</div>
-
-
-					<div class="col-md-4">
-						<a href="#">
-							<div class="app">
-								<div class="app-background">
-									<div class="app-icon">
-										<img src="public/images/edgeicon.png" alt="app-icon" class="img-responsive">
-
-									</div>
-
-									<div class="app-detail">
-										<div class="name-app" style="font-size: 20px;">
-											<a href="#"> Microsoft edge </a>
-										</div>
-										<div class="detail">
-											<div class="tile-tyle">
-												Loại:
-											</div>
-											<div class="loai">
-												Trình duyệt
-											</div>
-
-											<div class="tile-tyle">
-												Mô tả:
-											</div>
-											<div class="motangan">
-												Trình duyệt trên di động có những tính năng mang tính đột phá
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-							</div>
-
-						</a>
-					</div>
-
-
-					<div class="col-md-4">
-						<a href="#">
-							<div class="app">
-								<div class="app-background">
-									<div class="app-icon">
-										<img src="public/images/edgeicon.png" alt="app-icon" class="img-responsive">
-
-									</div>
-
-									<div class="app-detail">
-										<div class="name-app" style="font-size: 20px;">
-											<a href="#"> Microsoft edge </a>
-										</div>
-										<div class="detail">
-											<div class="tile-tyle">
-												Loại:
-											</div>
-											<div class="loai">
-												Trình duyệt
-											</div>
-
-											<div class="tile-tyle">
-												Mô tả:
-											</div>
-											<div class="motangan">
-												Trình duyệt trên di động có những tính năng mang tính đột phá
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-							</div>
-
-						</a>
-					</div>
-
-
-					<div class="col-md-4">
-						<a href="#">
-							<div class="app">
-								<div class="app-background">
-									<div class="app-icon">
-										<img src="public/images/edgeicon.png" alt="app-icon" class="img-responsive">
-
-									</div>
-
-									<div class="app-detail">
-										<div class="name-app" style="font-size: 20px;">
-											<a href="#"> Microsoft edge </a>
-										</div>
-										<div class="detail">
-											<div class="tile-tyle">
-												Loại:
-											</div>
-											<div class="loai">
-												Trình duyệt
-											</div>
-
-											<div class="tile-tyle">
-												Mô tả:
-											</div>
-											<div class="motangan">
-												Trình duyệt trên di động có những tính năng mang tính đột phá
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-							</div>
-
-						</a>
-					</div>
-
-
-					<div class="col-md-4">
-						<a href="#">
-							<div class="app">
-								<div class="app-background">
-									<div class="app-icon">
-										<img src="public/images/edgeicon.png" alt="app-icon" class="img-responsive">
-
-									</div>
-
-									<div class="app-detail">
-										<div class="name-app" style="font-size: 20px;">
-											<a href="#"> Microsoft edge </a>
-										</div>
-										<div class="detail">
-											<div class="tile-tyle">
-												Loại:
-											</div>
-											<div class="loai">
-												Trình duyệt
-											</div>
-
-											<div class="tile-tyle">
-												Mô tả:
-											</div>
-											<div class="motangan">
-												Trình duyệt trên di động có những tính năng mang tính đột phá
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-							</div>
-
-						</a>
-					</div>
-
-
+					<?
+				}
+				?>
+				
 				</div>
 
 			</div>
@@ -598,6 +294,9 @@ var_dump($data);
 <!-- Padding -->
 <div class="padding">
 	<div class="container">
+
+		{!! $data->render() !!}
+		<!--
 		<tr>
 			<td><a href="#">
 				<span class="background-p" > 1 </span>
@@ -612,6 +311,7 @@ var_dump($data);
 			</a></td>
 
 		</tr>
+	-->
 
 	</div>
 </div>

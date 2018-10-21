@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Application;
+use App\Banners;
 use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller {
@@ -22,12 +23,22 @@ class ProjectController extends Controller {
 		if($page == 'index') {
 
 
+			// Lấy nội dung mới nhất hiển thị
 			$data = DB::table('Application')
 			->join('Types', 'Application.IdType', '=' , 'Types.IdType')
-			->select('Application.*', 'Types.NameType')->where('IdCategory', 1)->get();
+			->select('Application.*', 'Types.NameType')->where('IdCategory', 1)->paginate(9);
 
 
-			return view($page, ['data'=>$data]);
+			// Lay 4 banner moi nhat
+			$banner = DB::table('Banners')->limit(4)->get();
+
+
+			// Lay 10 ung dung tai nhieu nhat
+			$topdown =  DB::table('Application')->orderBy('NumberDownload', 'desc')->where('IdCategory', 1)->limit(10)->get();
+
+
+			//$data->setBaseUrl('myproject/public/index');
+			return view('index', ['data'=>$data, 'banner'=>$banner, 'topdown'=>$topdown]);
 
 		}
 
