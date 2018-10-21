@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Application;
 use App\Banners;
+use App\Types;
 use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller {
@@ -37,24 +38,62 @@ class ProjectController extends Controller {
 			$topdown =  DB::table('Application')->orderBy('NumberDownload', 'desc')->where('IdCategory', 1)->limit(10)->get();
 
 
+
+			// Lay 6 ung dung ngau nhien de de xuat
+			$randomApp = Application::all()->random(6);
+
+
+
 			//$data->setBaseUrl('myproject/public/index');
-			return view('index', ['data'=>$data, 'banner'=>$banner, 'topdown'=>$topdown]);
+			return view('index', ['data'=>$data, 'banner'=>$banner, 'topdown'=>$topdown, 'randomApp'=>$randomApp]);
+
 
 		}
 
 		if ($page == 'game') {
 
+			
+			// Lấy nội dung mới nhất hiển thị
 			$data = DB::table('Application')
 			->join('Types', 'Application.IdType', '=' , 'Types.IdType')
-			->select('Application.*', 'Types.NameType')->where('IdCategory', 2)->get();
+			->select('Application.*', 'Types.NameType')->where('IdCategory', 2)->paginate(9);
 
 
-			return view('index', ['data'=>$data]);
+			// Lay 4 banner moi nhat
+			$banner = DB::table('Banners')->limit(4)->get();
+
+
+			// Lay 10 ung dung tai nhieu nhat
+			$topdown =  DB::table('Application')->orderBy('NumberDownload', 'desc')->where('IdCategory', 2)->limit(10)->get();
+
+
+
+			// Lay 6 ung dung ngau nhien de de xuat
+			$randomApp = Application::all()->random(6);
+
+
+
+			//$data->setBaseUrl('myproject/public/index');
+			return view('index', ['data'=>$data, 'banner'=>$banner, 'topdown'=>$topdown, 'randomApp'=>$randomApp]);
 		}
 
 
 		// Các trang còn lại
 		return view($page);
+		
+	}
+
+	// Lay thong tin mot ung dung
+	public function getChiTiet($IdApp){
+
+
+
+		$data = DB::table('Application')
+			->join('Types', 'Application.IdType', '=' , 'Types.IdType')
+			->select('Application.*', 'Types.NameType')->where('IdApplication', $IdApp)->first();
+			
+
+		return $data;
 		
 	}
 
@@ -87,7 +126,7 @@ class ProjectController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		
 	}
 
 	/**
@@ -120,7 +159,7 @@ class ProjectController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		
 	}
 
 }

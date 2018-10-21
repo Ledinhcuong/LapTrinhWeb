@@ -1,3 +1,11 @@
+<?php
+use App\Http\Controllers\ProjectController;
+$control = new ProjectController();
+
+$id = $_GET['id'];
+$data = $control->getChiTiet($id);
+
+?>
 
 @extends('master')
 @section('title', 'chitiet')
@@ -11,7 +19,7 @@
 			
 			<div class="col-md-3">
 				<div class="icon-app">
-					<img src="public/images/gestureicon.png" alt="icon app" width="128x" height="128px">
+					<img src="public/images/<?php echo $data->Icon ?>" alt="<?php echo $data->NameApp ?>" width="128x" height="128px">
 
 				</div>
 
@@ -20,19 +28,19 @@
 			<div class="col-md-3">
 				<div class="thongtin-cb">
 					<div class="ten-ung-dung">
-						Gesture
+						<?php echo $data->NameApp ?>
 					</div>
 
 					<div class="cong-ty" style="color: #2196f3">
-						Apple inc
+						<?php echo $data->Developer ?>
 					</div>
 
 					<div class="the-loai">
-						Điểu hướng
+						<?php echo $data->NameType ?>
 					</div>
 
 					<div class="mo-ta-ngan">
-						Ứng dụng thay đổi các cử chỉ vút trên thiết bị của chúng ta.
+						<?php echo $data->SortDescription ?>
 					</div>
 
 				</div>
@@ -51,7 +59,7 @@
 					Miễn phí
 				</div>
 				
-				<a href="#" style="text-decoration: none;">
+				<a href="<?php echo $data->LinkDownload ?>" style="text-decoration: none;">
 					<span class="nut-tai-ve">
 						Tải xuống
 					</span>
@@ -69,8 +77,7 @@
 			</div>
 
 			<div class="noidung-mt">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus dignissimos eveniet labore, atque fuga sequi adipisci. Rerum pariatur quisquam a cupiditate quis nihil ipsam similique earum magni numquam consectetur, vitae!
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto quidem recusandae atque, dicta eaque. Molestias consectetur, officiis voluptas, doloremque minus, sed mollitia at iure eligendi eum ipsa aspernatur deserunt ut.
+				<?php echo $data->Description ?>
 			</div>
 
 		</div>
@@ -85,28 +92,23 @@
 
 			<div class="danhsach-image">
 				<div class="row">
+					
 					<div class="col-md-3" >
-						<img src="public/images/edge1.jpg" alt="edg1" class="img-responsive" onclick="showImage()">
+						<img src="public/images/<?php echo $data->Image1 ?>" alt="edg1" class="img-responsive">
 					</div>
 
 					<div class="col-md-3">
-						<img src="public/images/edge2.jpg" alt="edg2" class="img-responsive">
+						<img src="public/images/<?php  echo $data->Image2 ?>" alt="edg2" class="img-responsive">
 					</div>
 
 					<div class="col-md-3">
-						<img src="public/images/edge2.jpg" alt="edg3" class="img-responsive">
+						<img src="public/images/<?php echo $data->Image3 ?>" alt="edg3" class="img-responsive">
 					</div>
 
-					<div class="col-md-3">
-						<img src="public/images/edge4.jpg" alt="edg3" class="img-responsive">
-					</div>
+				
 				</div>
 			</div>
 
-			<div class="show-image" style="display: inline;">
-				<img src="public/images/controlcenter1.png" alt="image">
-				<button style="display: block;">Đóng</button>
-			</div>
 
 
 		</div>
@@ -125,7 +127,7 @@
 					</div>
 
 					<div class="content-bs">
-						Facebook inc
+						<?php echo $data->Developer ?>
 					</div>
 
 
@@ -134,7 +136,7 @@
 					</div>
 
 					<div class="content-bs">
-						Facebook inc
+						<?php echo $data->Developer ?>
 					</div>
 
 				</div>
@@ -146,7 +148,7 @@
 					</div>
 
 					<div class="content-bs">
-						17/10/2013
+						<?php echo $data->DateSubmit ?>
 					</div>
 
 
@@ -155,7 +157,7 @@
 					</div>
 
 					<div class="content-bs">
-						47,55 MB
+						<?php  echo $data->Size ?> MB
 					</div>
 
 				</div>
@@ -168,7 +170,7 @@
 					</div>
 
 					<div class="content-bs">
-						1.6
+						<?php echo $data->Version ?>
 					</div>
 
 
@@ -177,7 +179,7 @@
 					</div>
 
 					<div class="content-bs">
-						Xã hội
+						<?php echo $data->NameType ?>
 					</div>
 
 				</div>

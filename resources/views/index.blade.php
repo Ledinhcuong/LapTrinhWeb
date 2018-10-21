@@ -1,6 +1,5 @@
 <?php
 
-
 ?>
 
 @extends('master')
@@ -51,107 +50,34 @@
 		<div class="content-suggest">
 			<div class="row">
 
+				<?php 
+				foreach ($randomApp as $key) {
+					
+				?>
+
 				<div class="col-md-2">
-					<a href="#">
+					<a href="chitiet?id=<?php echo $key->IdApplication ?>">
 						<div class="content-app">
 							<div class="icon-app-sg" style="text-align: center;">
-								<img src="public/images/controlcentericon.png" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
+								<img src="public/images/<?php echo $key->Icon ?>" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
 							</div>
 							<div class="name-app-sg" style="margin-top: 10px; font-weight: bold; font-size: 18px; color: #000">
-								Ứng dụng 1
+								<?php  echo $key->NameApp ?>
 							</div>
 							<div class="author-app-sg" >
-								Facebook inc
+								<?php echo $key->Developer ?>
 							</div>
 						</div>
 					</a>
 
 				</div>
 
-				<div class="col-md-2">
-					<a href="#">
-						<div class="content-app">
-							<div class="icon-app-sg" style="text-align: center;">
-								<img src="public/images/controlcentericon.png" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
-							</div>
-							<div class="name-app-sg" style="margin-top: 10px; font-weight: bold; font-size: 18px; color: #000">
-								Ứng dụng 1
-							</div>
-							<div class="author-app-sg" >
-								Facebook inc
-							</div>
-						</div>
-					</a>
+				<?php
+			}
 
-				</div>
+				?>
 
-				<div class="col-md-2">
-					<a href="#">
-						<div class="content-app">
-							<div class="icon-app-sg" style="text-align: center;">
-								<img src="public/images/controlcentericon.png" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
-							</div>
-							<div class="name-app-sg" style="margin-top: 10px; font-weight: bold; font-size: 18px; color: #000">
-								Ứng dụng 1
-							</div>
-							<div class="author-app-sg" >
-								Facebook inc
-							</div>
-						</div>
-					</a>
-
-				</div>
-
-				<div class="col-md-2">
-					<a href="#">
-						<div class="content-app">
-							<div class="icon-app-sg" style="text-align: center;">
-								<img src="public/images/controlcentericon.png" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
-							</div>
-							<div class="name-app-sg" style="margin-top: 10px; font-weight: bold; font-size: 18px; color: #000">
-								Ứng dụng 1
-							</div>
-							<div class="author-app-sg" >
-								Facebook inc
-							</div>
-						</div>
-					</a>
-
-				</div>
-
-				<div class="col-md-2">
-					<a href="#">
-						<div class="content-app">
-							<div class="icon-app-sg" style="text-align: center;">
-								<img src="public/images/controlcentericon.png" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
-							</div>
-							<div class="name-app-sg" style="margin-top: 10px; font-weight: bold; font-size: 18px; color: #000">
-								Ứng dụng 1
-							</div>
-							<div class="author-app-sg" >
-								Facebook inc
-							</div>
-						</div>
-					</a>
-
-				</div>
-
-				<div class="col-md-2">
-					<a href="#">
-						<div class="content-app">
-							<div class="icon-app-sg" style="text-align: center;">
-								<img src="public/images/controlcentericon.png" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
-							</div>
-							<div class="name-app-sg" style="margin-top: 10px; font-weight: bold; font-size: 18px; color: #000">
-								Ứng dụng 1
-							</div>
-							<div class="author-app-sg" >
-								Facebook inc
-							</div>
-						</div>
-					</a>
-
-				</div>
+				
 
 
 			</div>
@@ -212,7 +138,7 @@
 
 								?>
 								<li>
-								<a href="#">
+								<a href="chitiet?id=<?php echo $key->IdApplication ?>">
 									<img src="public/images/<?php echo $key->Icon ?>"  alt="<?php  echo $key->NameApp ?>" class="img-responsive" width="20px" height="20px" style="display: inline-block;"> <?php echo $key->NameApp ?>
 								</a>
 								</li>
@@ -242,7 +168,7 @@
 					 ?>
 
 					<div class="col-md-4">
-						<a href="#">
+						<a href="chitiet?id=<?php echo $key->IdApplication ?>">
 							<div class="app">
 								<div class="app-background">
 									<div class="app-icon">

@@ -1,8 +1,7 @@
 <?php
 
 
-
-Route::get('{page}', 'ProjectController@index');
+Route::get('{page?}', 'ProjectController@index');
 
 
 //Route::get('/', 'WelcomeController@index');
