@@ -409,12 +409,12 @@ footer li>a {
 
 .imge-resize {
 
-	max-width: 120px;
+	/*max-width: 120px;*/
 	max-height: 120px;
 }
 
 .name-app-search {
-	font-size: 35px;
+	font-size: 28px;
 	color: #000;
 	font-weight: bold;
 }

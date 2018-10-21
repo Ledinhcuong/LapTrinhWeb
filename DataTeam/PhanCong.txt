@@ -3,13 +3,13 @@ Sử dụng Model, Querry để thực hiện thao tác
 
 -------------------------------------
 Nguyệt
-Thực hiện chức năng tìm kiếm từ khóa  có thể là tên ứng dụng, developer và thực hiện phân trang (Tại trang tìm kiếm). Và truyền id đến trang tri tiết.
+:(
 
 -------------------------------------
 Dũng
 Thực hiện laravel thực hiện các câu lệnh cho phép lưu dữ liệu từ form đăng ký lưu vào cơ sở dữ liệu.
 
-Hỗ trợ Nguyệt
+
 
 -----------------------------------
 Anh Phương

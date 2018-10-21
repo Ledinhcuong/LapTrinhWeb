@@ -98,6 +98,14 @@ class ProjectController extends Controller {
 	}
 
 
+	// Tim kiem ung dung theo ten
+	public function searchApp($key) {
+
+		$result = DB::table('Application')->where('NameApp', 'like', '%'.$key.'%')->simplePaginate(8);
+		return $result;
+	}
+
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

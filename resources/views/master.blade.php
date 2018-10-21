@@ -41,9 +41,9 @@
 
 						<ul class="nav navbar-nav navbar-right">
 							<!-- form tìm kiếm -->
-							<form action="search" class="navbar-form navbar-left" role="search">
+							<form action="search" method="get" class="navbar-form navbar-left" role="search">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Nhập tên phần mềm">
+									<input type="text" name="key" class="form-control" placeholder="Nhập tên phần mềm">
 								</div>
 								<button type="submit" class="btn btn-default" style="color: #4284F3"><i class="fa fa-search" aria-hidden="true"></i></button>
 							</form>
