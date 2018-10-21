@@ -1,4 +1,5 @@
 Mọi người nếu có thắc mắc có thể gửi mail tới: ledinhcuongse@gmail.com
+Sử dụng Model để thực hiện thao tác
 
 -------------------------------------
 Nguyệt
