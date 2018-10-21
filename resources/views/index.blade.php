@@ -76,9 +76,7 @@
 			}
 
 				?>
-
-				
-
+	
 
 			</div>
 
@@ -178,7 +176,7 @@
 
 									<div class="app-detail">
 										<div class="name-app" style="font-size: 20px;">
-											<a href="chitiet?<php echo $key->IdApplication ?>"> <?php echo $key->NameApp ?> </a>
+											<a href="chitiet?id=<?php echo $key->IdApplication ?>"> <?php echo $key->NameApp ?> </a>
 										</div>
 										<div class="detail">
 											<div class="tile-tyle">
