@@ -105,6 +105,21 @@ class ProjectController extends Controller {
 		return $result;
 	}
 
+	// Loc ung dung theo loai
+	public function filterType($type) {
+
+
+		$result = DB::table('Application')->where('IdType', 'like', '%'.$type.'%')->simplePaginate(8);
+		return $result;
+
+	}
+
+	// Lay ten ung dung
+	public function getNameType($id) {
+
+		return Types::find($id);
+	}
+
 
 	/**
 	 * Show the form for creating a new resource.

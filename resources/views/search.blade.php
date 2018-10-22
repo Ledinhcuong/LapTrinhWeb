@@ -1,9 +1,18 @@
 <?php
 use App\Http\Controllers\ProjectController;
 $control = new ProjectController();
-$key = $_GET['key'];
 
-$data = $control-> searchApp($key);
+if(isset($_GET['type']) == true) {
+	$key = $_GET['type'];
+	$data = $control-> filterType($key);
+	$key = 'loại ' .$control->getNameType($key)->NameType;
+
+
+} else {
+	$key = $_GET['key'];
+	$data = $control-> searchApp($key);
+}
+
 
 ?>
 

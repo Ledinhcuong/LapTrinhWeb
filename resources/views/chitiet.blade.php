@@ -206,7 +206,7 @@ $data = $control->getChiTiet($id);
 				
 			</form>
 
-			<iframe src="list_comment.php" width="100%" height="600px" frameborder="0">
+			<iframe src="list_comment" width="100%" height="600px" frameborder="0">
 				
 			</iframe>
 			

@@ -253,10 +253,10 @@
 				<div class="col-md-3">
 
 					<ul class="list-dm">
-						<li><a href="#">Năng xuất</a></li>
-						<li><a href="#">Xã hội</a></li>
-						<li><a href="#">Tin tức</a></li>
-						<li><a href="#">Sức khỏe</a></li>
+						<li><a href="search?type=1">Năng xuất</a></li>
+						<li><a href="search?type=2">Xã hội</a></li>
+						<li><a href="search?type=3">Tin tức</a></li>
+						<li><a href="search?type=4">Sức khỏe</a></li>
 
 					</ul>
 
@@ -265,10 +265,10 @@
 				<div class="col-md-3">
 
 					<ul class="list-dm">
-						<li><a href="#">Bản đồ</a></li>
-						<li><a href="#">Các nhân hóa</a></li>
-						<li><a href="#">Sách</a></li>
-						<li><a href="#">Giải trí</a></li>
+						<li><a href="search?type=5">Bản đồ</a></li>
+						<li><a href="search?type=6">Các nhân hóa</a></li>
+						<li><a href="search?type=7">Sách</a></li>
+						<li><a href="search?type=8">Giải trí</a></li>
 
 					</ul>
 
@@ -276,10 +276,10 @@
 
 				<div class="col-md-3">
 					<ul class="list-dm">
-						<li><a href="#">Ảnh </a></li>
-						<li><a href="#">Video</a></li>
-						<li><a href="#">Nhạc</a></li>
-						<li><a href="#">Bảo mật</a></li>
+						<li><a href="search?type=9">Ảnh </a></li>
+						<li><a href="search?type=10">Video</a></li>
+						<li><a href="search?type=11">Nhạc</a></li>
+						<li><a href="search?type=12">Bảo mật</a></li>
 
 					</ul>
 
@@ -287,9 +287,9 @@
 
 				<div class="col-md-3">
 					<ul class="list-dm">
-						<li><a href="#">Giáo dục</a></li>
-						<li><a href="#">Thời tiết</a></li>
-						<li><a href="#">Mua sắm</a></li>
+						<li><a href="search?type=13">Giáo dục</a></li>
+						<li><a href="search?type=14">Thời tiết</a></li>
+						<li><a href="search?type=15">Mua sắm</a></li>
 					</ul>
 
 				</div>
@@ -302,9 +302,9 @@
 				<div class="col-md-3">
 
 					<ul class="list-dm">
-						<li><a href="#">Chiến lược</a></li>
-						<li><a href="#">Thể thao</a></li>
-						<li><a href="#">Hành động</a></li>
+						<li><a href="search?type=16">Chiến lược</a></li>
+						<li><a href="search?type=17">Thể thao</a></li>
+						<li><a href="search?type=18">Hành động</a></li>
 
 					</ul>
 
@@ -313,9 +313,9 @@
 				<div class="col-md-3">
 
 					<ul class="list-dm">
-						<li><a href="#">Sòng bạc</a></li>
-						<li><a href="#">Mô phỏng</a></li>
-						<li><a href="#">Cổ điển</a></li>
+						<li><a href="search?type=19">Sòng bạc</a></li>
+						<li><a href="search?type=20">Mô phỏng</a></li>
+						<li><a href="search?type=21">Cổ điển</a></li>
 
 					</ul>
 
@@ -323,8 +323,8 @@
 
 				<div class="col-md-3">
 					<ul class="list-dm">
-						<li><a href="#">Phiêu lưu </a></li>
-						<li><a href="#">Bắn sung</a></li>
+						<li><a href="search?type=22">Phiêu lưu </a></li>
+						<li><a href="search?type=23">Bắn sung</a></li>
 
 					</ul>
 
@@ -332,8 +332,8 @@
 
 				<div class="col-md-3" >
 					<ul class="list-dm">
-						<li><a href="#">Đố chữ</a></li>
-						<li><a href="#">Nhập vai</a></li>
+						<li><a href="search?type=24">Đố chữ</a></li>
+						<li><a href="search?type=25">Nhập vai</a></li>
 					</ul>
 
 				</div>
