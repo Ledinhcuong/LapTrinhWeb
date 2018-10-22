@@ -5,7 +5,7 @@ $control = new ProjectController();
 if(isset($_GET['type']) == true) {
 	$key = $_GET['type'];
 	$data = $control-> filterType($key);
-	$key = 'loại ' .$control->getNameType($key)->NameType;
+	$key = ' thể loại ' .$control->getNameType($key)->NameType;
 
 
 } else {

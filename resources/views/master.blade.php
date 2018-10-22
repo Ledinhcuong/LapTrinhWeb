@@ -41,9 +41,9 @@
 
 						<ul class="nav navbar-nav navbar-right">
 							<!-- form tìm kiếm -->
-							<form action="search" method="get" class="navbar-form navbar-left" role="search">
+							<form action="search" method="get" class="navbar-form navbar-left" role="search" onsubmit="return validateForm()">
 								<div class="form-group">
-									<input type="text" name="key" class="form-control" placeholder="Nhập tên phần mềm">
+									<input type="text" name="key" id="search" class="form-control" placeholder="Nhập tên phần mềm">
 								</div>
 								<button type="submit" class="btn btn-default" style="color: #4284F3"><i class="fa fa-search" aria-hidden="true"></i></button>
 							</form>
@@ -73,11 +73,7 @@
 						</ul>
 					</div>
 
-					<!-- Các chỉ mục -->
-					<li><a href="#" style="color: #5BC348"><i class="fa fa-android" aria-hidden="true"></i> Phần mềm</a></li>
-					<li><a href="#" style="color: #f44336"><i class="fa fa-gamepad"></i> Trò chơi</a></li>
-					<li><a href="https://www.facebook.com/LeDinhCuongPrime/" style="color: #3B5998"><i class="fa fa-facebook-official" aria-hidden="true"></i> Face</a></li>
-					<li><a href="login"><i class="fa fa-user"></i> Tài khoản</a></li>
+				
 
 
 				</div>

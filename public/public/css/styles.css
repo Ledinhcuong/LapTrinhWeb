@@ -54,7 +54,8 @@ body {
 }
 
 .content-app:hover {
-	border: 0.5px solid #00c853;
+	border: 0.5px solid #2979ff;
+	background: #bbdefb;
 
 }
 
@@ -96,8 +97,18 @@ body {
 	margin-bottom: 10px;
 }
 
+.background-list >ul>li:hover  {
+	background: rgba(255, 255, 255, 0.2);
+}
+
 .background-list ul>li {
 	margin: 10px 0;
+}
+
+.background-list >ul>li>a {
+	text-decoration: none;
+	font-size: 18px;
+	color: #fff;
 }
 
 .app {
@@ -396,8 +407,18 @@ footer li>a {
 	
 }
 
+.app-result >a{
+	text-decoration: none;
+}
+
 .background-result {
 	background: rgba(206, 205, 210, 0.8);
+	padding: 10px;
+}
+
+
+.background-result:hover {
+	background: #bbdefb;
 	padding: 10px;
 }
 

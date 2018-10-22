@@ -137,7 +137,7 @@
 								?>
 								<li>
 								<a href="chitiet?id=<?php echo $key->IdApplication ?>">
-									<img src="public/images/<?php echo $key->Icon ?>"  alt="<?php  echo $key->NameApp ?>" class="img-responsive" width="20px" height="20px" style="display: inline-block;"> <?php echo $key->NameApp ?>
+									<img src="public/images/<?php echo $key->Icon ?>"  alt="<?php  echo $key->NameApp ?>" class="img-responsive" width="35px" height="35px" style="display: inline-block;"> <?php echo $key->NameApp ?>
 								</a>
 								</li>
 
@@ -351,7 +351,7 @@
 		<div class="row">
 			<div class="col-md-4 store" style="text-align: center;">
 
-				<a href="#">
+				<a href="https://play.google.com/store">
 					<img src="public/images/googleplay.png" alt="google play" width="60px" height="60px">
 
 					<div class="title-store">
@@ -363,7 +363,7 @@
 			</div>
 
 			<div class="col-md-4 store" style="text-align: center;">
-				<a href="#">
+				<a href="https://www.apple.com/ios/app-store/">
 
 					<img src="public/images/appstore.png" alt="google play" width="60px" height="60px">
 
@@ -378,7 +378,7 @@
 
 			<div class="col-md-4 store" style="text-align: center;">
 
-				<a href="#">
+				<a href="https://www.microsoft.com/en-us/store/appsvnext/windows">
 					<img src="public/images/Microsoft-icon.png" alt="google play" width="60px" height="60px">
 
 					<div class="title-store">
