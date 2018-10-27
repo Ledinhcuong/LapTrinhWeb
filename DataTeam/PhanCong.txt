@@ -1,10 +1,10 @@
-Mọi người nếu có thắc mắc có thể gửi mail tới: ledinhcuongse@gmail.com
+﻿Mọi người nếu có thắc mắc có thể gửi mail tới: ledinhcuongse@gmail.com
 Sử dụng Model, Querry để thực hiện thao tác
 
 -------------------------------------
 Nguyệt
 :(
-
+ Bao cao
 -------------------------------------
 Dũng
 Thực hiện laravel thực hiện các câu lệnh cho phép lưu dữ liệu từ form đăng ký lưu vào cơ sở dữ liệu.
