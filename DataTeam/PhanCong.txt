@@ -1,3 +1,9 @@
+Lưu ý khi clone đồ án:
+* Vì một vài lý do chưa xác định github không cập nhật các file như .env nên mọi người phải thực hiện theo cách thủ công như sau:
+B1: Clone đồ án vào một thư mục.
+B2: Lấy fixproject ra và giải nén ngay tại thư mục đồ án
+
+
 ﻿Mọi người nếu có thắc mắc có thể gửi mail tới: ledinhcuongse@gmail.com
 Sử dụng Model, Querry để thực hiện thao tác
 
