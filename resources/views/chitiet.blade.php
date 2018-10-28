@@ -17,7 +17,7 @@ $data = $control->getChiTiet($id);
 		<!-- Tong quan -->
 		<div class="row">
 			
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-3">
 				<div class="icon-app">
 					<img src="public/images/<?php echo $data->Icon ?>" alt="<?php echo $data->NameApp ?>" width="128x" height="128px">
 
@@ -25,7 +25,7 @@ $data = $control->getChiTiet($id);
 
 			</div>
 
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-3">
 				<div class="thongtin-cb">
 					<div class="ten-ung-dung">
 						<?php echo $data->NameApp ?>
@@ -47,11 +47,11 @@ $data = $control->getChiTiet($id);
 
 			</div>
 
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-2">
 				
 			</div>
 
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-3">
 				<div class="title-download">
 					Tải Về
 				</div>
@@ -93,15 +93,15 @@ $data = $control->getChiTiet($id);
 			<div class="danhsach-image">
 				<div class="row">
 					
-					<div class="col-md-3" >
+					<div class="col-md-3 col-sm-3 col-xs-3" >
 						<img src="public/images/<?php echo $data->Image1 ?>" alt="edg1" class="img-responsive">
 					</div>
 
-					<div class="col-md-3">
+					<div class="col-md-3 col-sm-3 col-xs-3">
 						<img src="public/images/<?php  echo $data->Image2 ?>" alt="edg2" class="img-responsive">
 					</div>
 
-					<div class="col-md-3">
+					<div class="col-md-3 col-sm-3 col-xs-3">
 						<img src="public/images/<?php echo $data->Image3 ?>" alt="edg3" class="img-responsive">
 					</div>
 
@@ -120,7 +120,7 @@ $data = $control->getChiTiet($id);
 			</div>
 
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-3">
 
 					<div class="title-bs">
 						Nhà xuất bản
@@ -141,7 +141,7 @@ $data = $control->getChiTiet($id);
 
 				</div>
 
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-3">
 
 					<div class="title-bs">
 						Ngày phát hành
@@ -163,7 +163,7 @@ $data = $control->getChiTiet($id);
 				</div>
 
 
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-3">
 
 					<div class="title-bs">
 						Phiên bản
@@ -194,12 +194,12 @@ $data = $control->getChiTiet($id);
 			</div>
 			<button style="margin-bottom: 5px;"> <i class="fa fa-pencil"></i> Viết đánh giá</button>
 
-			<form method="post" name="form-comment" action="#">
+			<form method="post" name="form-comment" action="#" >
 
 				
 					<label for="edt_comment" >Nhập đánh giá của bạn </label>
 
-					<input type="text" name="user-comment" id="edt_comment" class="form-control">
+					<input  type="text" name="user-comment" id="edt_comment" class="form-control">
 					<span class="help-block"></span>
 					<button type="submit" class="btn btn-primary">Đăng</button>
 					

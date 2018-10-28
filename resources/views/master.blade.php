@@ -92,7 +92,7 @@
 		<footer>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-4">
 						<div class="title-footer">
 							About Us
 						</div>
@@ -106,7 +106,7 @@
 
 					</div>
 
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-4">
 						<div class="title-footer">
 							Thông tin liên hệ
 						</div>
@@ -119,7 +119,7 @@
 
 					</div>
 
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-4">
 						<div class="title-footer">
 							Trang web
 						</div>

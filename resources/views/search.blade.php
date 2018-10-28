@@ -38,7 +38,7 @@ if(isset($_GET['type']) == true) {
 					foreach ($data as $key) {
 						
 					?>
-					<div class="col-md-3 app-result">
+					<div class="col-md-3 col-sm-4 col-xs-6 app-result">
 						<a href="chitiet?id=<?php echo $key->IdApplication  ?>">
 							<div class="background-result">
 

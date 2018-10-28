@@ -67,6 +67,8 @@ body {
 
 /*-------------------------------------Content -------------------------------------*/
 
+
+
 /*------------------------------------- Calendar -----------------------------*/
 .loi-chao {
 	padding-left: 20px;
@@ -132,6 +134,7 @@ body {
 
 .app-icon {
 	padding: 40px;
+	text-align: center;
 }
 
 .name-app {
@@ -390,6 +393,10 @@ footer li>a {
 	margin-bottom: 25px;
 }
 
+.form-control {
+	width: 75%;
+}
+
 /*---------------------------------------------------------- css trang search ----------------------------------------*/
 .search {
 	margin: 50px 0;
@@ -442,5 +449,55 @@ footer li>a {
 
 .name-company {
 	font-size: 20px;
+
+}
+
+
+
+
+@media(min-width: 768px) and (max-width: 1000px) {
+	
+
+	.leftbar {
+		display: none;
+	}
+
+	.float-button {
+		display: none;
+	}
+}
+
+
+
+@media(min-width: 320px) and (max-width: 767px) {
+
+	.other-store {
+		display: none;
+	}
+
+	.float-button {
+		display: none;
+	}
+
+	.ten-ung-dung {
+		font-size: 25px;
+	}
+
+	.title-download {
+		font-size: 25px;
+	}
+
+	.icon-app {
+		text-align: left;
+	}
+
+	.icon-app img {
+		width: 80px;
+		height: 80px;
+	}
+
+	.imge-resize {
+		max-height: 64px;
+	}
 
 }

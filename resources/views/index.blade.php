@@ -55,7 +55,7 @@
 					
 				?>
 
-				<div class="col-md-2">
+				<div class="col-md-2 col-sm-4 col-xs-6">
 					<a href="chitiet?id=<?php echo $key->IdApplication ?>">
 						<div class="content-app">
 							<div class="icon-app-sg" style="text-align: center;">
@@ -92,7 +92,7 @@
 <div class="content">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-3 leftbar">
 
 				<div class="calendar">
 					<div class="background-list">
@@ -158,19 +158,19 @@
 			</div>
 
 			<!-- App -->
-			<div class="col-md-9">
+			<div class="col-md-9 ">
 				<div class="row">
 
 					<?php
 						foreach ($data as $key) {
 					 ?>
 
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-4">
 						<a href="chitiet?id=<?php echo $key->IdApplication ?>">
 							<div class="app">
 								<div class="app-background">
 									<div class="app-icon">
-										<img src="public/images/<?php echo $key->Icon ?>" alt="<?php echo $key->NameApp ?>" class="img-responsive">
+										<img  style="display: inline-block;" src="public/images/<?php echo $key->Icon ?>"  alt="<?php echo $key->NameApp ?>" class="img-responsive">
 
 									</div>
 
@@ -250,7 +250,7 @@
 
 		<div class="noi-dung-dm">
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-3 col-xs-6">
 
 					<ul class="list-dm">
 						<li><a href="search?type=1">Năng xuất</a></li>
@@ -262,7 +262,7 @@
 
 				</div>
 
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-3 col-xs-6">
 
 					<ul class="list-dm">
 						<li><a href="search?type=5">Bản đồ</a></li>
@@ -274,7 +274,7 @@
 
 				</div>
 
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-3 col-xs-6">
 					<ul class="list-dm">
 						<li><a href="search?type=9">Ảnh </a></li>
 						<li><a href="search?type=10">Video</a></li>
@@ -285,7 +285,7 @@
 
 				</div>
 
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-3 col-xs-6">
 					<ul class="list-dm">
 						<li><a href="search?type=13">Giáo dục</a></li>
 						<li><a href="search?type=14">Thời tiết</a></li>
@@ -299,7 +299,7 @@
 
 		<div class="noi-dung-dm">
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-3 col-xs-6">
 
 					<ul class="list-dm">
 						<li><a href="search?type=16">Chiến lược</a></li>
@@ -310,7 +310,7 @@
 
 				</div>
 
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-3 col-xs-6">
 
 					<ul class="list-dm">
 						<li><a href="search?type=19">Sòng bạc</a></li>
@@ -321,7 +321,7 @@
 
 				</div>
 
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-3 col-xs-6">
 					<ul class="list-dm">
 						<li><a href="search?type=22">Phiêu lưu </a></li>
 						<li><a href="search?type=23">Bắn sung</a></li>
@@ -330,7 +330,7 @@
 
 				</div>
 
-				<div class="col-md-3" >
+				<div class="col-md-3 col-sm-3 col-xs-6" >
 					<ul class="list-dm">
 						<li><a href="search?type=24">Đố chữ</a></li>
 						<li><a href="search?type=25">Nhập vai</a></li>
@@ -349,7 +349,7 @@
 <div class="other-store">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 store" style="text-align: center;">
+			<div class="col-md-4 col-sm-4 store" style="text-align: center;">
 
 				<a href="https://play.google.com/store">
 					<img src="public/images/googleplay.png" alt="google play" width="60px" height="60px">
@@ -362,7 +362,7 @@
 
 			</div>
 
-			<div class="col-md-4 store" style="text-align: center;">
+			<div class="col-md-4 col-sm-4 store" style="text-align: center;">
 				<a href="https://www.apple.com/ios/app-store/">
 
 					<img src="public/images/appstore.png" alt="google play" width="60px" height="60px">
@@ -376,7 +376,7 @@
 
 			</div>
 
-			<div class="col-md-4 store" style="text-align: center;">
+			<div class="col-md-4 col-sm-4 store" style="text-align: center;">
 
 				<a href="https://www.microsoft.com/en-us/store/appsvnext/windows">
 					<img src="public/images/Microsoft-icon.png" alt="google play" width="60px" height="60px">
