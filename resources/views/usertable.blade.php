@@ -94,51 +94,110 @@
         <!-- Search -->
 
         <div class="area-search" style="margin: 20px 0">
-             <h3>Tìm Kiếm Thông Tin Trong Bảng</h3>
-          <div class="row">
+         <h3>Tìm Kiếm Thông Tin Trong Bảng</h3>
+         <div class="row">
 
-            <div class="col-md-6">
+          <div class="col-md-6">
 
 
-              <form id="custom-search-input">
+            <form id="custom-search-input">
 
-                <div class="input-group col-md-12">
+              <div class="input-group col-md-12">
 
-                  <input type="text" class="form-control input-lg" placeholder="Nhập nội dung cần tìm" />
+                <input type="text" class="form-control input-lg" placeholder="Nhập nội dung cần tìm" />
 
-                  <span class="input-group-btn">
-                    
-                    <button  class="btn btn-info btn-lg" type="submit">
-                      <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
+                <span class="input-group-btn">
 
-                  </span>
+                  <button  class="btn btn-info btn-lg" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
 
-                </div>
+                </span>
 
-              </form>
+              </div>
 
-            </div>
+            </form>
+
           </div>
         </div>
+      </div>
+
+
+      <!-- Table -->
+      <div class="content-table">
+
+        <div class="nameTB">
+
+          Bảng User
+
+        </div>
+
+        <div class="tool">
+          <a href="#" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
+
+        </div>
+
+        <!-- Table -->
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Id User</th>
+              <th>Name User</th>
+              <th>Email</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Cuong Dinh</td>
+              <td>Cuong dinh@gmail.com</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Cuong Dinh</td>
+              <td>Cuong dinh@gmail.com</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Cuong Dinh</td>
+              <td>Cuong dinh@gmail.com</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Cuong Dinh</td>
+              <td>Cuong dinh@gmail.com</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Cuong Dinh</td>
+              <td>Cuong dinh@gmail.com</td>
+            </tr>
+          </tbody>
+        </table>
 
       </div>
+
+
+
     </div>
   </div>
+</div>
 
 
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
+<!-- Menu Toggle Script -->
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>
 
 </body>
 
