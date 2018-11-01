@@ -212,3 +212,13 @@ body {
 .btn-tool:hover {
   background: #82b1ff;
 }
+
+.btn-control {
+  padding: 5px;
+  display: block;
+  color: #fff;
+}
+
+.table a {
+  text-decoration: none;
+}
