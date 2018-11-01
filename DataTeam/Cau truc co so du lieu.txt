@@ -33,6 +33,7 @@ SortDescription
 Users
 ------------------
 IdUser
+TypeUser
 NameUser
 Email
 password

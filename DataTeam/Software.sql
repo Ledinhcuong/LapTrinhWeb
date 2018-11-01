@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 20, 2018 at 07:05 PM
+-- Generation Time: Nov 01, 2018 at 04:46 AM
 -- Server version: 5.6.37
 -- PHP Version: 5.6.31
 
@@ -206,6 +206,7 @@ INSERT INTO `Types` (`IdType`, `NameType`) VALUES
 
 CREATE TABLE IF NOT EXISTS `Users` (
   `IdUser` int(10) unsigned NOT NULL,
+  `TypeUser` int(2) NOT NULL,
   `NameUser` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `Email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL
@@ -215,11 +216,11 @@ CREATE TABLE IF NOT EXISTS `Users` (
 -- Dumping data for table `Users`
 --
 
-INSERT INTO `Users` (`IdUser`, `NameUser`, `Email`, `password`) VALUES
-(1, 'CuongDinh', 'cuongdinh@gmail.com', '123456'),
-(2, 'DungLe', 'DungLe@gmail.com', '123456'),
-(3, 'PhuongTran', 'phuongtran@gmail.com', '123456'),
-(4, 'NguyetTran', 'nguyettran@gmail.com', '123456');
+INSERT INTO `Users` (`IdUser`, `TypeUser`, `NameUser`, `Email`, `password`) VALUES
+(1, 1, 'CuongDinh', 'cuongdinh@gmail.com', '123456'),
+(2, 0, 'DungLe', 'DungLe@gmail.com', '123456'),
+(3, 0, 'PhuongTran', 'phuongtran@gmail.com', '123456'),
+(4, 0, 'NguyetTran', 'nguyettran@gmail.com', '123456');
 
 --
 -- Indexes for dumped tables

@@ -288,18 +288,22 @@ class DatabaseSeeder extends Seeder {
 		// Thêm dữ liệu vào bảng User
 		DB::table('Users')->insert([
 			['NameUser'=>'CuongDinh',
+			'TypeUser'=>1,
 			'Email'=>'cuongdinh@gmail.com',
 			'password'=>'123456'],
 
 			['NameUser'=>'DungLe',
+			'TypeUser'=>0,
 			'Email'=>'DungLe@gmail.com',
 			'password'=>'123456'],
 
 			['NameUser'=>'PhuongTran',
+			'TypeUser'=>0,
 			'Email'=>'phuongtran@gmail.com',
 			'password'=>'123456'],
 
 			['NameUser'=>'NguyetTran',
+			'TypeUser'=>0,
 			'Email'=>'nguyettran@gmail.com',
 			'password'=>'123456']
 
