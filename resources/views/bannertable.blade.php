@@ -155,14 +155,14 @@
 
               foreach ($data as $key) {
                 
-              
+              $linkImage = 'public/images/'.  $key->ImageBanner;
 
             ?>
             <tr>
               <td><?php echo $key->IdBanner ?></td>
               <td><?php echo $key->ContentBanner  ?></td>
               <td> <?php echo $key->CreateDate ?></td>
-              <td> <img src="{{url('public/images/<?php echo $key->ImageBanner ?>')}}" style="max-width: 300px;" alt=""></td>
+              <td> <img src='{{url($linkImage)}}' style="max-width: 300px;" alt=""></td>
               
               <td width="250">
                 <div>
@@ -181,10 +181,10 @@
           ?>
             
           
-           
-          
           </tbody>
         </table>
+
+       {!! $data->render() !!}
 
       </div>
 

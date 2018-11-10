@@ -5,14 +5,14 @@
 	<meta charset="UTF-8">
 	<title>@yield('title')</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<LINK REL="SHORTCUT ICON" href="public/images/mylogo.ico">
-	<link rel="stylesheet" href="public/font/OpenSansCondensed-Light.ttf">
-	<link rel="stylesheet" href="public/bootstrap-3.3.7-dist/css/bootstrap.min.css"> 
-	<link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="public/css/styles.css">
-	<link rel="stylesheet" type="text/css" href="public/css/slider.css">
-	<script type="text/javascript" src="public/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="public/js/sitecripts.js" ></script>
+	<LINK REL="SHORTCUT ICON" href="{{url('public/images/mylogo.ico')}}">
+	<link rel="stylesheet" href="{{url('public/font/OpenSansCondensed-Light.ttf')}}">
+	<link rel="stylesheet" href="{{url('public/bootstrap-3.3.7-dist/css/bootstrap.min.css')}}"> 
+	<link rel="stylesheet" href="{{url('public/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" href="{{url('public/css/styles.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url('public/css/slider.css')}}">
+	<script type="text/javascript" src="{{url('public/js/jquery-3.2.1.min.js')}}"></script>
+	<script type="text/javascript" src="{{url('public/js/sitecripts.js')}}" ></script>
 	
 	
 </head>
@@ -62,7 +62,7 @@
 					<div class="background-menu">
 
 						<div class="logo-menu" style="margin-bottom: 10px; text-align: center;">
-							<img src="public/images/mylogo.ico" alt="">
+							<img src="{{url('public/images/mylogo.ico')}}" alt="logo">
 						</div>
 
 
@@ -143,7 +143,7 @@
 
 		</div>
 
-		<script type="text/javascript" src="public/js/slider.js"></script>
+		<script type="text/javascript" src="{{url('public/js/slider.js')}}"></script>
 		<script>
         var indexCurrent = 1;      // Chỉ số hình đầu tiên hiển thị ở slide
         var loop = true;  // Bật lặp slide 

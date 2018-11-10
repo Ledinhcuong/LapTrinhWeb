@@ -4,7 +4,7 @@
 Route::get('{page?}', 'ProjectController@index');
 
 Route::resource('admin/banner','BannerController');
-
+Route::resource('admin/user','UserController');
 
 //Route::get('/', 'WelcomeController@index');
 
