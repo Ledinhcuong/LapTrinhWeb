@@ -11,9 +11,9 @@
   <title>administrator</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link href="{{url('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url('vendor/bootstrap/css/style.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{url('public/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 
 
 </head>
@@ -23,7 +23,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Administrator</a>
+      <a class="navbar-brand" href="{{url('admin')}}">Administrator</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -150,9 +150,15 @@
             </tr>
           </thead>
           <tbody>
+            <?php 
+                  foreach ($data as $key) {
+                    
+                  
+            ?>
+
             <tr>
-              <td>1</td>
-              <td>Software</td>
+              <td> {{$key->IdCategory}}</td>
+              <td> {{$key->NameCategory}} </td>
               <td>
                 <div>
                    <a href="#" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
@@ -163,6 +169,11 @@
                   
               </td>
             </tr>
+
+            <?php 
+
+          }
+          ?>
             
           </tbody>
         </table>
@@ -176,8 +187,8 @@
 
 
 <!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{url('vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{url('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 <!-- Menu Toggle Script -->
 <script>

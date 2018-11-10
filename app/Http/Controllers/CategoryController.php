@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Category;
 
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class CategoryController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$data = Category::paginate(30);
+		return view('categorytable', ['data'=>$data]);
 	}
 
 	/**

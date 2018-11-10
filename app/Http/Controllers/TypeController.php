@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Types;
 use Illuminate\Http\Request;
 
 class TypeController extends Controller {
@@ -14,7 +14,8 @@ class TypeController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$data = Types::paginate(30);
+		return view('typetable', ['data'=>$data]);
 	}
 
 	/**

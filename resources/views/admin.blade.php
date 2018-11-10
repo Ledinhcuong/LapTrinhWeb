@@ -63,7 +63,7 @@
 
       <div class="col-md-3 table">
 
-        <a href="" style="text-decoration: none;">
+        <a href="{{url('admin/application')}}" style="text-decoration: none;">
           <div class="block-table">
             <div class="background-card" >
 
@@ -81,7 +81,7 @@
 
     <div class="col-md-3 table">
 
-      <a href="" style="text-decoration: none;">
+      <a href="{{url('admin/category')}}" style="text-decoration: none;">
 
         <div class="block-table">
           <div class="background-card">
@@ -128,7 +128,7 @@
 </div>
 
 <div class="col-md-3 table">
-  <a href="" style="text-decoration: none;">
+  <a href="{{url('admin/type')}}" style="text-decoration: none;">
     <div class="block-table">
       <div class="background-card">
        <img src="vendor/image/type.png" alt="">
@@ -141,7 +141,7 @@
 </div>
 
 <div class="col-md-3 table">
-  <a href="" style="text-decoration: none;">
+  <a href="{{url('admin/review')}}" style="text-decoration: none;">
     <div class="block-table">
       <div class="background-card">
        <img src="vendor/image/review.png" alt="">

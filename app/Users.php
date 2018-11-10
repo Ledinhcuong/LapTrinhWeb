@@ -7,4 +7,8 @@ class Users extends Model {
 	protected $table = 'Users';
 	protected $primaryKey = 'IdUser';
 
+	public function Reviews() {
+		return $this->hasMany('App\Reviews', 'IdUser');
+	}
+
 }
