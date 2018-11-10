@@ -8,7 +8,8 @@ class Category extends Model {
 	protected $primaryKey = 'IdCategory';
 
 	public function Application() {
-		return $this->belongsto('App\Application');
+		
+		return $this->hasMany('App\Application', 'IdCategory');
 	}
 
 }

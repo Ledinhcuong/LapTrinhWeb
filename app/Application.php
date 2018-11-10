@@ -13,7 +13,11 @@ class Application extends Model {
 	}
 
 	public function Category() {
-		return $this->hasMany('App\Category');
+		return $this->belongsto('App\Application', 'IdCategory');
+	}
+
+	public function Types() {
+		return $this->belongsto('App\Types', 'IdType');
 	}
 	
 	
