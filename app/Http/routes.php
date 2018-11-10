@@ -3,6 +3,8 @@
 
 Route::get('{page?}', 'ProjectController@index');
 
+Route::resource('admin/banner','BannerController');
+
 
 //Route::get('/', 'WelcomeController@index');
 

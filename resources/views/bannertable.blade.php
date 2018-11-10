@@ -11,9 +11,9 @@
   <title>administrator</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link href="{{url('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url('vendor/bootstrap/css/style.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{url('public/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 
 
 </head>
@@ -142,19 +142,29 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Id User</th>
-              <th>Name User</th>
-              <th>Email</th>
+              <th>Id Banner</th>
+              <th>Content Banner</th>
+              <th>Create Date</th>
+              <th>Image</th>
               <th>Control</th>
 
             </tr>
           </thead>
           <tbody>
+            <?php
+
+              foreach ($data as $key) {
+                
+              
+
+            ?>
             <tr>
-              <td>1</td>
-              <td>Cuong Dinh</td>
-              <td>Cuong dinh@gmail.com</td>
-              <td>
+              <td><?php echo $key->IdBanner ?></td>
+              <td><?php echo $key->ContentBanner  ?></td>
+              <td> <?php echo $key->CreateDate ?></td>
+              <td> <img src="{{url('public/images/<?php echo $key->ImageBanner ?>')}}" style="max-width: 300px;" alt=""></td>
+              
+              <td width="250">
                 <div>
                    <a href="#" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
                 </div>
@@ -164,62 +174,15 @@
                   
               </td>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>Cuong Dinh</td>
-              <td>Cuong dinh@gmail.com</td>
-               <td>
-                <div>
-                   <a href="#" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
-                </div>
-                <div>
-                  <a href="#" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
-                </div>
-                  
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Cuong Dinh</td>
-              <td>Cuong dinh@gmail.com</td>
-               <td>
-                <div>
-                   <a href="#" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
-                </div>
-                <div>
-                  <a href="#" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
-                </div>
-                  
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Cuong Dinh</td>
-              <td>Cuong dinh@gmail.com</td>
-               <td>
-                <div>
-                   <a href="#" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
-                </div>
-                <div>
-                  <a href="#" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
-                </div>
-                  
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Cuong Dinh</td>
-              <td>Cuong dinh@gmail.com</td>
-               <td>
-                <div>
-                   <a href="#" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
-                </div>
-                <div>
-                  <a href="#" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
-                </div>
-                  
-              </td>
-            </tr>
+
+            <?php
+
+          }
+          ?>
+            
+          
+           
+          
           </tbody>
         </table>
 
@@ -232,8 +195,8 @@
 
 
 <!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{url('vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{url('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 <!-- Menu Toggle Script -->
 <script>

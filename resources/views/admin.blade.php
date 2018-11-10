@@ -98,7 +98,7 @@
   </div>
 
   <div class="col-md-3 table">
-    <a href="" style="text-decoration: none;">
+    <a href="{{url('admin/banner')}}" style="text-decoration: none;">
 
       <div class="block-table">
         <div class="background-card">
