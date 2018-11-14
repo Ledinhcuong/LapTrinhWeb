@@ -15,28 +15,38 @@ class CategoryController extends Controller {
 	 */
 	public function index()
 	{
+
 		$data = Category::paginate(30);
 		return view('categorytable', ['data'=>$data]);
 	}
 
 	/**
-	 * Show the form for creating a new resource.
+	 * Hiển thị form thêm mới .
 	 *
 	 * @return Response
 	 */
 	public function create()
 	{
-		//
+		//Gọi trang view trong thư mục category, file createcategory.blade.php
+		return view('category.createcategory');
 	}
 
 	/**
-	 * Store a newly created resource in storage.
+	 * action để lưu category mọi khi form submit
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+		$allRequest = $request->all();
+		$nameCategory = $allRequest['NameCategory'];
+		$dataInsertToDatabase = array(
+			'NameCategory' => $nameCategory
+		);
+
+		$objCategory = new Category();
+		$objCategory->insert($dataInsertToDatabase);
 	}
 
 	/**
@@ -59,6 +69,9 @@ class CategoryController extends Controller {
 	public function edit($id)
 	{
 		//
+		$objCategory = new  Category();
+		$getCatogoryById = $objCategory->find($id)->toArray();
+		return view ('category.editcategory')->with('getCategoryById', $getCategoryById);
 	}
 
 	/**
@@ -67,9 +80,19 @@ class CategoryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request)
 	{
 		//
+		$allRequest = $request->all();
+		$idCategory = $allRequest['IdCategory'];
+		$nameCategory = $allRequest['NameCategory'];
+
+		$objCategory = new Category();
+		$getCategoryById = $objCategory->find($idCategory);
+		$getCategoryById->NameCategory= $nameCategory;
+		$getCategoryById->save();
+
+		return redirect()->action('CategoryController.php');
 	}
 
 	/**
@@ -81,6 +104,8 @@ class CategoryController extends Controller {
 	public function destroy($id)
 	{
 		//
+		Category::find($idCategory)->delete();
+		return redirect()->action('CategoryController@index');
 	}
 
 }

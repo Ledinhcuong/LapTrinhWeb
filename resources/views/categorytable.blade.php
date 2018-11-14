@@ -128,7 +128,7 @@
 
         <div class="nameTB">
 
-          Bảng User
+          Bảng Category
 
         </div>
 
