@@ -7,23 +7,23 @@
 	<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 	<!--===============================================================================================-->
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href=" {{ asset('public/font-awesome-4.7.0/css/font-awesome.min.css') }}">
 
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href=" {{ asset('vendor/animate/animate.css') }}">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href=" {{ asset('vendor/css-hamburgers/hamburgers.min.css') }} ">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('vendor/animsition/css/animsition.min.css') }} ">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('vendor/select2/select2.min.css') }}">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('verangepicker/daterangepicker.css') }}">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="public/css/util.css">
-	<link rel="stylesheet" type="text/css" href="public/css/main.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('public/css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('public/css/main.css') }}">
 	<!--===============================================================================================-->
 </head>
 <body>
@@ -31,14 +31,14 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="{{ URL::action('CategoryController@store') }}"" method="Post">
+			<form class="contact100-form validate-form" action=" " method="Post" role="form">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<span class="contact100-form-title">
 					Add Category
 				</span>
-
+ 		 		
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Your Name</span>
+					<span class="label-input100">Category Name</span>
 					<input class="input100" type="text" name="name" placeholder="Enter your name">
 					<span class="focus-input100"></span>
 				</div>

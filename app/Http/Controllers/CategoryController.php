@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Category;
+use Illuminate\Routing\Redirector;
 
 use Illuminate\Http\Request;
 
@@ -20,15 +21,16 @@ class CategoryController extends Controller {
 		return view('categorytable', ['data'=>$data]);
 	}
 
+
 	/**
 	 * Hiển thị form thêm mới .
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function getCreate()
 	{
 		//Gọi trang view trong thư mục category, file createcategory.blade.php
-		return view('category.createcategory');
+		return view('createcategory');
 	}
 
 	/**
@@ -36,17 +38,20 @@ class CategoryController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function postCreate(Request $request)
 	{
-		//
+		
 		$allRequest = $request->all();
-		$nameCategory = $allRequest['NameCategory'];
+		$nameCategory = $allRequest['name'];
 		$dataInsertToDatabase = array(
 			'NameCategory' => $nameCategory
 		);
 
+	
+		
 		$objCategory = new Category();
 		$objCategory->insert($dataInsertToDatabase);
+		return redirect()->route('admin.category');
 	}
 
 	/**
@@ -66,12 +71,12 @@ class CategoryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function getEdit($id)
 	{
-		//
+		
 		$objCategory = new  Category();
-		$getCatogoryById = $objCategory->find($id)->toArray();
-		return view ('category.editcategory')->with('getCategoryById', $getCategoryById);
+		$getCategoryById = $objCategory->find($id)->toArray();
+		return view ('editcategory')->with('getCategoryById', $getCategoryById);
 	}
 
 	/**
@@ -80,7 +85,7 @@ class CategoryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(Request $request)
+	public function postEdit(Request $request)
 	{
 		//
 		$allRequest = $request->all();
@@ -91,8 +96,7 @@ class CategoryController extends Controller {
 		$getCategoryById = $objCategory->find($idCategory);
 		$getCategoryById->NameCategory= $nameCategory;
 		$getCategoryById->save();
-
-		return redirect()->action('CategoryController.php');
+		return redirect()->route('admin.category');
 	}
 
 	/**
@@ -101,10 +105,11 @@ class CategoryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
 	public function destroy($id)
 	{
 		//
-		Category::find($idCategory)->delete();
+		Category::find($id)->delete();
 		return redirect()->action('CategoryController@index');
 	}
 

@@ -23,7 +23,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="{{url('admin')}}">Administrator</a>
+      <a class="navbar-brand" href="#">Administrator</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -128,12 +128,12 @@
 
         <div class="nameTB">
 
-          Bảng Category
+          Bảng Types
 
         </div>
 
         <div class="tool">
-          <a href="{{ url('category/createcategory') }}" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
+          <a href="#" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
 
         </div>
 
@@ -142,39 +142,61 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Id Category</th>
-              <th>Name Category</th>
+              <th>Category</th>
+              <th>Type</th>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Developer</th>
+              <th>Description</th>
+              <th>Icon</th>
               <th>Control</th>
-             
 
             </tr>
           </thead>
           <tbody>
-            <?php 
-                  foreach ($data as $key) {
-                    
-                  
-            ?>
-
+          
             <tr>
-              <td> {{$key->IdCategory}}</td>
-              <td> {{$key->NameCategory}} </td>
+              <td>Application</td>
+              <td>Xa hoi</td>
+              <td>01</td>
+              <td>Facebook</td>
+              <td>Facebook inc</td>
+              <td width="40%">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit eius tempore, accusamus cum facilis atque adipisci dolore, error ut provident omnis. Dolor placeat, nulla eaque veritatis rerum adipisci. Ipsam, placeat.</td>
+              <td><img src="public/images/edgeicon.png" width="56" alt="icon"></td>
+        
               <td>
                 <div>
-                   <a href="{{ url('category/'.$key->IdCategory.'/editcategory') }}" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-sq  uare" aria-hidden="true"></i> Sửa</a>
+                   <a href="#" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
                 </div>
                 <div>
-                  <a href="{{ url('category/'.$key->IdCategory.'/delete') }}" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
+                  <a href="#" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
                 </div>
                   
               </td>
             </tr>
+            <tr class="show-more">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="public/images/edge1.jpg" alt="">
+                </div>
+                 <div class="col-md-4">
+                  <img src="public/images/edge2.jpg" alt="">
+                </div>
+                 <div class="col-md-4">
+                  <img src="public/images/edge3.jpg" alt="">
+                </div>
+              </div>
+              <div>Link: https://www.microsoft.com/vi-vn/p/facebook/9wzdncr...</div>
+              <div>Luot download: 5</div>
+              <div>Ngay them: 25/12/2018</div>
+              <div>Phien ban: 1.0</div>
+              <div>Kich thuoc: 35mb</div>
+              <div>Mo ta ngan: Luot web nhanh hon bao gio het</div>
 
-            <?php 
-
-          }
-          ?>
+            </tr>
             
+
+           
           </tbody>
         </table>
 
