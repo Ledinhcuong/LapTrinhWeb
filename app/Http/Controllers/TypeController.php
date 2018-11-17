@@ -23,21 +23,32 @@ class TypeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function getcreate()
 	{
-		//
+		//Gọi trang view trong thư mục type, file createtype.blade.php
+		return view('createtype');
 	}
 
 	/**
-	 * Store a newly created resource in storage.
+	 * action để lưu category mọi khi form submit
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function postCreate(Request $request)
 	{
-		//
-	}
+		
+		$allRequest = $request->all();
+		$nameType = $allRequest['name'];
+		$dataInsertToDatabase = array(
+			'NameType' => $nameType
+		);
 
+	
+		
+		$objType = new Types();
+		$objType->insert($dataInsertToDatabase);
+		return redirect()->route('admin.type');
+	}
 	/**
 	 * Display the specified resource.
 	 *
@@ -55,10 +66,14 @@ class TypeController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function getEdit($id)
 	{
-		//
+		
+		$objType = new  Types();
+		$getTypeById = $objType->find($id)->toArray();
+		return view ('edittype')->with('getTypeById', $getTypeById);
 	}
+
 
 	/**
 	 * Update the specified resource in storage.
@@ -66,9 +81,18 @@ class TypeController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function postEdit(Request $request)
 	{
 		//
+		$allRequest = $request->all();
+		$idType = $allRequest['id'];
+		$nameType = $allRequest['name'];
+
+		$objType = new Types();
+		$getTypeById = $objType->find($idType);
+		$getTypeById->NameType = $nameType;
+		$getTypeById->save();
+		return redirect()->route('admin.type');
 	}
 
 	/**
@@ -80,6 +104,8 @@ class TypeController extends Controller {
 	public function destroy($id)
 	{
 		//
+		Types::find($id)->delete();
+		return redirect()->action('TypeController@index');
 	}
 
 }

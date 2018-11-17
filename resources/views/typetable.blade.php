@@ -133,7 +133,7 @@
         </div>
 
         <div class="tool">
-          <a href="#" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
+          <a href="{{ url('type/createtype') }}" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
 
         </div>
 
@@ -162,10 +162,10 @@
         
               <td>
                 <div>
-                   <a href="#" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
+                   <a href="{{ url('type/'.$key->IdType.'/edittype') }}" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
                 </div>
                 <div>
-                  <a href="#" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
+                  <a href="{{ url('type/'.$key->IdType.'/delete') }}" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
                 </div>
                   
               </td>

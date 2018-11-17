@@ -89,12 +89,12 @@ class CategoryController extends Controller {
 	{
 		//
 		$allRequest = $request->all();
-		$idCategory = $allRequest['IdCategory'];
-		$nameCategory = $allRequest['NameCategory'];
+		$idCategory = $allRequest['id'];
+		$nameCategory = $allRequest['name'];
 
 		$objCategory = new Category();
 		$getCategoryById = $objCategory->find($idCategory);
-		$getCategoryById->NameCategory= $nameCategory;
+		$getCategoryById->NameCategory = $nameCategory;
 		$getCategoryById->save();
 		return redirect()->route('admin.category');
 	}
