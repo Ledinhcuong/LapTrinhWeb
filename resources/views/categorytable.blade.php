@@ -142,6 +142,7 @@
         <table class="table table-bordered">
           <thead>
             <tr>
+              <th>STT</th>
               <th>Id Category</th>
               <th>Name Category</th>
               <th>Control</th>
@@ -150,13 +151,15 @@
             </tr>
           </thead>
           <tbody>
-            <?php 
+           <?php 
+            $i = 0;
                   foreach ($data as $key) {
                     
                   
             ?>
 
             <tr>
+              <td> {{ $i+1 }} </td>
               <td> {{$key->IdCategory}}</td>
               <td> {{$key->NameCategory}} </td>
               <td>
@@ -171,7 +174,7 @@
             </tr>
 
             <?php 
-
+            $i++;
           }
           ?>
             

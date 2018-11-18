@@ -16,17 +16,23 @@ Route::resource('admin/application','ApplicationController');
 Route::get('category/createcategory','CategoryController@getCreate');
 
 //đường dẫn khi submit form thêm
-Route::post('category/createcategory','CategoryController@postCreate');
-
+Route::post('category/createcategory', [
+    'as' => 'create.category', 'uses' => 'CategoryController@postCreate'
+]);
 
 Route::get('category','CategoryController@index');
 
+
 //đường dẫn đến form edit của category
+
+
 Route::get('category/{id}/editcategory','CategoryController@getEdit');
 
 //đường dẫn khi submit edit
-Route::post('category/update','CategoryController@postEdit');
 
+Route::post('category/{id}/update', [
+    'as' => 'update.category', 'uses' => 'CategoryController@postEdit'
+]);
 
 //đường dẫn khi delete category
 Route::get('category/{id}/delete','CategoryController@destroy');
@@ -37,7 +43,10 @@ Route::get('category/{id}/delete','CategoryController@destroy');
 Route::get('type/createtype','TypeController@getCreate');
 
 //đường dẫn khi submit form thêm
-Route::post('type/createtype','TypeController@postCreate');
+Route::post('type/createtype', [
+    'as' => 'create.type', 'uses' => 'TypeController@postCreate'
+]);
+
 
 
 Route::get('type','TypeController@index');
@@ -46,7 +55,9 @@ Route::get('type','TypeController@index');
 Route::get('type/{id}/edittype','TypeController@getEdit');
 
 //đường dẫn khi submit edit
-Route::post('type/update','TypeController@postEdit');
+Route::post('type/{id}/update', [
+    'as' => 'update.type', 'uses' => 'TypeController@postEdit'
+]);
 
 
 //đường dẫn khi delete type
@@ -70,4 +81,5 @@ Route::controllers([
 Route::patch('admin/category',['as' => 'admin.category','uses' => 'CategoryController@index']);
 
 Route::patch('admin/type',['as' => 'admin.type','uses' => 'TypeController@index']);
+
 

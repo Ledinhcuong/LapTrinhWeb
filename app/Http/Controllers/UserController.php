@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\users;
 
 use Illuminate\Http\Request;
 
@@ -14,7 +15,12 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		return "Hello";
+		//$data = users::paginate(30);
+		//return view('usertable', ['data'=>$data]);
+		$objUser = new users();
+		$allUsers = $objUser->all()->toArray();
+
+		return view('admin.usertable');
 	}
 
 	/**

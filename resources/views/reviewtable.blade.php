@@ -145,7 +145,7 @@
               <th>Id Application</th>
               <th>Id User</th>
               <th>Review Date</th>
-               <th>Content Review</th>
+              <th>Content Review</th>
               <th>Control</th>
 
             </tr>
