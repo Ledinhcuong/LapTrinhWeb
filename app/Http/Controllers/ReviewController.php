@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App/Reviews;
 
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class ReviewController extends Controller {
 	 */
 	public function index()
 	{
-		return 'Hello';
+		$data = Reviews::paginate(30);
+		return view('reviewtable', ['data'=>$data]);
 	}
 
 	/**

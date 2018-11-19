@@ -14,7 +14,7 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		return "Hello";
+		return view ('usertable');
 	}
 
 	/**

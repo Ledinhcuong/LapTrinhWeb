@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Application;
 
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class ApplicationController extends Controller {
 	 */
 	public function index()
 	{
-		return view('usertable');
+		$data = Application::paginate(30);
+		return view('apptable', ['data'=>$data]);
 	}
 
 	/**

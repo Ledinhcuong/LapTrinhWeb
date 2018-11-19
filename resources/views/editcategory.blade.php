@@ -32,7 +32,7 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="" method="Post">
+			<form class="contact100-form validate-form" action="{!! URL::Route('update.category',$id) !!}" method="Post">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<input type="hidden" name="id" value="{{ old('IdCategory',$getCategoryById['IdCategory']) }}">
 				<span class="contact100-form-title">

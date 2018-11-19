@@ -174,26 +174,6 @@
                   
               </td>
             </tr>
-            <tr class="show-more">
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="public/images/edge1.jpg" alt="">
-                </div>
-                 <div class="col-md-4">
-                  <img src="public/images/edge2.jpg" alt="">
-                </div>
-                 <div class="col-md-4">
-                  <img src="public/images/edge3.jpg" alt="">
-                </div>
-              </div>
-              <div>Link: https://www.microsoft.com/vi-vn/p/facebook/9wzdncr...</div>
-              <div>Luot download: 5</div>
-              <div>Ngay them: 25/12/2018</div>
-              <div>Phien ban: 1.0</div>
-              <div>Kich thuoc: 35mb</div>
-              <div>Mo ta ngan: Luot web nhanh hon bao gio het</div>
-
-            </tr>
             
 
            

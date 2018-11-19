@@ -71,7 +71,7 @@ class TypeController extends Controller {
 		
 		$objType = new  Types();
 		$getTypeById = $objType->find($id)->toArray();
-		return view ('edittype')->with('getTypeById', $getTypeById);
+		return view ('edittype',array('id'=>$id))->with('getTypeById', $getTypeById);
 	}
 
 
@@ -81,11 +81,11 @@ class TypeController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function postEdit(Request $request)
+	public function postEdit($id,Request $request)
 	{
 		//
 		$allRequest = $request->all();
-		$idType = $allRequest['id'];
+		$idType = $id;
 		$nameType = $allRequest['name'];
 
 		$objType = new Types();

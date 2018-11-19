@@ -76,7 +76,7 @@ class CategoryController extends Controller {
 		
 		$objCategory = new  Category();
 		$getCategoryById = $objCategory->find($id)->toArray();
-		return view ('editcategory')->with('getCategoryById', $getCategoryById);
+		return view ('editcategory',array('id'=>$id))->with('getCategoryById', $getCategoryById);
 	}
 
 	/**
@@ -85,11 +85,11 @@ class CategoryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function postEdit(Request $request)
+	public function postEdit($id,Request $request)
 	{
 		//
 		$allRequest = $request->all();
-		$idCategory = $allRequest['id'];
+		$idCategory = $id;
 		$nameCategory = $allRequest['name'];
 
 		$objCategory = new Category();
