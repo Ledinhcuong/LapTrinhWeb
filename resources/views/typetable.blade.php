@@ -1,5 +1,5 @@
 @extends('adminmaster')
-@section('title', 'Bảng user')
+@section('title', 'Bảng Type')
 @section('content')
 
 

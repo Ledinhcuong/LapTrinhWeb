@@ -58,27 +58,27 @@
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
         <li class="sidebar-brand">
-          <a href="#">
+          <a href="/admin">
             Home Administrator
           </a>
         </li>
         <li>
-          <a href="#">Application Table</a>
+          <a href="application">Application Table</a>
         </li>
         <li>
-          <a href="#">User Table </a>
+          <a href="user">User Table </a>
         </li>
         <li>
-          <a href="#">Review Table</a>
+          <a href="review">Review Table</a>
         </li>
         <li>
-          <a href="#">Category Table</a>
+          <a href="category">Category Table</a>
         </li>
         <li>
-          <a href="#">Type Table</a>
+          <a href="type">Type Table</a>
         </li>
         <li>
-          <a href="#">Banner Table</a>
+          <a href="banner">Banner Table</a>
         </li>
 
       </ul>

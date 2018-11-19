@@ -1,5 +1,5 @@
 @extends('adminmaster')
-@section('title', 'Bảng user')
+@section('title', 'Bảng Application')
 @section('content')
 
 
@@ -8,7 +8,7 @@
 
         <div class="nameTB">
 
-          Bảng Types
+          Bảng Application
 
         </div>
 

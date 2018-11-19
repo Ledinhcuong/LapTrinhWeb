@@ -1,5 +1,5 @@
 @extends('adminmaster')
-@section('title', 'Bảng user')
+@section('title', 'Bảng Review')
 @section('content')
 
       <!-- Table -->
@@ -7,7 +7,7 @@
 
         <div class="nameTB">
 
-          Bảng User
+          Bảng Review
 
         </div>
 

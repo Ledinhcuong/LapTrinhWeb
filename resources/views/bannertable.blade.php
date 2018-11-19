@@ -1,5 +1,5 @@
 @extends('adminmaster')
-@section('title', 'Bảng user')
+@section('title', 'Bảng Banner')
 @section('content')
 
       <div class="content-table"> <!-- Table begin -->
