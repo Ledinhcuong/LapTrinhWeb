@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App/Reviews;
+use App\Reviews;
 
 use Illuminate\Http\Request;
 
