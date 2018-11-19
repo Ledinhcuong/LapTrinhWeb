@@ -27,7 +27,7 @@ class ProjectController extends Controller {
 			// Lấy nội dung mới nhất hiển thị
 			$data = DB::table('Application')
 			->join('Types', 'Application.IdType', '=' , 'Types.IdType')
-			->select('Application.*', 'Types.NameType')->where('IdCategory', 1)->paginate(9);
+			->select('Application.*', 'Types.NameType')->where('IdCategory', 1)->paginate(6);
 
 
 			// Lay 4 banner moi nhat

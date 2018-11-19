@@ -219,7 +219,8 @@
 <div class="padding">
 	<div class="container">
 
-		{!! $data->render() !!}
+		{!! $data->render() !!} 
+		
 		<!--
 		<tr>
 			<td><a href="#">
