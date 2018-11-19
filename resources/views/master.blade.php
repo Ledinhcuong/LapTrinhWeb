@@ -49,7 +49,7 @@
 							</form>
 
 							<!-- Các chỉ mục -->
-							<li><a href="index" style="color: #5BC348"><i class="fa fa-android" aria-hidden="true"></i> Phần mềm</a></li>
+							<li><a href="{{url('/')}}" style="color: #5BC348"><i class="fa fa-android" aria-hidden="true"></i> Phần mềm</a></li>
 							<li><a href="game" style="color: #f44336"><i class="fa fa-gamepad"></i> Trò chơi</a></li>
 							<li><a href="#" style="color: #3B5998"><i class="fa fa-facebook-official" aria-hidden="true"></i> Face</a></li>
 							<li class="account"><a href="login"><i class="fa fa-user"></i> Tài khoản</a></li>
