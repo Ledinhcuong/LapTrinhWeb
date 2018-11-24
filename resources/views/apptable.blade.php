@@ -40,6 +40,7 @@
         $image1 = 'public/images/'. $key->Image1;
         $image2 = 'public/images/'. $key->Image2;
         $image3 = 'public/images/'. $key->Image3;
+        $detail = 'admin/application/'. $key->IdApplication;
 
       ?>
 
@@ -61,7 +62,7 @@
         </div>
 
          <div>
-          <a style="background: #007aff;" class="btn-control" href="chitiet?id=<?php echo $key->IdApplication ?>" > <i class="fa fa-info-circle" aria-hidden="true"  ></i> Chi tiết </a>
+          <a style="background: #007aff;" class="btn-control" href="{{url($detail)}}" > <i class="fa fa-info-circle" aria-hidden="true"  ></i> Chi tiết </a>
         </div>
 
       </td>

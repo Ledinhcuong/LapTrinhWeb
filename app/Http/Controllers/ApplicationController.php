@@ -55,7 +55,10 @@ class ApplicationController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		$data = Application::find($id);
+		return view('detailapp', ['data'=>$data]);
+
+
 	}
 
 	/**
