@@ -73,9 +73,9 @@
 
 
       <div class="form-group">
-        <label for="tensp" class="col-sm-2 control-label">Name Type: </label>
+        <label for="nametype" class="col-sm-2 control-label">Name Type: </label>
         <div class="col-sm-10">
-          <select name="namecategory" id="namecategory">
+          <select name="nametype" id="nametype">
             <option value="">Game</option>
             <option value="">Software</option>
             <option value="">Facebook</option>
@@ -85,48 +85,49 @@
       </div>
 
       <div class="form-group">
-        <label for="gia" class="col-sm-2 control-label">Name App </label>
+        <label for="nameapp" class="col-sm-2 control-label">Name App </label>
         <div class="col-sm-10">
-          <input type="text" name="gia" id="gia" class="form-control">
+          <input type="text" name="nameapp" id="nameapp" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="hang" class="col-sm-2 control-label">Developer </label>
+        <label for="developer" class="col-sm-2 control-label">Developer </label>
         <div class="col-sm-10">
-          <input type="text" name="hang" id="hang" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="manhinh" class="col-sm-2 control-label">Link download </label>
-        <div class="col-sm-10">
-          <input type="text" name="manhinh" id="manhinh" class="form-control">
+          <input type="text" name="developer" id="developer" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="hedieuhanh" class="col-sm-2 control-label"> Version </label>
+        <label for="linkdownload" class="col-sm-2 control-label">Link download </label>
         <div class="col-sm-10">
-          <input type="text" name="hedieuhanh" id="hedieuhanh" class="form-control">
+          <input type="text" name="linkdownload" id="linkdownload" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="hedieuhanh" class="col-sm-2 control-label"> Sort Description </label>
+        <label for="version" class="col-sm-2 control-label"> Version </label>
         <div class="col-sm-10">
-          <input type="text" name="hedieuhanh" id="hedieuhanh" class="form-control">
+          <input type="text" name="version" id="version" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="camsau" class="col-sm-2 control-label"> Description </label>
+        <label for="sortdescription" class="col-sm-2 control-label"> Sort Description </label>
         <div class="col-sm-10">
-          <input type="text" name="camsau" id="camsau" class="form-control">
+          <input type="text" name="sortdescription" id="sortdescription" class="form-control">
+          <span class="help-block"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description" class="col-sm-2 control-label"> Description </label>
+        <div class="col-sm-10">
+          <input type="text" name="description" id="description" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
@@ -134,36 +135,36 @@
 
 
       <div class="form-group">
-        <label for="anh" class="col-sm-2 control-label">Icon </label>
+        <label for="icon" class="col-sm-2 control-label">Icon </label>
         <div class="col-sm-10">
-          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.8">
-          <span class="help-block"></span>
-        </div>
-      </div>
-
-
-      <div class="form-group">
-        <label for="anh" class="col-sm-2 control-label">Image 1 </label>
-        <div class="col-sm-10">
-          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.8">
+          <input type="file" id="icon" name="icon" class="form-control" style="opacity: 0.8">
           <span class="help-block"></span>
         </div>
       </div>
 
 
       <div class="form-group">
-        <label for="anh" class="col-sm-2 control-label">Image 2 </label>
+        <label for="image1" class="col-sm-2 control-label">Image 1 </label>
         <div class="col-sm-10">
-          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.8">
+          <input type="file" id="image1" name="image1" class="form-control" style="opacity: 0.8">
           <span class="help-block"></span>
         </div>
       </div>
 
 
       <div class="form-group">
-        <label for="anh" class="col-sm-2 control-label">Image 3 </label>
+        <label for="image2" class="col-sm-2 control-label">Image 2 </label>
         <div class="col-sm-10">
-          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.8">
+          <input type="file" id="image2" name="image2" class="form-control" style="opacity: 0.8">
+          <span class="help-block"></span>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="image3" class="col-sm-2 control-label">Image 3 </label>
+        <div class="col-sm-10">
+          <input type="file" id="image3" name="image3" class="form-control" style="opacity: 0.8">
           <span class="help-block"></span>
         </div>
       </div>
