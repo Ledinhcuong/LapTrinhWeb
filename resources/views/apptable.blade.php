@@ -41,6 +41,7 @@
         $image2 = 'public/images/'. $key->Image2;
         $image3 = 'public/images/'. $key->Image3;
         $detail = 'admin/application/'. $key->IdApplication;
+        $delete =  'application/'. $key->IdApplication. '/delete';
 
       ?>
 
@@ -58,7 +59,7 @@
            <a href="#" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
          </div>
          <div>
-          <a href="#" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
+          <a href="{{url($delete)}}" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
         </div>
 
          <div>

@@ -91,7 +91,9 @@ class ApplicationController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		Application::find($id)->delete();
+		return redirect()->action('ApplicationController@index');
+
 	}
 
 }
