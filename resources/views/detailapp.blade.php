@@ -1,4 +1,5 @@
 <?php
+$icon = 'public/images/' . $data->Icon;
 $image1 = 'public/images/' . $data->Image1;
 $image2 = 'public/images/' . $data->Image2;
 $image3 = 'public/images/' . $data->Image3;
@@ -19,7 +20,10 @@ $image3 = 'public/images/' . $data->Image3;
 <body>
 	<div class="container">
 
-		<div style="font-weight: bold; font-size: 35px">{{$data->NameApp}}</div>
+		<div style="font-weight: bold; font-size: 35px;">{{$data->NameApp}}</div>
+		<div>
+			<img style="max-width: 120px; margin-bottom: 30px;" src="{{url($icon)}}" alt="icon">
+		</div>
 
 		
 
@@ -42,7 +46,7 @@ $image3 = 'public/images/' . $data->Image3;
 		{{$data->Version}}
 
 		<div style="font-weight: bold; font-size: 20px;">Size</div>
-		{{$data->Size}}
+		{{$data->Size}} Mb
 
 
 		<div style="font-weight: bold; font-size: 20px;">Image </div>
