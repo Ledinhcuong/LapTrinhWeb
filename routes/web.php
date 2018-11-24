@@ -24,3 +24,5 @@ Route::resource('admin/application','ApplicationController');
 Route::get('/', function () {
     return view('welcome');
 });
+
+
