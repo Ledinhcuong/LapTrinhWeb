@@ -2,7 +2,6 @@
 @section('title', 'Bảng Application')
 @section('content')
 
-
 <!-- Table begin -->
 <div class="content-table">
 
@@ -35,14 +34,23 @@
     </thead>
     <tbody>
 
+      <?php 
+        foreach ($data as $key) {
+        $icon = 'public/images/'. $key->Icon;
+        $image1 = 'public/images/'. $key->Image1;
+        $image2 = 'public/images/'. $key->Image2;
+        $image3 = 'public/images/'. $key->Image3;
+
+      ?>
+
       <tr>
-        <td>Application</td>
-        <td>Xa hoi</td>
-        <td>01</td>
-        <td>Facebook</td>
-        <td>Facebook inc</td>
-        <td width="40%">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit eius tempore, accusamus cum facilis atque adipisci dolore, error ut provident omnis. Dolor placeat, nulla eaque veritatis rerum adipisci. Ipsam, placeat.</td>
-        <td><img src="{{url('public/images/edgeicon.png')}}" width="56" alt="icon"></td>
+        <td>{{$key->NameCategory}}</td>
+        <td>{{$key->NameType}}</td>
+        <td>{{$key->IdApplication}}</td>
+        <td>{{$key->NameApp}}</td>
+        <td>{{$key->Developer}}</td>
+        <td width="40%">{{$key->Description}}</td>
+        <td><img src="{{url($icon)}}" width="56" alt="icon"></td>
         
         <td>
           <div>
@@ -53,31 +61,15 @@
         </div>
 
          <div>
-          <a href="#" style="background: #007aff;" class="btn-control"> <i class="fa fa-info-circle" aria-hidden="true"></i> Chi tiết </a>
+          <a style="background: #007aff;" class="btn-control" href="chitiet?id=<?php echo $key->IdApplication ?>" > <i class="fa fa-info-circle" aria-hidden="true"  ></i> Chi tiết </a>
         </div>
 
       </td>
     </tr>
-    <div class="detail-app">
-      <div class="row">
-        <div class="col-md-4">
-          <img class="img-responsive"  src="{{url('public/images/edge1.jpg')}}" alt="">
-        </div>
-
-        <div class="col-md-4">
-          <img class="img-responsive" src="{{url('public/images/edge2.jpg')}}" alt="">
-        </div>
-
-        <div class="col-md-4">
-          <img class="img-responsive" src="{{url('public/images/edge3.jpg')}}" alt="">
-        </div>
-      </div>
-      <div>Link Download: </div>
-      <div>Number Download: </div>
-      <div>Date Submit: </div>
-      <div>Version: </div>
-      <div>Size: </div>
-    </div>
+   
+    <?php
+  }
+    ?>
 
 
 

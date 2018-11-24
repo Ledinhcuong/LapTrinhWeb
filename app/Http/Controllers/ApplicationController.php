@@ -3,6 +3,9 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Application;
+use App\Banners;
+use App\Types;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -15,7 +18,12 @@ class ApplicationController extends Controller {
 	 */
 	public function index()
 	{
-		$data = Application::paginate(30);
+		 // $data = Application::with('Category', 'Types')->get();
+		$data = DB::table('Application')
+			->join('Category', 'Application.IdCategory', '=', 'Category.IdCategory')
+			->join('Types', 'Application.IdType', '=', 'Types.IdType')
+			->select('Application.*', 'Types.NameType', 'Category.NameCategory')->get();
+
 		return view('apptable', ['data'=>$data]);
 	}
 
