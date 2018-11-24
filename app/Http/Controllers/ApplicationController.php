@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Application;
 use App\Banners;
 use App\Types;
+use App\Reviews;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ class ApplicationController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return 'Hello';
 	}
 
 	/**
@@ -91,7 +92,11 @@ class ApplicationController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		// Xóa dữ liệu bảng liên quan trước
+		Reviews::where('IdApplication', $id)->delete();
+
 		Application::find($id)->delete();
+
 		return redirect()->action('ApplicationController@index');
 
 	}
