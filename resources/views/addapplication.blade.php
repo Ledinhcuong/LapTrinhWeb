@@ -8,12 +8,12 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>administrator</title>
+  <title>Add application</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link href="{{url('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url('vendor/bootstrap/css/style.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{url('public/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 
 
 </head>
@@ -62,7 +62,11 @@
       <div class="form-group">
         <label for="namecategory" class="col-sm-2 control-label">Name Category: </label>
         <div class="col-sm-10">
-          <input type="text" name="namecategory" id="namecategory" class="form-control">
+          <select name="namecategory" id="namecategory">
+            <option value="">Game</option>
+            <option value="">Software</option>
+            <option value="">Facebook</option>
+          </select>
           <span class="help-block"></span>
         </div>
       </div>
@@ -71,7 +75,11 @@
       <div class="form-group">
         <label for="tensp" class="col-sm-2 control-label">Name Type: </label>
         <div class="col-sm-10">
-          <input type="text" name="tensp" id="tensp" class="form-control">
+          <select name="namecategory" id="namecategory">
+            <option value="">Game</option>
+            <option value="">Software</option>
+            <option value="">Facebook</option>
+          </select>
           <span class="help-block"></span>
         </div>
       </div>
@@ -128,7 +136,7 @@
       <div class="form-group">
         <label for="anh" class="col-sm-2 control-label">Icon </label>
         <div class="col-sm-10">
-          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.3">
+          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.8">
           <span class="help-block"></span>
         </div>
       </div>
@@ -137,7 +145,7 @@
       <div class="form-group">
         <label for="anh" class="col-sm-2 control-label">Image 1 </label>
         <div class="col-sm-10">
-          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.3">
+          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.8">
           <span class="help-block"></span>
         </div>
       </div>
@@ -146,7 +154,7 @@
       <div class="form-group">
         <label for="anh" class="col-sm-2 control-label">Image 2 </label>
         <div class="col-sm-10">
-          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.3">
+          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.8">
           <span class="help-block"></span>
         </div>
       </div>
@@ -155,7 +163,7 @@
       <div class="form-group">
         <label for="anh" class="col-sm-2 control-label">Image 3 </label>
         <div class="col-sm-10">
-          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.3">
+          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.8">
           <span class="help-block"></span>
         </div>
       </div>
@@ -163,7 +171,7 @@
 
       <div class="form-group">
         <div class="col-sm-10 col-sm-offset-2">
-          <button type="submit" class="btn btn-primary">Thêm</button>
+          <button type="submit" class="btn btn-primary">Thêm ứng dụng</button>
         </div>
       </div>
     </form>
@@ -171,8 +179,8 @@
   </div>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{url('vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 </body>
 

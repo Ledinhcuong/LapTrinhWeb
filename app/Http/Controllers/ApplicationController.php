@@ -35,7 +35,7 @@ class ApplicationController extends Controller {
 	 */
 	public function create()
 	{
-		return 'Hello';
+		return view('addapplication');
 	}
 
 	/**

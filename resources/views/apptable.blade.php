@@ -12,7 +12,7 @@
   </div>
 
   <div class="tool">
-    <a href="#" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
+    <a href="{{url('admin/application/create')}}" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
 
   </div>
 
