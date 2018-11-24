@@ -69,7 +69,7 @@
 
 
       <div class="form-group">
-        <label for="tensp" class="col-sm-2 control-label">Tên sản phẩm: </label>
+        <label for="tensp" class="col-sm-2 control-label">Name Type: </label>
         <div class="col-sm-10">
           <input type="text" name="tensp" id="tensp" class="form-control">
           <span class="help-block"></span>
@@ -77,7 +77,7 @@
       </div>
 
       <div class="form-group">
-        <label for="gia" class="col-sm-2 control-label">Giá: </label>
+        <label for="gia" class="col-sm-2 control-label">Name App </label>
         <div class="col-sm-10">
           <input type="text" name="gia" id="gia" class="form-control">
           <span class="help-block"></span>
@@ -85,14 +85,14 @@
       </div>
 
       <div class="form-group">
-        <label for="hang" class="col-sm-2 control-label">Hãng: </label>
+        <label for="hang" class="col-sm-2 control-label">Developer </label>
         <div class="col-sm-10">
           <input type="text" name="hang" id="hang" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
       <div class="form-group">
-        <label for="manhinh" class="col-sm-2 control-label">Màn hình: </label>
+        <label for="manhinh" class="col-sm-2 control-label">Link download </label>
         <div class="col-sm-10">
           <input type="text" name="manhinh" id="manhinh" class="form-control">
           <span class="help-block"></span>
@@ -100,7 +100,7 @@
       </div>
 
       <div class="form-group">
-        <label for="hedieuhanh" class="col-sm-2 control-label">Hệ điều hành: </label>
+        <label for="hedieuhanh" class="col-sm-2 control-label"> Version </label>
         <div class="col-sm-10">
           <input type="text" name="hedieuhanh" id="hedieuhanh" class="form-control">
           <span class="help-block"></span>
@@ -108,81 +108,52 @@
       </div>
 
       <div class="form-group">
-        <label for="camsau" class="col-sm-2 control-label">Camera sau: </label>
+        <label for="hedieuhanh" class="col-sm-2 control-label"> Sort Description </label>
+        <div class="col-sm-10">
+          <input type="text" name="hedieuhanh" id="hedieuhanh" class="form-control">
+          <span class="help-block"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="camsau" class="col-sm-2 control-label"> Description </label>
         <div class="col-sm-10">
           <input type="text" name="camsau" id="camsau" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="camtruoc" class="col-sm-2 control-label">Camera trước: </label>
-        <div class="col-sm-10">
-          <input type="text" name="camtruoc" id="camtruoc" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
+
 
       <div class="form-group">
-        <label for="cpu" class="col-sm-2 control-label">CPU: </label>
+        <label for="anh" class="col-sm-2 control-label">Icon </label>
         <div class="col-sm-10">
-          <input type="text" name="cpu" id="cpu" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="ram" class="col-sm-2 control-label">RAM: </label>
-        <div class="col-sm-10">
-          <input type="text" name="ram" id="ram" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="bonho" class="col-sm-2 control-label">Bộ nhớ: </label>
-        <div class="col-sm-10">
-          <input type="text" name="bonho" id="bonho" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="chatlieu" class="col-sm-2 control-label">Chất liệu: </label>
-        <div class="col-sm-10">
-          <input type="text" name="chatlieu" id="chatlieu" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="trongluong" class="col-sm-2 control-label">Trọng lượng: </label>
-        <div class="col-sm-10">
-          <input type="text" name="trongluong" id="trongluong" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="pin" class="col-sm-2 control-label">Dung lượng pin: </label>
-        <div class="col-sm-10">
-          <input type="text" name="pin" id="pin" class="form-control">
+          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.3">
           <span class="help-block"></span>
         </div>
       </div>
 
 
-
       <div class="form-group">
-        <label for="dacdiem" class="col-sm-2 control-label">Đặc điểm: </label>
+        <label for="anh" class="col-sm-2 control-label">Image 1 </label>
         <div class="col-sm-10">
-          <textarea name="dacdiem" id="dacdiem" cols="30" rows="5" class="form-control"></textarea>
+          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.3">
           <span class="help-block"></span>
         </div>
       </div>
 
+
       <div class="form-group">
-        <label for="anh" class="col-sm-2 control-label">Tệp ảnh </label>
+        <label for="anh" class="col-sm-2 control-label">Image 2 </label>
+        <div class="col-sm-10">
+          <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.3">
+          <span class="help-block"></span>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="anh" class="col-sm-2 control-label">Image 3 </label>
         <div class="col-sm-10">
           <input type="file" id="anh" name="fileUpload" class="form-control" style="opacity: 0.3">
           <span class="help-block"></span>
