@@ -6,6 +6,7 @@ use App\Application;
 use App\Banners;
 use App\Types;
 use App\Reviews;
+use App\Category;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
@@ -35,7 +36,9 @@ class ApplicationController extends Controller {
 	 */
 	public function create()
 	{
-		return view('addapplication');
+		$category = Category::all();
+		$type = Types::all();
+		return view('addapplication', ['type'=>$type, 'category'=>$category]);
 	}
 
 	/**

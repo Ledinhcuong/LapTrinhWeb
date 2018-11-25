@@ -62,23 +62,41 @@
       <div class="form-group">
         <label for="namecategory" class="col-sm-2 control-label">Name Category: </label>
         <div class="col-sm-10">
+
           <select name="namecategory" id="namecategory">
-            <option value="">Game</option>
-            <option value="">Software</option>
-            <option value="">Facebook</option>
-          </select>
-          <span class="help-block"></span>
-        </div>
-      </div>
+           <?php
+
+           foreach ($category as $key) {
 
 
-      <div class="form-group">
+             ?>
+
+             <option value="{{$key->IdCategory}}">{{$key->NameCategory}}</option>
+
+             <?php
+                }
+             ?>
+
+           </select>
+           <span class="help-block"></span>
+         </div>
+       </div>
+
+
+       <div class="form-group">
         <label for="nametype" class="col-sm-2 control-label">Name Type: </label>
         <div class="col-sm-10">
           <select name="nametype" id="nametype">
-            <option value="">Game</option>
-            <option value="">Software</option>
-            <option value="">Facebook</option>
+            <?php
+            foreach ($type as $key) {
+
+            ?>
+            <option value="{{$key->IdType}}">{{$key->NameType}}</option>
+
+            <?php
+              }
+
+            ?>
           </select>
           <span class="help-block"></span>
         </div>
