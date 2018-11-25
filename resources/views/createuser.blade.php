@@ -33,7 +33,7 @@
 	<div class="container-fluid" style="background: gold;">
 		<div class="col-lg-12">
 			<h1 class="page-header">
-				<small>Thêm</small>
+				<small>Add User</small>
 			</h1>
 		</div>
 		<!-- col-lg-12-->
@@ -75,33 +75,33 @@
 			<form action="{!! URL::Route('create.users') !!}" method="POST" >
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<div class="form-group">
-					<label>Ho ten</label>
-					<input type="text" class="form-control" name="name" placeholder="Nhap ten nguoi dung">
+					<label>Name</label>
+					<input type="text" class="form-control" name="name" placeholder="Nhập tên người dùng">
 				</div>
 				<div class="form-group">
 					<label>Email</label>
-					<input type="email" class="form-control" name="email" placeholder="Nhap dia chi email">
+					<input type="email" class="form-control" name="email" placeholder="Nhập địa chỉ email">
 				</div>
 				<div class="form-group">
 					<label>Password</label>
-					<input type="password" class="form-control" name="password" placeholder="Nhap mat khau">
+					<input type="password" class="form-control" name="password" placeholder="Nhập mật khẩu">
 				</div>
 				<div class="form-group">
-					<label>Nhap lai password</label>
-					<input type="password" class="form-control" name="re_password" placeholder="Nhap lai password">
+					<label>password enter</label>
+					<input type="password" class="form-control" name="re_password" placeholder="Nhập lại mật khẩu">
 				</div>
 				<div class="form-group">
-					<label>Quyen nguoi dung</label></br>
+					<label>Phân quyền</label></br>
 					<label class="radio-inline">
-						<input type="radio" value="0" checked="" name="rdoStatus"> Thuong
+						<input type="radio" value="0" checked="" name="rdoStatus"> User
 					</label>
 					<label class="radio-inline">
 						<input type="radio" name="rdoStatus" value="1" > Admin
 					</label></br>
 					
 				</div>
-				<button type="submit" class="btn btn-dèault">Them</button>
-				<button type="reset" class="btn btn-default">Lam moi</button>
+				<button type="submit" class="btn btn-default" style="background: grey">Add</button>
+				<button type="reset" class="btn btn-default" style="background: grey">Reset</button>
 			</form>
 		</div>
 	</div>

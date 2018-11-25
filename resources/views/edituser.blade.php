@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Thêm Type</title>
+	<title>Repair User</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
@@ -32,7 +32,7 @@
 	<div id="page-wrapper">
 	<div class="container-fluid" style="background: gold;">
 		<div class="col-lg-12">
-			<h1 class="page-header">Sửa
+			<h1 class="page-header">Repair User
 				<small></small>
 			</h1>
 		</div>
@@ -75,7 +75,7 @@
 			<form action="{!! URL::Route('update.users',$id) !!}" method="POST" >
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<div class="form-group">
-					<label>Ho ten</label>
+					<label>Name</label>
 					<input type="text" class="form-control" name="name" placeholder="Nhap ten nguoi dung"  value="{{ old('NameUser',$getUserById['NameUser']) }}">
 				</div>
 				<div class="form-group">
@@ -87,8 +87,8 @@
 					<input type="password" class="form-control" name="password" placeholder="Nhap mat khau"  value="{{ old('password',$getUserById['password']) }}">
 				</div>
 				
-				<button type="submit" class="btn btn-dèault">Sửa</button>
-				<button type="reset" class="btn btn-default">Lam moi</button>
+				<button type="submit" class="btn btn-default" style="background: grey">Repair</button>
+				<button type="reset" class="btn btn-default" style="background: grey">Reset</button>
 			</form>
 		</div>
 	</div>
