@@ -18,6 +18,25 @@ class BannerController extends Controller {
 		return view('bannertable', ['data'=>$data]);
 	}
 
+	public function getCreate()
+	{
+		return view('createbanner');
+	}
+
+	public function postCreate(Request $request)
+	{
+		
+		$allRequest = $request->all();
+		$nameBanner = $allRequest['name'];
+		$dataInsertToDatabase = array(
+			'NameBanner' => $nameBanner
+		);
+
+		$objBanner = new Banner();
+		$objBanner->insert($dataInsertToDatabase);
+		return redirect()->route('admin.banner');
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -25,7 +44,7 @@ class BannerController extends Controller {
 	 */
 	public function create()
 	{
-		
+		return view("createbanner");
 	}
 
 	/**
@@ -49,6 +68,27 @@ class BannerController extends Controller {
 		//
 	}
 
+	public function getEdit($id)
+	{
+		$objBanner = new  Banner();
+		$getBannerById = $objBanner->find($id)->toArray();
+		return view ('editbanner',array('id'=>$id))->with('getBannerById', $getBannerById);
+	}
+
+	public function postEdit($id,Request $request)
+	{
+		//
+		$allRequest = $request->all();
+		$idBanner = $id;
+		$nameBanner = $allRequest['name'];
+
+		$objBanner = new Banner();
+		$getBannerById = $objBanner->find($idBanner);
+		$getBannerById->NameBanner = $nameBanner;
+		$getBannerById->save();
+		return redirect()->route('admin.banner');
+	}
+
 	/**
 	 * Show the form for editing the specified resource.
 	 *
@@ -57,7 +97,7 @@ class BannerController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		return view("EditBanner");
 	}
 
 	/**
@@ -79,7 +119,8 @@ class BannerController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		Banner::find($id)->delete();
+		return redirect()->action('BannerController@index');
 	}
 
 }
