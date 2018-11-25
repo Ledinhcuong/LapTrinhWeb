@@ -46,9 +46,16 @@ class ApplicationController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$allRequest = $request->all();
+
+		$idcategory = $allRequest['idcategory'];
+		$idtype = $allRequest['idtype'];
+		$nameapp = $allRequest['nameapp'];
+		$developer = $allRequest['developer'];
+		$sortdescription = $allRequest['sortdescription'];
+		$description = $allRequest['description'];
 	}
 
 	/**
