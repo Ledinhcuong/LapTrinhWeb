@@ -2,7 +2,8 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Users;
+use Illuminate\Routing\Redirector;
 use Illuminate\Http\Request;
 
 class UserController extends Controller {
@@ -14,7 +15,8 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		return view ('usertable');
+		$data = Users::paginate(30);
+		return view('usertable', ['data'=>$data]);
 	}
 
 	/**
@@ -22,8 +24,9 @@ class UserController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function getCreate()
 	{
+		return view('createuser');
 		//
 	}
 
@@ -76,9 +79,24 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function postCreate(Request $request)
 	{
-		//
+		
+		$allRequest = $request->all();
+		$IdUser = $allRequest['id'];
+		$NamUser = $allRequest['name'];
+		$Email = $allRequest['mail'];
+		$dataInsertToDatabase = array(
+			'id' => $IdUser,
+			'nam' => $NamUser,
+			'mail' => $mail,
+		);
+
+	
+		
+		$objusers = new users();
+		$objusers->insert($dataInsertToDatabase);
+		return redirect()->route('admin.users');
 	}
 
 }
