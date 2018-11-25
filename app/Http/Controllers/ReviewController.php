@@ -24,10 +24,39 @@ class ReviewController extends Controller {
 	 *
 	 * @return Response
 	 */
+	public function getcreate()
+	{
+		return view('createreview');
+	}
+
+	/**
+	 * 
+	 *
+	 * @return Response
+	 */
+	public function postCreate(Request $request)
+	{
+		return "postcreate called";
+		$allRequest = $request->all();
+		$nameReview = $allRequest['name'];
+		$dataInsertToDatabase = array(
+			'NameReview' => $nameReview
+		);
+		
+		$objReview = new Reviews();
+		$objReview->insert($dataInsertToDatabase);
+		return redirect()->route('admin.Review');
+	}
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
 	public function create()
 	{
-		//
+		return view('createreview');
 	}
+
 
 	/**
 	 * Store a newly created resource in storage.
@@ -36,7 +65,7 @@ class ReviewController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		return "store";
 	}
 
 	/**
@@ -47,7 +76,7 @@ class ReviewController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		return "show";
 	}
 
 	/**
@@ -58,7 +87,7 @@ class ReviewController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		echo "edit";
 	}
 
 	/**
@@ -69,7 +98,7 @@ class ReviewController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		return "update";
 	}
 
 	/**
@@ -80,7 +109,7 @@ class ReviewController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		return "update";
 	}
 
 }

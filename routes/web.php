@@ -23,6 +23,7 @@ Route::resource('admin/users','TypeController');
 Route::resource('admin/review','ReviewController');
 Route::resource('admin/application','ApplicationController');
 
+
 /*------------------------- Application -----------*/
 
 
@@ -96,12 +97,9 @@ Route::post('banner/{id}/update', [
 //đường dẫn khi delete banner
 Route::get('banner/{id}/delete','BannerController@destroy');
 
-//====================================//
-Route::get('/', function () {
-    return view('welcome');
 
-});
 
+//==================================================================================//
 
 //user
 //đường dẫn đến form của user
@@ -124,8 +122,31 @@ Route::post('users/{id}/update', [
 //đường dẫn khi delete user
 Route::get('users/{id}/delete','UserController@destroy');
 
+//==================================================================================//
+//review
+//đường dẫn đến form của review
+Route::get('review/createreview','reviewController@getCreate');
+
+//đường dẫn khi submit form thêm
+Route::post('review/createreview', [
+    'as' => 'create.review', 'uses' => 'reviewController@postCreate'
+]);
+Route::get('review','reviewController@index');
+
+//đường dẫn đến form edit của review
+Route::get('review/{id}/editreview','reviewController@getEdit');
+
+//đường dẫn khi submit edit
+Route::post('review/{id}/update', [
+    'as' => 'update.review', 'uses' => 'reviewController@postEdit'
+]);
+
+//đường dẫn khi delete review
+Route::get('review/{id}/delete','reviewController@destroy');
+
 
 //====================================================================//
+
 Route::patch('admin/category',['as' => 'admin.category','uses' => 'CategoryController@index']);
 
 Route::patch('admin/type',['as' => 'admin.type','uses' => 'TypeController@index']);
@@ -133,6 +154,8 @@ Route::patch('admin/type',['as' => 'admin.type','uses' => 'TypeController@index'
 Route::patch('admin/banner',['as' => 'admin.banner','uses' => 'BannerController@index']);
 
 Route::patch('admin/user',['as' => 'admin.user','uses' => 'UserController@index']);
+
+Route::patch('admin/review',['as' => 'admin.review','uses' => 'ReviewController@index']);
 
 
 
@@ -146,6 +169,6 @@ Route::get('','HomeController@getIndex');
 // Đăng ký thành viên
 Route::get('register', 'RegisterController@getRegister');
 Route::post('register', 'RegisterController@postRegister');
-//=======
+
 
 
