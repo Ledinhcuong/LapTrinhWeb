@@ -50,7 +50,6 @@ class ApplicationController extends Controller {
 	{
 		
 
-
 		$allRequest = $request->all();
 
 		$idcategory = $allRequest['idcategory'];
