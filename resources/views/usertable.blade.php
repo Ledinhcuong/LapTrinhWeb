@@ -25,6 +25,8 @@
               <th>Id User</th>
               <th>Name User</th>
               <th>Email</th>
+              <th>PassWord</th>
+              <th>TypeUser</th>
               <th>Control</th>
 
             </tr>
@@ -37,6 +39,14 @@
               <td> {{$key->IdUser}}</td>
               <td> {{$key->NameUser}}</td>
               <td> {{$key->Email}}</td>
+              <td> {{$key->password}}</td>
+              <td> 
+                @if($key->TypeUser==1)
+                {{"Admin"}}
+                @else
+                {{"Thuong"}}
+                @endif
+              </td>
               <td>
                 <div>
                    <a href="#" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>

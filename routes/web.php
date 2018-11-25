@@ -19,6 +19,7 @@ Route::resource('admin/banner','BannerController');
 Route::resource('admin/user','UserController');
 Route::resource('admin/category','CategoryController');
 Route::resource('admin/type','TypeController');
+Route::resource('admin/users','TypeController');
 Route::resource('admin/review','ReviewController');
 Route::resource('admin/application','ApplicationController');
 //====================================================================================//
@@ -98,12 +99,40 @@ Route::get('/', function () {
 });
 
 
+//==================================================================================//
+//user
+//đường dẫn đến form của user
+Route::get('users/createuser','UserController@getCreate');
+
+//đường dẫn khi submit form thêm
+Route::post('users/createuser', [
+    'as' => 'create.users', 'uses' => 'UserController@postCreate'
+]);
+Route::get('users','UserController@index');
+
+//đường dẫn đến form edit của type
+Route::get('users/{id}/edituser','UserController@getEdit');
+
+//đường dẫn khi submit edit
+Route::post('users/{id}/update', [
+    'as' => 'update.users', 'uses' => 'UserController@postEdit'
+]);
+
+//đường dẫn khi delete type
+Route::get('users/{id}/delete','UserController@destroy');
+
+
 //====================================================================//
 Route::patch('admin/category',['as' => 'admin.category','uses' => 'CategoryController@index']);
 
 Route::patch('admin/type',['as' => 'admin.type','uses' => 'TypeController@index']);
 
 Route::patch('admin/banner',['as' => 'admin.banner','uses' => 'BannerController@index']);
+
+Route::patch('admin/user',['as' => 'admin.user','uses' => 'UserController@index']);
+
+
+
 //=============== trang dang nhap
 
 

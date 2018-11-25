@@ -43,7 +43,6 @@ class RegisterController extends Controller
             're_password.same' => 'Xác nhận mật khẩu không đúng',
             're_password.required' => 'bạn chưa nhập lại mất khẩu',
         ]);
-
         $users = new users;
         $users->NameUser = $request->name;
         $users->Email = $request->email;
