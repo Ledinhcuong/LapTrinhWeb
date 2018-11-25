@@ -28,4 +28,5 @@ Route::get('/', function () {
 
 /*------------------------- Application -----------*/
 Route::get('application/{id}/delete', 'ApplicationController@destroy');
+//Route::post('application/add', 'ApplicationController@store');
 

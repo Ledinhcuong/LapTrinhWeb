@@ -49,6 +49,8 @@ class ApplicationController extends Controller {
 	public function store(Request $request)
 	{
 		
+
+
 		$allRequest = $request->all();
 
 		$idcategory = $allRequest['idcategory'];
@@ -57,15 +59,29 @@ class ApplicationController extends Controller {
 		$developer = $allRequest['developer'];
 		$sortdescription = $allRequest['sortdescription'];
 		$description = $allRequest['description'];
-		$icon = $allRequest['icon'];
-		$image1 = $allRequest['image1'];
-		$image2 = $allRequest['image2'];
-		$image3 = $allRequest['image3'];
+		
 		$linkdownload = $allRequest['linkdownload'];
 		$version = $allRequest['version'];
 		$size = $allRequest['size'];
+
+		// Xu ly cac thanh phan lien quan den file
 		
-		return 'hello';
+		//$image1 = $allRequest['image1'];
+		//$image2 = $allRequest['image2'];
+		//$image3 = $allRequest['image3'];
+
+		// Xu ly file icon
+		$icon = $allRequest['icon'];
+
+		$nameicon = $icon->getClientOriginalName();  // Lấy tên file
+		$icontype = $icon->getClientOriginalExtension(); // Lấy đuôi file
+		$linkicon = $icon->getRealPath();
+
+
+
+		
+		
+		return $icontype. " ". $nameicon;
 	}
 
 	/**
