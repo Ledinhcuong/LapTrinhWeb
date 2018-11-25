@@ -76,7 +76,42 @@
                 <!-- <img src="images/signup-bg.jpg" alt=""> -->
                 <div class="container">
                     <div class="signup-content">
-                        <form method="POST" id="signup-form" class="signup-form">
+
+                        <?php //Hiển thị thông báo thành công?>
+                        @if ( Session::has('success') )
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                                <strong>{{ Session::get('success') }}</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                            </div>
+                        @endif
+                        <?php //Hiển thị thông báo lỗi?>
+                        @if ( Session::has('error') )
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <strong>{{ Session::get('error') }}</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                            </div>
+                        @endif
+                        @if ($errors->any())
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                            </div>
+                        @endif
+                        <form method="POST" id="signup-form" class="signup-form" action="register" >
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <h2 class="form-title">Create account</h2>
                             <div class="form-group">
                                 <input type="text" class="form-input" name="name" id="name" placeholder="Your Name"/>
@@ -84,10 +119,13 @@
                             <div class="form-group">
                                 <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"/>
                             </div>
+
+
                             <div class="form-group">
                                 <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
                                 <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                             </div>
+                            
                             <div class="form-group">
                                 <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password"/>
                             </div>
