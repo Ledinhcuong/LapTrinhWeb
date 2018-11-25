@@ -53,13 +53,14 @@
 
   <!-- Page Content -->
   <div class="container" style="padding: 120px 0px;">
-    <form action="{{URL::action('ApplicationController@store')}}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data" onsubmit="return validateformProduct();">
+    <form action="{{URL::action('ApplicationController@update')}}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data" onsubmit="return validateformProduct();">
       <div class="form-group">
         <legend style="color: #009688">Sửa Thông Tin Ứng Dụng</legend>
 
       </div>
 
       <input type="hidden" name="_token" value="{{csrf_token()}}">
+      <input type="hidden" name="id" value="{{$editapp->IdApplication}}">
 
       <div class="form-group">
         <label for="idcategory" class="col-sm-2 control-label">Name Category: </label>
@@ -69,145 +70,166 @@
            <?php
 
            foreach ($category as $key) {
+           if($key->IdCategory == $editapp->IdCategory) {
+           ?>
 
-             ?>
+           <option selected="selected"  value="{{$key->IdCategory}}" >{{$key->NameCategory}}</option>
 
-             <option value="{{$key->IdCategory}}">{{$key->NameCategory}}</option>
-             <?php
-                }
-             ?>
-           </select>
-           <span class="help-block"></span>
-         </div>
-       </div>
+           <?php
 
+         } else {
 
-       <div class="form-group">
-        <label for="idtype" class="col-sm-2 control-label">Name Type: </label>
-        <div class="col-sm-10">
-          <select name="idtype" id="idtype" class="form-control">
-            <?php
-            foreach ($type as $key) {
+         ?>
+         <option value="{{$key->IdCategory}}" >{{$key->NameCategory}}</option>
 
-            ?>
-            <option value="{{$key->IdType}}">{{$key->NameType}}</option>
+         <?php
+       }
+     }
+     ?>
 
-            <?php
-              }
-
-            ?>
-          </select>
-          <span class="help-block"></span>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="nameapp" class="col-sm-2 control-label">Name App </label>
-        <div class="col-sm-10">
-          <input value="{{$editapp->NameApp}}" maxlength="20" required="true" type="text" name="nameapp" id="nameapp" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="developer" class="col-sm-2 control-label">Developer </label>
-        <div class="col-sm-10">
-          <input value="{{$editapp->Developer}}" required="true"  maxlength="15" type="text" name="developer" id="developer" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="linkdownload" class="col-sm-2 control-label">Link download </label>
-        <div class="col-sm-10">
-          <input value="{{$editapp->LinkDownload}}" required="true" type="text" name="linkdownload" id="linkdownload" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="version" class="col-sm-2 control-label"> Version </label>
-        <div class="col-sm-10">
-          <input value="{{$editapp->Version}}" required="true" type="number" name="version" id="version" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
+   </select>
+   <span class="help-block"></span>
+ </div>
+</div>
 
 
-      <div class="form-group">
-        <label for="size" class="col-sm-2 control-label"> Size </label>
-        <div class="col-sm-10">
-          <input value="{{$editapp->Size}}" type="number" required="true" maxlength="5" name="size" id="size" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
+<div class="form-group">
+  <label for="idtype" class="col-sm-2 control-label">Name Type: </label>
+  <div class="col-sm-10">
+    <select name="idtype" id="idtype" class="form-control">
+      <?php
+      foreach ($type as $key) {
 
-      <div class="form-group">
-        <label for="sortdescription" class="col-sm-2 control-label"> Sort Description </label>
-        <div class="col-sm-10">
-          <input value="{{$editapp->SortDescription}}" required="true" maxlength="25" type="text" name="sortdescription" id="sortdescription" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
+      if ($key->IdType == $editapp->IdType) {
 
-      <div class="form-group">
-        <label for="description" class="col-sm-2 control-label"> Description </label>
-        <div class="col-sm-10">
-          <input value="{{$editapp->Description}}" required="true"  type="text" name="description" id="description" class="form-control">
-          <span class="help-block"></span>
-        </div>
-      </div>
+      ?>
 
+      <option selected="selected" value="{{$key->IdType}}">{{$key->NameType}}</option>
 
+      <?php
+    } else {
 
-      <div class="form-group">
-        <label for="icon" class="col-sm-2 control-label">Icon </label>
-        <div class="col-sm-10">
-          <input type="file" id="icon" name="icon" class="form-control" style="opacity: 0.8" required="true">
-          <span class="help-block"></span>
-        </div>
-      </div>
+    ?>
 
+    <option value="{{$key->IdType}}">{{$key->NameType}}</option>
+    
+    <?php
+  }
+}
 
-      <div class="form-group">
-        <label for="image1" class="col-sm-2 control-label">Image 1 </label>
-        <div class="col-sm-10">
-          <input type="file" id="image1" name="image1" class="form-control" style="opacity: 0.8" required="true">
-          <span class="help-block"></span>
-        </div>
-      </div>
+?>
+</select>
+<span class="help-block"></span>
+</div>
+</div>
 
-
-      <div class="form-group">
-        <label for="image2" class="col-sm-2 control-label">Image 2 </label>
-        <div class="col-sm-10">
-          <input type="file" id="image2" name="image2" class="form-control" style="opacity: 0.8" required="true">
-          <span class="help-block"></span>
-        </div>
-      </div>
-
-
-      <div class="form-group">
-        <label for="image3" class="col-sm-2 control-label">Image 3 </label>
-        <div class="col-sm-10">
-          <input type="file" id="image3" name="image3" class="form-control" style="opacity: 0.8" required="true">
-          <span class="help-block"></span>
-        </div>
-      </div>
-
-
-      <div class="form-group">
-        <div class="col-sm-10 col-sm-offset-2">
-          <button type="submit" class="btn btn-primary"> Lưu </button>
-        </div>
-      </div>
-    </form>
-
+<div class="form-group">
+  <label for="nameapp" class="col-sm-2 control-label">Name App </label>
+  <div class="col-sm-10">
+    <input value="{{$editapp->NameApp}}" maxlength="20" required="true" type="text" name="nameapp" id="nameapp" class="form-control">
+    <span class="help-block"></span>
   </div>
+</div>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="{{url('vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{url('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<div class="form-group">
+  <label for="developer" class="col-sm-2 control-label">Developer </label>
+  <div class="col-sm-10">
+    <input value="{{$editapp->Developer}}" required="true"  maxlength="15" type="text" name="developer" id="developer" class="form-control">
+    <span class="help-block"></span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="linkdownload" class="col-sm-2 control-label">Link download </label>
+  <div class="col-sm-10">
+    <input value="{{$editapp->LinkDownload}}" required="true" type="text" name="linkdownload" id="linkdownload" class="form-control">
+    <span class="help-block"></span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="version" class="col-sm-2 control-label"> Version </label>
+  <div class="col-sm-10">
+    <input value="{{$editapp->Version}}" required="true" type="number" name="version" id="version" class="form-control">
+    <span class="help-block"></span>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label for="size" class="col-sm-2 control-label"> Size </label>
+  <div class="col-sm-10">
+    <input value="{{$editapp->Size}}" type="number" required="true" maxlength="5" name="size" id="size" class="form-control">
+    <span class="help-block"></span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="sortdescription" class="col-sm-2 control-label"> Sort Description </label>
+  <div class="col-sm-10">
+    <input value="{{$editapp->SortDescription}}" required="true" maxlength="25" type="text" name="sortdescription" id="sortdescription" class="form-control">
+    <span class="help-block"></span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="description" class="col-sm-2 control-label"> Description </label>
+  <div class="col-sm-10">
+    <input value="{{$editapp->Description}}" required="true"  type="text" name="description" id="description" class="form-control">
+    <span class="help-block"></span>
+  </div>
+</div>
+
+
+
+<div class="form-group">
+  <label for="icon" class="col-sm-2 control-label">Icon </label>
+  <div class="col-sm-10">
+    <input type="file" id="icon" name="icon" class="form-control" style="opacity: 0.8" required="true">
+    <span class="help-block"></span>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label for="image1" class="col-sm-2 control-label">Image 1 </label>
+  <div class="col-sm-10">
+    <input type="file" id="image1" name="image1" class="form-control" style="opacity: 0.8" required="true">
+    <span class="help-block"></span>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label for="image2" class="col-sm-2 control-label">Image 2 </label>
+  <div class="col-sm-10">
+    <input type="file" id="image2" name="image2" class="form-control" style="opacity: 0.8" required="true">
+    <span class="help-block"></span>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label for="image3" class="col-sm-2 control-label">Image 3 </label>
+  <div class="col-sm-10">
+    <input type="file" id="image3" name="image3" class="form-control" style="opacity: 0.8" required="true">
+    <span class="help-block"></span>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <div class="col-sm-10 col-sm-offset-2">
+    <button type="submit" class="btn btn-primary"> Lưu </button>
+  </div>
+</div>
+</form>
+
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="{{url('vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{url('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 </body>
 

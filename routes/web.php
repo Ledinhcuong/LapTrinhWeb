@@ -22,6 +22,10 @@ Route::resource('admin/type','TypeController');
 Route::resource('admin/users','TypeController');
 Route::resource('admin/review','ReviewController');
 Route::resource('admin/application','ApplicationController');
+
+/*------------------------- Application -----------*/
+
+
 //====================================================================================//
 //Category
 //đường dẫn đến form của category
@@ -99,8 +103,6 @@ Route::get('/', function () {
 });
 
 
-//<<<<<<< HEAD
-//==================================================================================//
 //user
 //đường dẫn đến form của user
 Route::get('users/createuser','UserController@getCreate');
@@ -145,5 +147,5 @@ Route::get('','HomeController@getIndex');
 Route::get('register', 'RegisterController@getRegister');
 Route::post('register', 'RegisterController@postRegister');
 //=======
-/*------------------------- Application -----------*/
+
 
