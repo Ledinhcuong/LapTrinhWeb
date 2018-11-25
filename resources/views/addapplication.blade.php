@@ -65,7 +65,7 @@
         <label for="idcategory" class="col-sm-2 control-label">Name Category: </label>
         <div class="col-sm-10">
 
-          <select name="idcategory" id="idcategory">
+          <select name="idcategory" id="idcategory" class="form-control">
            <?php
 
            foreach ($category as $key) {
@@ -88,7 +88,7 @@
        <div class="form-group">
         <label for="idtype" class="col-sm-2 control-label">Name Type: </label>
         <div class="col-sm-10">
-          <select name="idtype" id="idtype">
+          <select name="idtype" id="idtype" class="form-control">
             <?php
             foreach ($type as $key) {
 
@@ -107,7 +107,7 @@
       <div class="form-group">
         <label for="nameapp" class="col-sm-2 control-label">Name App </label>
         <div class="col-sm-10">
-          <input type="text" name="nameapp" id="nameapp" class="form-control">
+          <input maxlength="20" required="true" type="text" name="nameapp" id="nameapp" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
@@ -115,7 +115,7 @@
       <div class="form-group">
         <label for="developer" class="col-sm-2 control-label">Developer </label>
         <div class="col-sm-10">
-          <input type="text" name="developer" id="developer" class="form-control">
+          <input required="true"  maxlength="15" type="text" name="developer" id="developer" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
@@ -123,7 +123,7 @@
       <div class="form-group">
         <label for="linkdownload" class="col-sm-2 control-label">Link download </label>
         <div class="col-sm-10">
-          <input type="text" name="linkdownload" id="linkdownload" class="form-control">
+          <input required="true" type="text" name="linkdownload" id="linkdownload" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
@@ -131,7 +131,7 @@
       <div class="form-group">
         <label for="version" class="col-sm-2 control-label"> Version </label>
         <div class="col-sm-10">
-          <input type="text" name="version" id="version" class="form-control">
+          <input required="true" type="number" name="version" id="version" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
@@ -140,7 +140,7 @@
       <div class="form-group">
         <label for="size" class="col-sm-2 control-label"> Size </label>
         <div class="col-sm-10">
-          <input type="text" name="size" id="size" class="form-control">
+          <input  type="number" required="true" maxlength="5" name="size" id="size" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
@@ -148,7 +148,7 @@
       <div class="form-group">
         <label for="sortdescription" class="col-sm-2 control-label"> Sort Description </label>
         <div class="col-sm-10">
-          <input type="text" name="sortdescription" id="sortdescription" class="form-control">
+          <input required="true" maxlength="25" type="text" name="sortdescription" id="sortdescription" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
@@ -156,7 +156,7 @@
       <div class="form-group">
         <label for="description" class="col-sm-2 control-label"> Description </label>
         <div class="col-sm-10">
-          <input type="text" name="description" id="description" class="form-control">
+          <input required="true"  type="text" name="description" id="description" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
