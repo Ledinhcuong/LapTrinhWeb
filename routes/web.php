@@ -27,5 +27,26 @@ Route::get('/', function () {
 
 
 /*------------------------- Application -----------*/
-Route::get('application/{id}/delete', 'ApplicationController@destroy');
 
+//đường dẫn đến form của category
+Route::get('category/createcategory','CategoryController@getCreate');
+
+//đường dẫn khi submit form thêm
+Route::post('category/createcategory', [
+    'as' => 'create.category', 'uses' => 'CategoryController@postCreate'
+]);
+
+Route::get('category','CategoryController@index');
+
+//đường dẫn đến form edit của category
+
+Route::get('category/{id}/editcategory','CategoryController@getEdit');
+
+//đường dẫn khi submit edit
+
+Route::post('category/{id}/update', [
+    'as' => 'update.category', 'uses' => 'CategoryController@postEdit'
+]);
+
+//đường dẫn khi delete category
+Route::get('category/{id}/delete','CategoryController@destroy');
