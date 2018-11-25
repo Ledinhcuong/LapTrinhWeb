@@ -195,7 +195,12 @@ class ApplicationController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		
+		$category = Category::all();
+		$type = Types::all();
+		$editapp = Application::find($id);
+
+		return view('editapp', ['type'=>$type, 'category'=>$category, 'editapp' =>$editapp]);
 	}
 
 	/**
