@@ -3,6 +3,11 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Application;
+use App\Banners;
+use App\Types;
+use App\Reviews;
+use App\Category;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -15,7 +20,12 @@ class ApplicationController extends Controller {
 	 */
 	public function index()
 	{
-		$data = Application::paginate(30);
+		 // $data = Application::with('Category', 'Types')->get();
+		$data = DB::table('Application')
+			->join('Category', 'Application.IdCategory', '=', 'Category.IdCategory')
+			->join('Types', 'Application.IdType', '=', 'Types.IdType')
+			->select('Application.*', 'Types.NameType', 'Category.NameCategory')->get();
+
 		return view('apptable', ['data'=>$data]);
 	}
 
@@ -26,7 +36,9 @@ class ApplicationController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		$category = Category::all();
+		$type = Types::all();
+		return view('addapplication', ['type'=>$type, 'category'=>$category]);
 	}
 
 	/**
@@ -34,9 +46,26 @@ class ApplicationController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		
+		$allRequest = $request->all();
+
+		$idcategory = $allRequest['idcategory'];
+		$idtype = $allRequest['idtype'];
+		$nameapp = $allRequest['nameapp'];
+		$developer = $allRequest['developer'];
+		$sortdescription = $allRequest['sortdescription'];
+		$description = $allRequest['description'];
+		$icon = $allRequest['icon'];
+		$image1 = $allRequest['image1'];
+		$image2 = $allRequest['image2'];
+		$image3 = $allRequest['image3'];
+		$linkdownload = $allRequest['linkdownload'];
+		$version = $allRequest['version'];
+		$size = $allRequest['size'];
+		
+		return 'hello';
 	}
 
 	/**
@@ -47,7 +76,10 @@ class ApplicationController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		$data = Application::find($id);
+		return view('detailapp', ['data'=>$data]);
+
+
 	}
 
 	/**
@@ -80,7 +112,13 @@ class ApplicationController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		// Xóa dữ liệu bảng liên quan trước
+		Reviews::where('IdApplication', $id)->delete();
+
+		Application::find($id)->delete();
+
+		return redirect()->action('ApplicationController@index');
+
 	}
 
 }

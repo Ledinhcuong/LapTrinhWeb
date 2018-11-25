@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 01, 2018 at 04:46 AM
+-- Generation Time: Nov 25, 2018 at 05:25 AM
 -- Server version: 5.6.37
--- PHP Version: 5.6.31
+-- PHP Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -39,7 +39,6 @@ CREATE TABLE IF NOT EXISTS `Application` (
   `Image3` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `LinkDownload` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `NumberDownload` int(11) NOT NULL,
-  `DateSubmit` date NOT NULL,
   `Version` double(8,2) NOT NULL,
   `Size` double(8,2) NOT NULL,
   `SortDescription` varchar(255) COLLATE utf8_unicode_ci NOT NULL
@@ -49,20 +48,20 @@ CREATE TABLE IF NOT EXISTS `Application` (
 -- Dumping data for table `Application`
 --
 
-INSERT INTO `Application` (`IdCategory`, `IdType`, `IdApplication`, `NameApp`, `Developer`, `Description`, `Icon`, `Image1`, `Image2`, `Image3`, `LinkDownload`, `NumberDownload`, `DateSubmit`, `Version`, `Size`, `SortDescription`) VALUES
-(1, 1, 1, 'Microsoft edge', 'Microsoft', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'edgeicon.png', 'edge1.jpg', 'edge2.jpg', 'edge3.jpg', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 5, '2018-10-15', 1.00, 50.00, 'Lướt web nhanh hơn bao giờ hết'),
-(1, 1, 2, 'Gesture', 'Oval', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'gestureicon.png', 'gesture1.png', 'gesture2.png', 'gesture3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 10, '2018-08-03', 1.00, 50.00, 'Điều hướng phong cách iphone x'),
-(1, 6, 3, 'Volume slide', 'Maxtine', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'volumeslideicon.png', 'volumeslide1.png', 'volumeslide2.png', 'volumeslide3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 80, '2018-10-20', 1.00, 50.00, 'Điều chỉnh âm lượng phong cách android 9'),
-(1, 1, 4, 'Stick share', 'the verb', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'stickshareicon.png', 'stickshare1.png', 'stickshare2.png', 'stickshare3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 60, '2018-10-07', 1.00, 50.00, 'Chụp nhanh màn hình'),
-(1, 6, 5, 'Recent bar', 'apple', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'recentbaricon.png', 'recentbar1.png', 'recentbar2.png', 'recentbar3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 20, '2018-10-20', 1.00, 50.00, 'Mở nhanh ứng dụng gần đây'),
-(1, 3, 6, 'Splashtop', 'Ramus', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'splashtopicon.png', 'volumeslide4.png', 'recentbar4.png', 'edge4.jpg', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 15, '2018-10-20', 1.00, 50.00, 'Biến màn hình điện thoại thành màn hình phụ'),
-(1, 1, 7, 'Datally', 'Google', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'datallyicon.png', 'datally1.png', 'datally2.png', 'datally3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 11, '2018-10-20', 1.00, 50.00, 'Theo dõi lưu lượng sử dụng'),
-(1, 1, 8, 'File go', 'Google', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'filesgoicon.png', 'filego1.png', 'filego2.png', 'filego3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 95, '2018-10-20', 1.00, 50.00, 'Quan ly file'),
-(1, 1, 9, 'Just aline', 'Google', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'justalineicon.png', 'justaline1.png', 'justaline2.png', 'justaline3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 95, '2018-10-20', 1.00, 50.00, 'Ứng dụng AR'),
-(1, 1, 10, 'Forest', 'Google', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'floatingbaricon.png', 'forestlive1.png', 'forestlive2.png', 'forestlive3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 95, '2018-10-20', 1.00, 50.00, 'Ứng dụng AR'),
-(2, 14, 11, 'Monster', 'Sigma game', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'monstericon.png', 'monster1.jpg', 'monster2.jpg', 'monster3.jpg', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 32, '2018-10-20', 1.00, 50.00, 'Trò chơi nhập vai'),
-(2, 18, 12, 'Pokemon quest', 'Sigma game', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'pokemon1.png', 'pokemon1.png', 'pokemon2.png', 'pokemon3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 65, '2018-10-20', 1.00, 50.00, 'Game giải trí nhẹ nhàng'),
-(2, 20, 13, 'Green farm', 'Gameloft', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'greenfarmlogo.png', 'greenfarm1.jpg', 'greenfarm2.jpg', 'greenfarm3.jpg', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 65, '2018-10-20', 1.00, 50.00, 'Game nông trại giải trí');
+INSERT INTO `Application` (`IdCategory`, `IdType`, `IdApplication`, `NameApp`, `Developer`, `Description`, `Icon`, `Image1`, `Image2`, `Image3`, `LinkDownload`, `NumberDownload`, `Version`, `Size`, `SortDescription`) VALUES
+(1, 1, 1, 'Microsoft edge', 'Microsoft', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'edgeicon.png', 'edge1.jpg', 'edge2.jpg', 'edge3.jpg', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 5, 1.00, 50.00, 'Lướt web nhanh hơn bao giờ hết'),
+(1, 1, 2, 'Gesture', 'Oval', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'gestureicon.png', 'gesture1.png', 'gesture2.png', 'gesture3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 10, 1.00, 50.00, 'Điều hướng phong cách iphone x'),
+(1, 6, 3, 'Volume slide', 'Maxtine', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'volumeslideicon.png', 'volumeslide1.png', 'volumeslide2.png', 'volumeslide3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 80, 1.00, 50.00, 'Điều chỉnh âm lượng phong cách android 9'),
+(1, 1, 4, 'Stick share', 'the verb', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'stickshareicon.png', 'stickshare1.png', 'stickshare2.png', 'stickshare3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 60, 1.00, 50.00, 'Chụp nhanh màn hình'),
+(1, 6, 5, 'Recent bar', 'apple', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'recentbaricon.png', 'recentbar1.png', 'recentbar2.png', 'recentbar3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 20, 1.00, 50.00, 'Mở nhanh ứng dụng gần đây'),
+(1, 3, 6, 'Splashtop', 'Ramus', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'splashtopicon.png', 'volumeslide4.png', 'recentbar4.png', 'edge4.jpg', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 15, 1.00, 50.00, 'Biến màn hình điện thoại thành màn hình phụ'),
+(1, 1, 7, 'Datally', 'Google', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'datallyicon.png', 'datally1.png', 'datally2.png', 'datally3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 11, 1.00, 50.00, 'Theo dõi lưu lượng sử dụng'),
+(1, 1, 8, 'File go', 'Google', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'filesgoicon.png', 'filego1.png', 'filego2.png', 'filego3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 95, 1.00, 50.00, 'Quan ly file'),
+(1, 1, 9, 'Just aline', 'Google', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'justalineicon.png', 'justaline1.png', 'justaline2.png', 'justaline3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 95, 1.00, 50.00, 'Ứng dụng AR'),
+(1, 1, 10, 'Forest', 'Google', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'floatingbaricon.png', 'forestlive1.png', 'forestlive2.png', 'forestlive3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 95, 1.00, 50.00, 'Ứng dụng AR'),
+(2, 14, 11, 'Monster', 'Sigma game', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'monstericon.png', 'monster1.jpg', 'monster2.jpg', 'monster3.jpg', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 32, 1.00, 50.00, 'Trò chơi nhập vai'),
+(2, 18, 12, 'Pokemon quest', 'Sigma game', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'pokemon1.png', 'pokemon1.png', 'pokemon2.png', 'pokemon3.png', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 65, 1.00, 50.00, 'Game giải trí nhẹ nhàng'),
+(2, 20, 13, 'Green farm', 'Gameloft', 'Get rid of your navigation bar and learn to appreciate the benefits of gesture-based navigation. There was never before, a more natural way, to control your smartphone. Let the future begin!', 'greenfarmlogo.png', 'greenfarm1.jpg', 'greenfarm2.jpg', 'greenfarm3.jpg', 'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab', 65, 1.00, 50.00, 'Game nông trại giải trí');
 
 -- --------------------------------------------------------
 
@@ -73,7 +72,6 @@ INSERT INTO `Application` (`IdCategory`, `IdType`, `IdApplication`, `NameApp`, `
 CREATE TABLE IF NOT EXISTS `Banners` (
   `IdBanner` int(10) unsigned NOT NULL,
   `ContentBanner` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `CreateDate` date NOT NULL,
   `ImageBanner` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -81,11 +79,11 @@ CREATE TABLE IF NOT EXISTS `Banners` (
 -- Dumping data for table `Banners`
 --
 
-INSERT INTO `Banners` (`IdBanner`, `ContentBanner`, `CreateDate`, `ImageBanner`) VALUES
-(1, 'Nơi đây tổng hợp các phần mềm hoàn toàn miễn phí', '2018-10-15', 'banner page.jpg'),
-(2, 'Những trò chơi hay nhất đang đợi bạn', '2018-10-15', 'banner 2.jpg'),
-(3, 'Hãy chia sẽ trang này cho bạn bè của bạn', '2018-10-15', 'banner 3.jpg'),
-(4, 'Những ứng dụng mang đến trải nghiệm tốt nhất', '2018-10-15', 'banner 4.jpg');
+INSERT INTO `Banners` (`IdBanner`, `ContentBanner`, `ImageBanner`) VALUES
+(1, 'Nơi đây tổng hợp các phần mềm hoàn toàn miễn phí', 'banner page.jpg'),
+(2, 'Những trò chơi hay nhất đang đợi bạn', 'banner 2.jpg'),
+(3, 'Hãy chia sẽ trang này cho bạn bè của bạn', 'banner 3.jpg'),
+(4, 'Những ứng dụng mang đến trải nghiệm tốt nhất', 'banner 4.jpg');
 
 -- --------------------------------------------------------
 

@@ -140,6 +140,17 @@
 
 <!-- Menu Toggle Script -->
 <script>
+
+  function showDetail() {
+    
+   
+   // $test =  $(this).parent().parent().parent().next().html();
+    $(this).parent().after("Xin chao");
+    
+
+  }
+
+
   $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");

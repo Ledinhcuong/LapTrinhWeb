@@ -2,64 +2,82 @@
 @section('title', 'Bảng Application')
 @section('content')
 
+<!-- Table begin -->
+<div class="content-table">
 
-      <!-- Table begin -->
-      <div class="content-table">
+  <div class="nameTB">
 
-        <div class="nameTB">
+    Bảng Application
 
-          Bảng Application
+  </div>
 
-        </div>
+  <div class="tool">
+    <a href="{{url('admin/application/create')}}" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
 
-        <div class="tool">
-          <a href="#" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
+  </div>
 
-        </div>
+  <!-- Table -->
 
-        <!-- Table -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Type</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Developer</th>
+        <th>Description</th>
+        <th>Icon</th>
+        <th>Control</th>
 
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Category</th>
-              <th>Type</th>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Developer</th>
-              <th>Description</th>
-              <th>Icon</th>
-              <th>Control</th>
+      </tr>
+    </thead>
+    <tbody>
 
-            </tr>
-          </thead>
-          <tbody>
-          
-            <tr>
-              <td>Application</td>
-              <td>Xa hoi</td>
-              <td>01</td>
-              <td>Facebook</td>
-              <td>Facebook inc</td>
-              <td width="40%">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit eius tempore, accusamus cum facilis atque adipisci dolore, error ut provident omnis. Dolor placeat, nulla eaque veritatis rerum adipisci. Ipsam, placeat.</td>
-              <td><img src="public/images/edgeicon.png" width="56" alt="icon"></td>
+      <?php 
+        foreach ($data as $key) {
+        $icon = 'public/images/'. $key->Icon;
+        $image1 = 'public/images/'. $key->Image1;
+        $image2 = 'public/images/'. $key->Image2;
+        $image3 = 'public/images/'. $key->Image3;
+        $detail = 'admin/application/'. $key->IdApplication;
+        $delete =  'application/'. $key->IdApplication. '/delete';
+
+      ?>
+
+      <tr>
+        <td>{{$key->NameCategory}}</td>
+        <td>{{$key->NameType}}</td>
+        <td>{{$key->IdApplication}}</td>
+        <td>{{$key->NameApp}}</td>
+        <td>{{$key->Developer}}</td>
+        <td width="40%">{{$key->Description}}</td>
+        <td><img src="{{url($icon)}}" width="56" alt="icon"></td>
         
-              <td>
-                <div>
-                   <a href="#" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
-                </div>
-                <div>
-                  <a href="#" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
-                </div>
-                  
-              </td>
-            </tr>
-            
+        <td>
+          <div>
+           <a href="#" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
+         </div>
+         <div>
+          <a href="{{url($delete)}}" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
+        </div>
 
-           
-          </tbody>
-        </table>
+         <div>
+          <a style="background: #007aff;" class="btn-control" href="{{url($detail)}}" > <i class="fa fa-info-circle" aria-hidden="true"  ></i> Chi tiết </a>
+        </div>
 
-      </div>
-      <!-- Table end -->
+      </td>
+    </tr>
+   
+    <?php
+  }
+    ?>
+
+
+
+  </tbody>
+</table>
+
+</div>
+<!-- Table end -->
 @endsection

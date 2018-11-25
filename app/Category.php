@@ -11,6 +11,10 @@ class Category extends Model {
 	
 	protected $fillable = ['NameCategory'];
 
+	public function Application() {
+		return $this->hasMany('App\Application', 'IdCategory');
+	}
+
 	
 
 }
