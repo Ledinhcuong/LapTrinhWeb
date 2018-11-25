@@ -98,8 +98,6 @@ Route::get('/', function () {
 
 });
 
-
-<<<<<<< HEAD
 //==================================================================================//
 //user
 //đường dẫn đến form của user
@@ -144,8 +142,7 @@ Route::get('','HomeController@getIndex');
 // Đăng ký thành viên
 Route::get('register', 'RegisterController@getRegister');
 Route::post('register', 'RegisterController@postRegister');
-=======
+
 /*------------------------- Application -----------*/
 Route::get('application/{id}/delete', 'ApplicationController@destroy');
 
->>>>>>> e6461208dd0acfbc503f30af87cc29ad09b965a1
