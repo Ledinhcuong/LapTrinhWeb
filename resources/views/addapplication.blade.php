@@ -53,7 +53,7 @@
 
   <!-- Page Content -->
   <div class="container" style="padding: 120px 0px;">
-    <form action="themsanpham.php" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data" onsubmit="return validateformProduct();">
+    <form action="{{url('admin/application')}}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data" onsubmit="return validateformProduct();">
       <div class="form-group">
         <legend style="color: #009688">Thêm Ứng Dụng</legend>
 
