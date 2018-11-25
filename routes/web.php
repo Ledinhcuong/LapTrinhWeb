@@ -14,7 +14,7 @@ Route::resource('admin/application','ApplicationController');
 
 
 /*------------------------- Application -----------*/
-
+Route::get('application/{id}/delete', 'ApplicationController@destroy');
 
 //====================================================================================//
 //Category
