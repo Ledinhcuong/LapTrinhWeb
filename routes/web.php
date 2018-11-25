@@ -132,7 +132,7 @@ Route::patch('admin/user',['as' => 'admin.user','uses' => 'UserController@index'
 
 
 
-//=============== trang dang nhap
+//=============== trang dang nhap====================================
 
 
 Route::get('login','LoginController@getLogin');
