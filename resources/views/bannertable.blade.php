@@ -5,17 +5,12 @@
       <div class="content-table"> <!-- Table begin -->
 
         <div class="nameTB">
-
           Bảng Banner
-
         </div>
 
         <div class="tool">
-          <a href="banner/create" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
-
-        </div>
-
-        
+          <a href="{{ url('banner/create') }}" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
+        </div>   
 
         <table class="table table-bordered">
           <thead>
@@ -49,8 +44,6 @@
                 </td>
               </tr>
             @endforeach   
-            
-          
           </tbody>
         </table>
 

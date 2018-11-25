@@ -56,15 +56,6 @@
     <form action="{!! URL::Route('create.banner')!!}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data" onsubmit="return validateformProduct();">
       <div class="form-group">
         <legend style="color: #009688">Thêm banner</legend>
-
-      </div>
-
-      <div class="form-group">
-        <label for="bannerid" class="col-sm-2 control-label">Banner ID</label>
-        <div class="col-sm-10">
-          <input type="text" name="bannerid" id="bannerid" class="form-control">
-          <span class="help-block"></span>
-        </div>
       </div>
 
       <div class="form-group">

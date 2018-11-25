@@ -23,7 +23,6 @@ class BannerController extends Controller {
 		return view('createbanner');
 	}
 
-
 	public function postCreate(Request $request)
 	{
 		
@@ -33,8 +32,6 @@ class BannerController extends Controller {
 			'NameBanner' => $nameBanner
 		);
 
-	
-		
 		$objBanner = new Banner();
 		$objBanner->insert($dataInsertToDatabase);
 		return redirect()->route('admin.banner');
@@ -73,7 +70,6 @@ class BannerController extends Controller {
 
 	public function getEdit($id)
 	{
-		
 		$objBanner = new  Banner();
 		$getBannerById = $objBanner->find($id)->toArray();
 		return view ('editbanner',array('id'=>$id))->with('getBannerById', $getBannerById);
@@ -123,7 +119,8 @@ class BannerController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		Banner::find($id)->delete();
+		return redirect()->action('BannerController@index');
 	}
 
 }
