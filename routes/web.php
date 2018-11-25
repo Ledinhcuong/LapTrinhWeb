@@ -50,3 +50,5 @@ Route::post('category/{id}/update', [
 
 //đường dẫn khi delete category
 Route::get('category/{id}/delete','CategoryController@destroy');
+
+Route::patch('admin/category',['as' => 'admin.category','uses' => 'CategoryController@index']);
