@@ -48,6 +48,7 @@ class ApplicationController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		
 		$allRequest = $request->all();
 
 		$idcategory = $allRequest['idcategory'];
@@ -56,6 +57,15 @@ class ApplicationController extends Controller {
 		$developer = $allRequest['developer'];
 		$sortdescription = $allRequest['sortdescription'];
 		$description = $allRequest['description'];
+		$icon = $allRequest['icon'];
+		$image1 = $allRequest['image1'];
+		$image2 = $allRequest['image2'];
+		$image3 = $allRequest['image3'];
+		$linkdownload = $allRequest['linkdownload'];
+		$version = $allRequest['version'];
+		$size = $allRequest['size'];
+		
+		return 'hello';
 	}
 
 	/**
