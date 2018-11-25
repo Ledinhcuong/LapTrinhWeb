@@ -22,13 +22,6 @@ Route::resource('admin/type','TypeController');
 Route::resource('admin/users','TypeController');
 Route::resource('admin/review','ReviewController');
 Route::resource('admin/application','ApplicationController');
-
-/*------------------------- Application -----------*/
-
-Route::get('application/{id}/delete', 'ApplicationController@destroy');
-
-
-
 //====================================================================================//
 //Category
 //đường dẫn đến form của category
@@ -79,17 +72,17 @@ Route::get('type/{id}/delete','TypeController@destroy');
 //==================================================================================//
 //Banner
 //đường dẫn đến form của banner
-Route::get('banner/createbanner','BannerController@getCreate');
+Route::get('banner/create','BannerController@getCreate');
 
 //đường dẫn khi submit form thêm
-Route::post('banner/createbanner', [
+Route::post('banner/create', [
     'as' => 'create.banner', 'uses' => 'BannerController@postCreate'
 ]);
 
 Route::get('banner','BannerController@index');
 
 //đường dẫn đến form edit của banner
-Route::get('banner/{id}/editbanner','BannerController@getEdit');
+Route::get('banner/{id}/edit','BannerController@getEdit');
 
 //đường dẫn khi submit edit
 Route::post('banner/{id}/update', [
@@ -151,4 +144,6 @@ Route::get('','HomeController@getIndex');
 // Đăng ký thành viên
 Route::get('register', 'RegisterController@getRegister');
 Route::post('register', 'RegisterController@postRegister');
+//=======
+/*------------------------- Application -----------*/
 
