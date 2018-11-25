@@ -69,30 +69,14 @@ class UserController extends Controller {
         return redirect()->route('admin.user');
 	}
 
-	
-
-	/**
-	 * Display the specified resource.
-
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
+	public function getEdit($id)
 	{
-		//
+		
+		$objUser = new  Users();
+		$getUserById = $objUser->find($id)->toArray();
+		return view ('edituser',array('id'=>$id))->with('getUserById', $getUserById);
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
 
 	/**
 	 * Update the specified resource in storage.
@@ -100,10 +84,36 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function postEdit($id,Request $request)
 	{
-		//
-	}
+		$this->validate($request,
+        [
+            'name' => 'required|string|min:3',
+            'email' => 'required|email|unique:users,email',
+            //'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|min:6|max:32',
+            
+
+        ],
+        [
+            'name.required' => 'Họ và tên là trường bắt buộc',
+            'name.max' => 'Họ và tên ít nhất có 3 ký tự',
+            'email.required' => 'Email là trường bắt buộc',
+            'email.email' => 'Email không đúng định dạng',
+            'email.max' => 'Email không quá 255 ký tự',
+            'email.unique' => 'Email đã tồn tại',
+            'password.required' => 'Mật khẩu là trường bắt buộc',
+            'password.min' => 'Mật khẩu phải chứa ít nhất 6 ký tự'
+        ]);
+		$users = new users;
+        $users->NameUser = $request->name;
+        $users->Email = $request->email;
+        $users->password = $request->password;
+        $users->TypeUser = $request->rdoStatus;
+        $users -> save();
+
+        return redirect()->route('admin.user');
+    }
 
 	/**
 	 * Remove the specified resource from storage.
@@ -111,6 +121,11 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	
+	public function destroy($id)
+	{
+		//
+		Users::find($id)->delete();
+		return redirect()->action('UserController@index');
+	}
 
 }

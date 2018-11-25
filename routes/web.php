@@ -110,7 +110,7 @@ Route::post('users/createuser', [
 ]);
 Route::get('users','UserController@index');
 
-//đường dẫn đến form edit của type
+//đường dẫn đến form edit của user
 Route::get('users/{id}/edituser','UserController@getEdit');
 
 //đường dẫn khi submit edit
@@ -118,7 +118,7 @@ Route::post('users/{id}/update', [
     'as' => 'update.users', 'uses' => 'UserController@postEdit'
 ]);
 
-//đường dẫn khi delete type
+//đường dẫn khi delete user
 Route::get('users/{id}/delete','UserController@destroy');
 
 
