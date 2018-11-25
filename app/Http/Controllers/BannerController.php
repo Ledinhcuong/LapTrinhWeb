@@ -20,12 +20,13 @@ class BannerController extends Controller {
 
 	public function getCreate()
 	{
+		echo("getcreate");
 		return view('createbanner');
 	}
 
 	public function postCreate(Request $request)
 	{
-		
+		return "postcreate";
 		$allRequest = $request->all();
 		$nameBanner = $allRequest['name'];
 		$dataInsertToDatabase = array(
@@ -44,6 +45,7 @@ class BannerController extends Controller {
 	 */
 	public function create()
 	{
+		echo("createbanner");
 		return view("createbanner");
 	}
 
