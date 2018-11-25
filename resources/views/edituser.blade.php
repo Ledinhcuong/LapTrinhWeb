@@ -32,8 +32,8 @@
 	<div id="page-wrapper">
 	<div class="container-fluid" style="background: gold;">
 		<div class="col-lg-12">
-			<h1 class="page-header">
-				<small>Sửa</small>
+			<h1 class="page-header">Sửa
+				<small></small>
 			</h1>
 		</div>
 		<!-- col-lg-12-->
@@ -72,7 +72,7 @@
                             </div>
                         @endif
 			
-			<form action="{!! URL::Route('create.users') !!}" method="POST" >
+			<form action="{!! URL::Route('update.users',$id) !!}" method="POST" >
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<div class="form-group">
 					<label>Ho ten</label>
