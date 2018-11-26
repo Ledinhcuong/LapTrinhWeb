@@ -8,6 +8,8 @@ use App\Types;
 use App\Reviews;
 use App\Category;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+ use File;  
 
 use Illuminate\Http\Request;
 
@@ -66,6 +68,14 @@ class ApplicationController extends Controller {
 		$location = 'public/images/';
 		$result = true;
 
+
+
+		// Kiểm tra tên ứng dụng có trùng với thành phần nào không
+		if (Application::where('NameApp', $nameapp)->count() > 0) {
+			return  'Tên của ứng dụng này đã tồn tại vui lòng đặt tên khác !';
+		}
+
+
 		// Xu ly cac thanh phan lien quan den file
 		
 		// Xu ly file icon
@@ -75,11 +85,23 @@ class ApplicationController extends Controller {
 		$icontype = $icon->getClientOriginalExtension(); // Lấy đuôi file
 		$linkicon = $icon->getRealPath();
 
+		// Kiểm tra file đã tồn tại trong cơ sở dữ liệu chưa
+		if (Application::where('Icon', $nameicon)->get()->count() > 0) {
+			return 'Tên file của icon bạn chọn đã tồn tại vui lòng chọn file khác!';
+		} else if (Application::where('Image1', $nameicon)->get()->count() > 0) {
+			return 'Tên file của icon bạn chọn đã tồn tại vui lòng chọn file khác!';
+		} else 	if (Application::where('Image2', $nameicon)->get()->count() > 0) {
+			return 'Tên file của icon bạn chọn đã tồn tại vui lòng chọn file khác!';
+		} else if (Application::where('Image3', $nameicon)->get()->count() > 0) {
+			return 'Tên file của icon bạn chọn đã tồn tại vui lòng chọn file khác!';
+		}
+
 		if ($icontype == "jpg"  OR $icontype == "png") {
 			// Tiến hành di chuyển file vô thư mục
 			$icon->move($location, $nameicon);
 		} else {
 			$result = false;
+			return 'Bạn chọn file icon không phải là hình ảnh :(';
 		}
 
 		// Xu ly file image 1
@@ -89,11 +111,13 @@ class ApplicationController extends Controller {
 		$image1type = $image1->getClientOriginalExtension(); // Lấy đuôi file
 		$linkimage1 = $image1->getRealPath();
 
+
 		if (($image1type == "jpg"  OR $image1type == "png") AND $result != false) {
 			// Tiến hành di chuyển file vô thư mục
 			$image1->move($location, $nameimage1);
 		} else {
 			$result = false;
+			return  'Bạn chọn file image1 không phải là hình ảnh :(';
 		}
 
 
@@ -110,6 +134,7 @@ class ApplicationController extends Controller {
 			$image2->move($location, $nameimage2);
 		} else {
 			$result = false;
+			return 'Bạn chọn image2 không phải là hình ảnh :(';
 		}
 
 
@@ -120,32 +145,18 @@ class ApplicationController extends Controller {
 		$image3type = $image3->getClientOriginalExtension(); // Lấy đuôi file
 		$linkimage3 = $image3->getRealPath();
 
+
 		if (($image3type == "jpg"  OR $image3type == "png") AND $result != false) {
 			// Tiến hành di chuyển file vô thư mục
 			$image3->move($location, $nameimage3);
 		} else {
 			$result = false;
+			return 'Bạn chọn image 3 không phải là hình ảnh :(';
 		}
 
 		// Tiến hành thêm dữ liệu vào cơ sở dữ liệu
 		if ($result == true) {
-			/*
-			DB::create([
-			['IdCategory' => $idcategory],
-			['IdType' => $idtype],
-			['NameApp' => $nameapp],
-			['Developer' => $developer],
-			['Description' => $description],
-			['Icon' => $nameicon],
-			['Image1' => $nameimage1],
-			['Image2' => $nameimage2],
-			['Image3' => $nameimage3],
-			['LinkDownload' => $linkdownload],
-			['Version' => $version],
-			['Size' => $size],
-			['SortDescription' => 'hello']
-		]);
-		*/
+			
 		$app = new Application();
 		$app->IdCategory = $idcategory;
 		$app->IdType = $idtype;
@@ -358,7 +369,24 @@ class ApplicationController extends Controller {
 		// Xóa dữ liệu bảng liên quan trước
 		Reviews::where('IdApplication', $id)->delete();
 
+
+		// Thực hiện xóa file lưu trữ
+		$data = Application::find($id);
+
+		$icon = $data->Icon;
+		$image1 =  $data->Image1;
+		$image2 =  $data->Image2;
+		$image3 =  $data->Image3;
+
+
+		File::delete('public/images/'. $icon);  
+		File::delete('public/images/'. $image1);  
+		File::delete('public/images/'. $image2);  
+		File::delete('public/images/'. $image3);  
+
 		Application::find($id)->delete();
+
+
 
 		return redirect()->action('ApplicationController@index');
 
