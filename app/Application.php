@@ -8,6 +8,10 @@ class Application extends Model {
 	protected $table = 'Application';
 	protected $primaryKey = 'IdApplication';
 
+
+	public $timestamps = false;
+
+
 	public function Reviews() {
 		return $this->hasMany('App\Reviews');
 	}
