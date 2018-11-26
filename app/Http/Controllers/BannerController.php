@@ -91,9 +91,8 @@ class BannerController extends Controller {
 	}
 
 	public function getEdit($id)
-	{
-		
-		$objBanner = new  Banner();
+	{	
+		$objBanner = new  Banners();
 		$getBannerById = $objBanner->find($id)->toArray();
 		return view ('editbanner',array('id'=>$id))->with('getBannerById', $getBannerById);
 	}
@@ -105,7 +104,7 @@ class BannerController extends Controller {
 		$idBanner = $id;
 		$nameBanner = $allRequest['name'];
 
-		$objBanner = new Banner();
+		$objBanner = new Banners();
 		$getBannerById = $objBanner->find($idBanner);
 		$getBannerById->NameBanner = $nameBanner;
 		$getBannerById->save();
