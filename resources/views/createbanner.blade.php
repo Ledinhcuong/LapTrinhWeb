@@ -63,7 +63,7 @@
       <div class="form-group">
         <label for="content" class="col-sm-2 control-label">Content </label>
         <div class="col-sm-10">
-          <input type="text" name="ContentBanner" id="content" class="form-control">
+          <input type="text" name="ContentBanner" id="content" class="form-control" required="true">
           <span class="help-block"></span>
         </div>
       </div>
@@ -71,7 +71,7 @@
       <div class="form-group">
         <label for="ImageBanner" class="col-sm-2 control-label">Image 1 </label>
         <div class="col-sm-10">
-          <input type="file" id="ImageBanner" name="ImageBanner" class="form-control" style="opacity: 0.8">
+          <input type="file" id="ImageBanner" name="ImageBanner" class="form-control" style="opacity: 0.8" required="true">
           <span class="help-block"></span>
         </div>
       </div>
