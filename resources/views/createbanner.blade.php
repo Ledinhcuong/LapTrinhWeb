@@ -53,7 +53,8 @@
 
   <!-- Page Content -->
   <div class="container" style="padding: 120px 0px;">
-    <form action="{!! URL::Route('create.banner')!!}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data" onsubmit="return validateformProduct();">
+    <form action="{{URL::action('BannerController@store')}}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data" onsubmit="return validateformProduct();">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="form-group">
         <legend style="color: #009688">Thêm banner</legend>
 
@@ -62,15 +63,15 @@
       <div class="form-group">
         <label for="content" class="col-sm-2 control-label">Content </label>
         <div class="col-sm-10">
-          <input type="text" name="content" id="content" class="form-control">
+          <input type="text" name="ContentBanner" id="content" class="form-control">
           <span class="help-block"></span>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="image1" class="col-sm-2 control-label">Image 1 </label>
+        <label for="ImageBanner" class="col-sm-2 control-label">Image 1 </label>
         <div class="col-sm-10">
-          <input type="file" id="image1" name="image1" class="form-control" style="opacity: 0.8">
+          <input type="file" id="ImageBanner" name="ImageBanner" class="form-control" style="opacity: 0.8">
           <span class="help-block"></span>
         </div>
       </div>

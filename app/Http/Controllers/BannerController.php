@@ -26,16 +26,10 @@ class BannerController extends Controller {
 
 	public function postCreate(Request $request)
 	{
-		
 		$allRequest = $request->all();
-		$nameBanner = $allRequest['name'];
-		$dataInsertToDatabase = array(
-			'NameBanner' => $nameBanner
-		);
-
-	
+		$bannerContent = $allRequest['ContentBanner'];
 		
-		$objBanner = new Banner();
+		$objBanner = new Banners();
 		$objBanner->insert($dataInsertToDatabase);
 		return redirect()->route('admin.banner');
 	}
@@ -55,9 +49,34 @@ class BannerController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$allRequest = $request->all();
+		$bannerContent = $allRequest['ContentBanner'];
+		$result = true;
+		
+		$location = 'public/images/';
+		
+		// Xu ly file bannerImage
+		$bannerImage = $allRequest['ImageBanner'];
+
+		$namebannerImage = $bannerImage->getClientOriginalName();  // Lấy tên file
+		$bannerImagetype = $bannerImage->getClientOriginalExtension(); // Lấy đuôi file
+		$linkbannerImage = $bannerImage->getRealPath();
+
+		if (($bannerImagetype == "jpg"  OR $bannerImagetype == "png") AND $result != false) {
+			// Tiến hành di chuyển file vô thư mục
+			$bannerImage->move($location, $namebannerImage);
+		} else {
+			$result = false;
+			return  'File được chọn không đúng định dạng png hoặc jpg :(';
+		}
+		
+		$objBanner = new Banners();
+		$objBanner->ImageBanner = $namebannerImage;
+		$objBanner->ContentBanner = $bannerContent;
+		$objBanner->save();
+		return redirect()->route('admin.banner');
 	}
 
 	/**
