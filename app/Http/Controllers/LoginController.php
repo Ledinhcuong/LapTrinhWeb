@@ -3,49 +3,46 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\users;
+use App\Http\Requests;
+use Validator;
+use Auth;
 use Illuminate\Support\MessageBag;
-
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Auth;
-use Session;
 
 class LoginController extends Controller
 {
-	//
-	public function getLogin(){
-		return view('login');
-	}
+    
+    public function getLogin() {
+        return view('login');
+    }
+    public function postLogin(Request $request) {
+        $rules = [
+            'Email' =>'required|Email',
+            'password' => 'required|min:6'
+        ];
+        $messages = [
+            'Email.required' => 'Email là trường bắt buộc',
+            'Email.Email' => 'Email không đúng định dạng',
+            'password.required' => 'Mật khẩu là trường bắt buộc',
+            'password.min' => 'Mật khẩu phải chứa ít nhất 6 ký tự',
+        ];
 
-	public function postLogin(Request $request){
+        $validator = Validator::make($request->all(), $rules, $messages);
 
-		$users = new users;
-		$rules = [
-    		'email' =>'required|email',
-    		'password' => 'required|min:6'
-    	];
-    	$messages = [
-    		'email.required' => 'Email là trường bắt buộc',
-    		'email.email' => 'Email không đúng định dạng',
-    		'password.required' => 'Mật khẩu là trường bắt buộc',
-    		'password.min' => 'Mật khẩu phải chứa ít nhất 6 ký tự',
-    	];
-    	$validator = Validator::make($request->all(), $rules, $messages);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator);
+        }else{
+            $Email['Email'] = $request->input('Email');
+            $password['paasword'] = $request->input('password');
 
-    	if ($validator->fails()) {
-    		return redirect('login')->withErrors($validator)->withInput();
-    	} else {
-    		$Email = $request->input('email');
-    		$password = $request->input('password');
+            if( Auth::attempt(['Email' => $Email['Email'], 'password' =>$password['paasword']])) {
+                return redirect()->intended('/');
+            } else {
+                $errors = new MessageBag(['errorlogin' => 'Email hoặc mật khẩu không đúng']);
+                return redirect()->back()->withInput()->withErrors($errors);
+               // return redirect()->back();
+            }
 
-    		if( Auth::attempt(['email' => $Email, 'password' => $password])) {
-    			return redirect()->intended('/');
-    		} else {
-    			$errors = new MessageBag(['errorlogin' => 'Email hoặc mật khẩu không đúng']);
-    			return redirect()->back()->withInput()->withErrors($errors);
-    		}
-    	}
-	}
+        }
+    }
 }

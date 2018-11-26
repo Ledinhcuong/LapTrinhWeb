@@ -20,6 +20,7 @@ Route::resource('admin/user','UserController');
 Route::resource('admin/category','CategoryController');
 Route::resource('admin/type','TypeController');
 Route::resource('admin/users','TypeController');
+Route::resource('admin/users','LoginController');
 Route::resource('admin/review','ReviewController');
 Route::resource('admin/application','ApplicationController');
 //====================================================================================//

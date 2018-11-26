@@ -305,6 +305,11 @@ class DatabaseSeeder extends Seeder
 			'Email'=>'nguyettran@gmail.com',
 			'password'=>'123456']
 
+			['NameUser'=>'NguyetTran',
+			'TypeUser'=>0,
+			'Email'=>'nguyettran@gmail.com',
+			'password'=> bcrypt(12345678)]
+
 		]);
 
 

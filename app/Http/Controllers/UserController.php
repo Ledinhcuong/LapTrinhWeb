@@ -62,7 +62,7 @@ class UserController extends Controller {
         $users = new users;
         $users->NameUser = $request->name;
         $users->Email = $request->email;
-        $users->password = $request->password;
+        $users->password = bcrypt($request->password);
         $users->TypeUser = $request->rdoStatus;
         $users -> save();
 
@@ -89,7 +89,7 @@ class UserController extends Controller {
 		$users = Users::find($id);
         $users->NameUser = $request->name;
         $users->Email = $request->email;
-        $users->password = $request->password;
+        $users->password = bcrypt($request->password)
         //$users->TypeUser = $request->rdoStatus;
         $users -> save();
 
