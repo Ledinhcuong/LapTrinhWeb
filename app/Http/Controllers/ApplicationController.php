@@ -66,6 +66,13 @@ class ApplicationController extends Controller {
 		$location = 'public/images/';
 		$result = true;
 
+
+
+		// Kiểm tra tên ứng dụng có trùng với thành phần nào không
+		if (Application::where('NameApp', $nameapp)->count() > 0) {
+			return  'Tên của ứng dụng này đã tồn tại vui lòng đặt tên khác !';
+		}
+
 		// Xu ly cac thanh phan lien quan den file
 		
 		// Xu ly file icon
@@ -80,6 +87,7 @@ class ApplicationController extends Controller {
 			$icon->move($location, $nameicon);
 		} else {
 			$result = false;
+			return 'Bạn chọn file icon không phải là hình ảnh :(';
 		}
 
 		// Xu ly file image 1
@@ -94,6 +102,7 @@ class ApplicationController extends Controller {
 			$image1->move($location, $nameimage1);
 		} else {
 			$result = false;
+			return  'Bạn chọn file image1 không phải là hình ảnh :(';
 		}
 
 
@@ -110,6 +119,7 @@ class ApplicationController extends Controller {
 			$image2->move($location, $nameimage2);
 		} else {
 			$result = false;
+			return 'Bạn chọn image2 không phải là hình ảnh :(';
 		}
 
 
@@ -125,6 +135,7 @@ class ApplicationController extends Controller {
 			$image3->move($location, $nameimage3);
 		} else {
 			$result = false;
+			return 'Bạn chọn image 3 không phải là hình ảnh :(';
 		}
 
 		// Tiến hành thêm dữ liệu vào cơ sở dữ liệu
