@@ -72,12 +72,10 @@ Route::get('type/{id}/delete','TypeController@destroy');
 //==================================================================================//
 //Banner
 //đường dẫn đến form của banner
-Route::get('banner/createbanner','BannerController@getCreate');
+Route::get('banner/create','BannerController@create');
 
 //đường dẫn khi submit form thêm
-Route::post('banner/createbanner', [
-    'as' => 'create.banner', 'uses' => 'BannerController@postCreate'
-]);
+Route::post('banner/create', 'BannerController@store');
 
 Route::get('banner','BannerController@index');
 
