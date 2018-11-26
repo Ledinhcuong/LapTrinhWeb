@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Reviews extends Model {
 
 	protected $table = 'Reviews';
+	public $timestamps = false;
 	
 	public function Users() {
 		return $this->belongsto('App\Users');
