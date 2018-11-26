@@ -8,6 +8,8 @@ use App\Types;
 use App\Reviews;
 use App\Category;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+ use File;  
 
 use Illuminate\Http\Request;
 
@@ -73,6 +75,7 @@ class ApplicationController extends Controller {
 			return  'Tên của ứng dụng này đã tồn tại vui lòng đặt tên khác !';
 		}
 
+
 		// Xu ly cac thanh phan lien quan den file
 		
 		// Xu ly file icon
@@ -81,6 +84,17 @@ class ApplicationController extends Controller {
 		$nameicon = $icon->getClientOriginalName();  // Lấy tên file
 		$icontype = $icon->getClientOriginalExtension(); // Lấy đuôi file
 		$linkicon = $icon->getRealPath();
+
+		// Kiểm tra file đã tồn tại trong cơ sở dữ liệu chưa
+		if (Application::where('Icon', $nameicon)->get()->count() > 0) {
+			return 'Tên file của icon bạn chọn đã tồn tại vui lòng chọn file khác!';
+		} else if (Application::where('Image1', $nameicon)->get()->count() > 0) {
+			return 'Tên file của icon bạn chọn đã tồn tại vui lòng chọn file khác!';
+		} else 	if (Application::where('Image2', $nameicon)->get()->count() > 0) {
+			return 'Tên file của icon bạn chọn đã tồn tại vui lòng chọn file khác!';
+		} else if (Application::where('Image3', $nameicon)->get()->count() > 0) {
+			return 'Tên file của icon bạn chọn đã tồn tại vui lòng chọn file khác!';
+		}
 
 		if ($icontype == "jpg"  OR $icontype == "png") {
 			// Tiến hành di chuyển file vô thư mục
@@ -96,6 +110,7 @@ class ApplicationController extends Controller {
 		$nameimage1 = $image1->getClientOriginalName();  // Lấy tên file
 		$image1type = $image1->getClientOriginalExtension(); // Lấy đuôi file
 		$linkimage1 = $image1->getRealPath();
+
 
 		if (($image1type == "jpg"  OR $image1type == "png") AND $result != false) {
 			// Tiến hành di chuyển file vô thư mục
@@ -129,6 +144,7 @@ class ApplicationController extends Controller {
 		$nameimage3 = $image3->getClientOriginalName();  // Lấy tên file
 		$image3type = $image3->getClientOriginalExtension(); // Lấy đuôi file
 		$linkimage3 = $image3->getRealPath();
+
 
 		if (($image3type == "jpg"  OR $image3type == "png") AND $result != false) {
 			// Tiến hành di chuyển file vô thư mục
@@ -353,7 +369,24 @@ class ApplicationController extends Controller {
 		// Xóa dữ liệu bảng liên quan trước
 		Reviews::where('IdApplication', $id)->delete();
 
+
+		// Thực hiện xóa file lưu trữ
+		$data = Application::find($id);
+
+		$icon = $data->Icon;
+		$image1 =  $data->Image1;
+		$image2 =  $data->Image2;
+		$image3 =  $data->Image3;
+
+
+		File::delete('public/images/'. $icon);  
+		File::delete('public/images/'. $image1);  
+		File::delete('public/images/'. $image2);  
+		File::delete('public/images/'. $image3);  
+
 		Application::find($id)->delete();
+
+
 
 		return redirect()->action('ApplicationController@index');
 
