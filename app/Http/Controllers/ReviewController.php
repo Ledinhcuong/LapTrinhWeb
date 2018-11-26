@@ -3,6 +3,11 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Reviews;
+use App\Application;
+use App\Banners;
+use App\Types;
+use Illuminate\Support\Facades\DB;
+use App\Category;
 
 use Illuminate\Http\Request;
 
@@ -15,7 +20,13 @@ class ReviewController extends Controller {
 	 */
 	public function index()
 	{
-		$data = Reviews::paginate(30);
+
+		$data =  DB::table('Reviews')
+		->join('Application', 'Reviews.IdApplication', '=', 'Application.IdApplication')
+		->join('Users', 'Reviews.IdUser', '=', 'Users.IdUser')
+		->select('Reviews.*', 'Application.NameApp', 'Users.NameUser')->get();
+
+
 		return view('reviewtable', ['data'=>$data]);
 	}
 
