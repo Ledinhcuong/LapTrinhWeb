@@ -40,8 +40,10 @@
         $image1 = 'public/images/'. $key->Image1;
         $image2 = 'public/images/'. $key->Image2;
         $image3 = 'public/images/'. $key->Image3;
+
         $detail = 'admin/application/'. $key->IdApplication;
         $delete =  'application/'. $key->IdApplication. '/delete';
+        $edit = 'admin/application/'. $key->IdApplication. '/edit';
 
       ?>
 
@@ -56,7 +58,7 @@
         
         <td>
           <div>
-           <a href="#" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
+           <a href="{{url($edit)}}" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
          </div>
          <div>
           <a href="{{url($delete)}}" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
