@@ -8,6 +8,8 @@ use App\Types;
 use App\Reviews;
 use App\Category;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+ use File;  
 
 use Illuminate\Http\Request;
 
@@ -367,7 +369,24 @@ class ApplicationController extends Controller {
 		// Xóa dữ liệu bảng liên quan trước
 		Reviews::where('IdApplication', $id)->delete();
 
+
+		// Thực hiện xóa file lưu trữ
+		$data = Application::find($id);
+
+		$icon = $data->Icon;
+		$image1 =  $data->Image1;
+		$image2 =  $data->Image2;
+		$image3 =  $data->Image3;
+
+
+		File::delete('public/images/'. $icon);  
+		File::delete('public/images/'. $image1);  
+		File::delete('public/images/'. $image2);  
+		File::delete('public/images/'. $image3);  
+
 		Application::find($id)->delete();
+
+
 
 		return redirect()->action('ApplicationController@index');
 
