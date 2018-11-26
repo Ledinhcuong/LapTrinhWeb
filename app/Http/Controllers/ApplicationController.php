@@ -22,9 +22,9 @@ class ApplicationController extends Controller {
 	{
 		 // $data = Application::with('Category', 'Types')->get();
 		$data = DB::table('Application')
-			->join('Category', 'Application.IdCategory', '=', 'Category.IdCategory')
-			->join('Types', 'Application.IdType', '=', 'Types.IdType')
-			->select('Application.*', 'Types.NameType', 'Category.NameCategory')->get();
+		->join('Category', 'Application.IdCategory', '=', 'Category.IdCategory')
+		->join('Types', 'Application.IdType', '=', 'Types.IdType')
+		->select('Application.*', 'Types.NameType', 'Category.NameCategory')->get();
 
 		return view('apptable', ['data'=>$data]);
 	}
@@ -146,32 +146,32 @@ class ApplicationController extends Controller {
 			['SortDescription' => 'hello']
 		]);
 		*/
-			$app = new Application();
-			$app->IdCategory = $idcategory;
-			$app->IdType = $idtype;
-			$app->NameApp = $nameapp;
-			$app->Developer = $developer;
-			$app->Description = $description;
-			$app->Icon = $nameicon;
-			$app->Image1 = $nameimage1;
-			$app->Image2 = $nameimage2;
-			$app->Image3 = $nameimage3;
-			$app->LinkDownload = $linkdownload;
-			$app->Version = $version;
-			$app->Size = $size;
-			$app->NumberDownload = 0;
-			$app->SortDescription = $sortdescription;
-			$app->save();
+		$app = new Application();
+		$app->IdCategory = $idcategory;
+		$app->IdType = $idtype;
+		$app->NameApp = $nameapp;
+		$app->Developer = $developer;
+		$app->Description = $description;
+		$app->Icon = $nameicon;
+		$app->Image1 = $nameimage1;
+		$app->Image2 = $nameimage2;
+		$app->Image3 = $nameimage3;
+		$app->LinkDownload = $linkdownload;
+		$app->Version = $version;
+		$app->Size = $size;
+		$app->NumberDownload = 0;
+		$app->SortDescription = $sortdescription;
+		$app->save();
 
 
-			return redirect()->action('ApplicationController@index');
+		return redirect()->action('ApplicationController@index');
 
-		}
-
-
-		
-		return 'Đã xảy ra sự cố ngoài ý muốn :)';
 	}
+
+
+
+	return 'Đã xảy ra sự cố ngoài ý muốn :)';
+}
 
 	/**
 	 * Display the specified resource.
@@ -233,20 +233,33 @@ class ApplicationController extends Controller {
 
 		// Xu ly cac thanh phan lien quan den file
 		
-		// Xu ly file icon
-		$icon = $allRequest['icon'];
+		// Xu ly file icon nếu người dùng chọn
+		if ($request->hasFile('icon'))
+		{
+			
+			$icon = $allRequest['icon'];
 
-		$nameicon = $icon->getClientOriginalName();  // Lấy tên file
-		$icontype = $icon->getClientOriginalExtension(); // Lấy đuôi file
-		$linkicon = $icon->getRealPath();
+			$nameicon = $icon->getClientOriginalName();  // Lấy tên file
+			$icontype = $icon->getClientOriginalExtension(); // Lấy đuôi file
+			$linkicon = $icon->getRealPath();
 
-		if ($icontype == "jpg"  OR $icontype == "png") {
-			// Tiến hành di chuyển file vô thư mục
-			$icon->move($location, $nameicon);
-		} else {
-			$result = false;
+			if ($icontype == "jpg"  OR $icontype == "png") {
+
+				// Tiến hành di chuyển file vô thư mục
+				$icon->move($location, $nameicon);
+
+				// Thực hiện thay đổi
+				Application::where('IdApplication', $idapp)->update(['Icon'=>$nameicon]);
+				return 'Thay đổi rồi đó';
+			} else {
+				return 'Bạn chọn một file icon không phải là một ảnh :( ';
+			}
+		
+		
 		}
 
+
+/*
 		// Xu ly file image 1
 		$image1 = $allRequest['image1'];
 
@@ -320,6 +333,7 @@ class ApplicationController extends Controller {
 
 		
 		return 'Đã xảy ra sự cố ngoài ý muốn :)';
+		*/
 		
 	}
 
