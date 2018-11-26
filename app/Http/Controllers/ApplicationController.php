@@ -129,23 +129,7 @@ class ApplicationController extends Controller {
 
 		// Tiến hành thêm dữ liệu vào cơ sở dữ liệu
 		if ($result == true) {
-			/*
-			DB::create([
-			['IdCategory' => $idcategory],
-			['IdType' => $idtype],
-			['NameApp' => $nameapp],
-			['Developer' => $developer],
-			['Description' => $description],
-			['Icon' => $nameicon],
-			['Image1' => $nameimage1],
-			['Image2' => $nameimage2],
-			['Image3' => $nameimage3],
-			['LinkDownload' => $linkdownload],
-			['Version' => $version],
-			['Size' => $size],
-			['SortDescription' => 'hello']
-		]);
-		*/
+			
 		$app = new Application();
 		$app->IdCategory = $idcategory;
 		$app->IdType = $idtype;
