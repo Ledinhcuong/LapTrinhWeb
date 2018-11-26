@@ -23,7 +23,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-    <a class="navbar-brand" href="{{ url("admin") }}">Administrator</a>
+    <a class="navbar-brand" href="{{ url('admin') }}">Administrator</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -57,14 +57,6 @@
       <div class="form-group">
         <legend style="color: #009688">Thêm banner</legend>
 
-      </div>
-
-      <div class="form-group">
-        <label for="bannerid" class="col-sm-2 control-label">Banner ID</label>
-        <div class="col-sm-10">
-          <input type="text" name="bannerid" id="bannerid" class="form-control">
-          <span class="help-block"></span>
-        </div>
       </div>
 
       <div class="form-group">

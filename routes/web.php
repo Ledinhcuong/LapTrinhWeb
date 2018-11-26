@@ -75,9 +75,7 @@ Route::get('type/{id}/delete','TypeController@destroy');
 Route::get('banner/createbanner','BannerController@getCreate');
 
 //đường dẫn khi submit form thêm
-Route::post('banner/createbanner', [
-    'as' => 'create.banner', 'uses' => 'BannerController@postCreate'
-]);
+Route::post('banner/createbanner', 'BannerController@postCreate');
 
 Route::get('banner','BannerController@index');
 
