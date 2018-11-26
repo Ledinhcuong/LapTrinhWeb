@@ -48,17 +48,24 @@ $image3 = 'public/images/' . $data->Image3;
 		<div style="font-weight: bold; font-size: 20px;">Size</div>
 		{{$data->Size}} Mb
 
+		<?php
+			$image1 = 'public/images/'. $data->Image1;
+			$image2 = 'public/images/'. $data->Image2;
+			$image3 = 'public/images/'. $data->Image3;
+
+		?>
+
 
 		<div style="font-weight: bold; font-size: 20px;">Image </div>
 		<div class="row">
 			<div class="col-md-4">
-				<img src="{{url('public/images/edge1.jpg')}}" alt="image 1">
+				<img style="max-width: 148px" src="{{url($image1)}}" alt="image 1">
 			</div>
 			<div class="col-md-4">
-				<img src="{{url('public/images/edge1.jpg')}}" alt="image 2">
+				<img  style="max-width: 148px" src="{{url($image2)}}" alt="image 2">
 			</div>
 			<div class="col-md-4">
-				<img src="{{url('public/images/edge1.jpg')}}" alt="image 3">
+				<img   style="max-width: 148px" src="{{url($image3)}}" alt="image 3">
 			</div>
 		</div>
 	</div>
