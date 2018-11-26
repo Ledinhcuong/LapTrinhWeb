@@ -109,16 +109,6 @@ class ApplicationController extends Controller {
 		$image1type = $image1->getClientOriginalExtension(); // Lấy đuôi file
 		$linkimage1 = $image1->getRealPath();
 
-		// Kiểm tra file đã tồn tại trong cơ sở dữ liệu chưa
-		if (Application::where('Icon', $nameimage1)->get()->count() > 0) {
-			return 'Tên file của Image1 bạn chọn đã tồn tại vui lòng chọn file khác!';
-		} else if (Application::where('Image1', $nameimage1)->get()->count() > 0) {
-			return 'Tên file của Image1 bạn chọn đã tồn tại vui lòng chọn file khác!';
-		} else 	if (Application::where('Image2', $nameimage1)->get()->count() > 0) {
-			return 'Tên file của Image1 bạn chọn đã tồn tại vui lòng chọn file khác!';
-		} else if (Application::where('Image3', $nameimage1)->get()->count() > 0) {
-			return 'Tên file của Image1 bạn chọn đã tồn tại vui lòng chọn file khác!';
-		}
 
 		if (($image1type == "jpg"  OR $image1type == "png") AND $result != false) {
 			// Tiến hành di chuyển file vô thư mục
@@ -137,17 +127,6 @@ class ApplicationController extends Controller {
 		$image2type = $image2->getClientOriginalExtension(); // Lấy đuôi file
 		$linkimage2 = $image2->getRealPath();
 
-		// Kiểm tra file đã tồn tại trong cơ sở dữ liệu chưa
-		if (Application::where('Icon', $nameimage2)->get()->count() > 0) {
-			return 'Tên file của Image1 bạn chọn đã tồn tại vui lòng chọn file khác!';
-		} else if (Application::where('Image1', $nameimage2)->get()->count() > 0) {
-			return 'Tên file của Image1 bạn chọn đã tồn tại vui lòng chọn file khác!';
-		} else 	if (Application::where('Image2', $nameimage2)->get()->count() > 0) {
-			return 'Tên file của Image1 bạn chọn đã tồn tại vui lòng chọn file khác!';
-		} else if (Application::where('Image3', $nameimage2)->get()->count() > 0) {
-			return 'Tên file của Image1 bạn chọn đã tồn tại vui lòng chọn file khác!';
-		}
-
 		if (($image2type == "jpg"  OR $image2type == "png") AND $result != false) {
 			// Tiến hành di chuyển file vô thư mục
 			$image2->move($location, $nameimage2);
@@ -164,16 +143,6 @@ class ApplicationController extends Controller {
 		$image3type = $image3->getClientOriginalExtension(); // Lấy đuôi file
 		$linkimage3 = $image3->getRealPath();
 
-		// Kiểm tra file đã tồn tại trong cơ sở dữ liệu chưa
-		if (Application::where('Icon', $nameimage3)->get()->count() > 0) {
-			return 'Tên file của Image1 bạn chọn đã tồn tại vui lòng chọn file khác!';
-		} else if (Application::where('Image1', $nameimage3)->get()->count() > 0) {
-			return 'Tên file của Image3 bạn chọn đã tồn tại vui lòng chọn file khác!';
-		} else 	if (Application::where('Image2', $nameimage3)->get()->count() > 0) {
-			return 'Tên file của Image3 bạn chọn đã tồn tại vui lòng chọn file khác!';
-		} else if (Application::where('Image3', $nameimage3)->get()->count() > 0) {
-			return 'Tên file của Image3 bạn chọn đã tồn tại vui lòng chọn file khác!';
-		}
 
 		if (($image3type == "jpg"  OR $image3type == "png") AND $result != false) {
 			// Tiến hành di chuyển file vô thư mục
