@@ -63,16 +63,16 @@
           </a>
         </li>
         <li>
-          <a href="application">Application Table</a>
+          <a href="{{url('admin/application')}}">Application Table</a>
         </li>
         <li>
-          <a href="user">User Table </a>
+          <a href="{{url('admin/users')}}">User Table </a>
         </li>
         <li>
-          <a href="review">Review Table</a>
+          <a href="{{url('admin/review')}}">Review Table</a>
         </li>
         <li>
-          <a href="category">Category Table</a>
+          <a href="{{url('admin/category')}}">Category Table</a>
         </li>
         <li>
           <a href="type">Type Table</a>

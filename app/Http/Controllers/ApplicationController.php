@@ -34,7 +34,17 @@ class ApplicationController extends Controller {
 
 	public function search(Request $request) {
 
-		return $request->key;
+		$key = '%'. $request->key. '%';
+
+		$data = DB::table('Application')
+		->join('Category', 'Application.IdCategory', '=', 'Category.IdCategory')
+		->join('Types', 'Application.IdType', '=', 'Types.IdType')
+		->where('NameApp', 'like', $key)
+		->orWhere('NameType', 'like', $key)
+		->orWhere('NameCategory', 'like', $key)
+		->select('Application.*', 'Types.NameType', 'Category.NameCategory')->get();
+
+		return view('apptable', ['data'=>$data]);
 	}
 
 	/**
