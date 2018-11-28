@@ -15,7 +15,7 @@
 
       <div class="input-group col-md-12">
 
-        <input type="text" name= "key" class="form-control input-lg" placeholder="Nhập tên ứng dụng hoặc tên thể loại bạn muốn" />
+        <input type="text" name= "key" class="form-control input-lg" placeholder="Nhập tên thể loại muốn tìm" />
 
         <span class="input-group-btn">
 
