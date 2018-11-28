@@ -147,3 +147,6 @@ Route::post('register', 'RegisterController@postRegister');
 Route::get('application/{id}/delete', 'ApplicationController@destroy');
 
 Route::post('application/update', 'ApplicationController@update');
+
+/*-------------------------- Delete ---------------------*/
+Route::get('review/{IdApp}/{IdUser}/delete', 'ReviewController@destroy');

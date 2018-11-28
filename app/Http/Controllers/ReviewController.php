@@ -91,7 +91,7 @@ class ReviewController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		return 'Hello';
 	}
 
 }
