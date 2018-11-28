@@ -143,14 +143,6 @@ $data = $control->getChiTiet($id);
 
 				<div class="col-md-3 col-sm-3">
 
-					<div class="title-bs">
-						Ngày phát hành
-					</div>
-
-					<div class="content-bs">
-						<?php echo $data->DateSubmit ?>
-					</div>
-
 
 					<div class="title-bs">
 						Kích thước
