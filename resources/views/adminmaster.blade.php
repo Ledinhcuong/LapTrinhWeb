@@ -91,36 +91,7 @@
 
         <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">All Table</a>
 
-        <!-- Search -->
-
-        <div class="area-search" style="margin: 20px 0">
-         <h3>Tìm Kiếm Thông Tin Trong Bảng</h3>
-         <div class="row">
-
-          <div class="col-md-6">
-
-
-            <form id="custom-search-input">
-
-              <div class="input-group col-md-12">
-
-                <input type="text" class="form-control input-lg" placeholder="Nhập nội dung cần tìm" />
-
-                <span class="input-group-btn">
-
-                  <button  class="btn btn-info btn-lg" type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-
-                </span>
-
-              </div>
-
-            </form>
-
-          </div>
-        </div>
-      </div>
+       
 
 
       <!-- Table -->

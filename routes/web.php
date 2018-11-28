@@ -148,5 +148,7 @@ Route::get('application/{id}/delete', 'ApplicationController@destroy');
 
 Route::post('application/update', 'ApplicationController@update');
 
+Route::get('application/search', 'ApplicationController@search');
+
 /*-------------------------- Delete ---------------------*/
 Route::get('review/{IdApp}/{IdUser}/delete', 'ReviewController@destroy');

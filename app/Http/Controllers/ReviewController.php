@@ -89,9 +89,10 @@ class ReviewController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($IdApp, $IdUser)
 	{
-		return 'Hello';
+		 Reviews::where('IdApplication', $IdApp)->where('IdUser', $IdUser)->delete();
+		 return redirect()->action('ReviewController@index');
 	}
 
 }

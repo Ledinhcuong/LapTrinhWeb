@@ -31,6 +31,12 @@ class ApplicationController extends Controller {
 		return view('apptable', ['data'=>$data]);
 	}
 
+
+	public function search(Request $request) {
+
+		return $request->key;
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
