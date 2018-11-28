@@ -18,6 +18,14 @@ class TypeController extends Controller {
 		return view('typetable', ['data'=>$data]);
 	}
 
+	public function search(Request $request) {
+
+		$key = '%'. $request->key . '%';
+
+		$data = Types::where('NameType', 'like', $key)->get();
+		return view('typetable', ['data'=>$data]);
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

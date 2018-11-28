@@ -157,3 +157,5 @@ Route::get('category/search', 'CategoryController@search');
 Route::get('banner/search', 'BannerController@search');
 
 Route::get('user/search', 'UserController@search');
+
+Route::get('type/search', 'TypeController@search');

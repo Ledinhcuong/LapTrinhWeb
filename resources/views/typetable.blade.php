@@ -3,61 +3,92 @@
 @section('content')
 
 
-      <!-- Table begin -->
-      <div class="content-table">
 
-        <div class="nameTB">
+<div class="area-search" style="margin: 20px 0">
+ <h3>Tìm Kiếm Thông Tin Trong Bảng</h3>
+ <div class="row">
 
-          Bảng Types
+  <div class="col-md-6">
 
-        </div>
 
-        <div class="tool">
-          <a href="{{ url('type/createtype') }}" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
+    <form id="custom-search-input" action="{{url('type/search')}}" method="get">
 
-        </div>
+      <div class="input-group col-md-12">
 
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Id Type</th>
-              <th>Name Type</th>
-              <th>Control</th>
+        <input type="text" name= "key" class="form-control input-lg" placeholder="Nhập tên ứng dụng hoặc tên thể loại bạn muốn" />
 
-            </tr>
-          </thead>
-          <tbody>
-            <?php 
+        <span class="input-group-btn">
 
-            foreach ($data as $key) {
-              
-            
+          <button  class="btn btn-info btn-lg" type="submit">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
 
-            ?>
-            <tr>
-              <td>{{$key->IdType}}</td>
-              <td>{{$key->NameType}}</td>
-        
-              <td>
-                <div>
-                   <a href="{{ url('type/'.$key->IdType.'/edittype') }}" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
-                </div>
-                <div>
-                  <a href="{{ url('type/'.$key->IdType.'/delete') }}" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
-                </div>
-                  
-              </td>
-            </tr>
-
-            <?php
-          }
-          ?>
-           
-          </tbody>
-        </table>
+        </span>
 
       </div>
 
-  <!-- Table end -->
+    </form>
+
+  </div>
+</div>
+</div>
+
+
+<!-- Table begin -->
+<div class="content-table">
+
+  <div class="nameTB">
+
+    Bảng Types
+
+  </div>
+
+  <div class="tool">
+    <a href="{{ url('type/createtype') }}" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
+
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id Type</th>
+        <th>Name Type</th>
+        <th>Control</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <?php 
+
+      foreach ($data as $key) {
+
+
+
+        ?>
+        <tr>
+          <td>{{$key->IdType}}</td>
+          <td>{{$key->NameType}}</td>
+
+          <td>
+            <div>
+             <a href="{{ url('type/'.$key->IdType.'/edittype') }}" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
+           </div>
+           <div>
+            <a href="{{ url('type/'.$key->IdType.'/delete') }}" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
+          </div>
+
+        </td>
+      </tr>
+
+      <?php
+    }
+    ?>
+
+  </tbody>
+</table>
+
+</div>
+
+<!-- Table end -->
 
 @endsection
