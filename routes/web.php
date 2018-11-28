@@ -150,5 +150,10 @@ Route::post('application/update', 'ApplicationController@update');
 
 Route::get('application/search', 'ApplicationController@search');
 
-/*-------------------------- Delete ---------------------*/
 Route::get('review/{IdApp}/{IdUser}/delete', 'ReviewController@destroy');
+
+Route::get('category/search', 'CategoryController@search');
+
+Route::get('banner/search', 'BannerController@search');
+
+Route::get('user/search', 'UserController@search');

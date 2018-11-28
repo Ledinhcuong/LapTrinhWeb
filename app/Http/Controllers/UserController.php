@@ -25,6 +25,16 @@ class UserController extends Controller {
 		return view('usertable', ['data'=>$data]);
 	}
 
+
+	public function search(Request $request) {
+
+		$key = '%'. $request->key .'%';
+
+		$data = Users::where('NameUser', 'like', $key)
+		->orWhere('Email', 'like', $key)->get();
+		return view('usertable', ['data'=>$data]);
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

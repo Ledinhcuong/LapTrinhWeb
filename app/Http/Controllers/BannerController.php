@@ -18,6 +18,15 @@ class BannerController extends Controller {
 		return view('bannertable', ['data'=>$data]);
 	}
 
+	public function search(Request $request) {
+
+		$key = '%'. $request->key .'%';
+
+
+		$data = Banners::where('ContentBanner', 'like', $key)->paginate(30);
+		return view('bannertable', ['data'=>$data]);
+	}
+
 	public function getCreate()
 	{
 		return view('createbanner');

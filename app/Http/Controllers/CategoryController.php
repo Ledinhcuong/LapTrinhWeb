@@ -22,6 +22,15 @@ class CategoryController extends Controller {
 	}
 
 
+	public function search(Request $request) {
+
+		$key = '%'. $request->key .'%';
+
+		$data = Category::where('NameCategory', 'like', $key)->get();
+		return view('categorytable', ['data'=>$data]);
+	}
+
+
 	/**
 	 * Hiển thị form thêm mới .
 	 *

@@ -75,10 +75,10 @@
           <a href="{{url('admin/category')}}">Category Table</a>
         </li>
         <li>
-          <a href="type">Type Table</a>
+          <a href="{{url('admin/type')}}">Type Table</a>
         </li>
         <li>
-          <a href="banner">Banner Table</a>
+          <a href="{{url('admin/banner')}}">Banner Table</a>
         </li>
 
       </ul>
