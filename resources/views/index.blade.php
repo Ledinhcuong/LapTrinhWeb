@@ -16,12 +16,13 @@
 			<div class="slider">
 				<?php
 					foreach ($banner as $key) {
+					$imageslide = 'public/images/'. $key->ImageBanner;
 
 						
 					
 				 ?>
 
-				<img src="public/images/<?php echo $key->ImageBanner ?>" class="img-responsive" title="<?php echo $key->ContentBanner ?>" />
+				<img src="{{url($imageslide)}}" class="img-responsive" title="<?php echo $key->ContentBanner ?>" />
 
 				<?php
 			}
@@ -54,13 +55,14 @@
 				<?php 
 				foreach ($randomApp as $key) {
 					$chitiet = 'home/chitiet/'. $key->IdApplication;	
+					$icon = 'public/images/' . $key->Icon;
 				?>
 
 				<div class="col-md-2 col-sm-4 col-xs-6">
 					<a href="{{url($chitiet)}}">
 						<div class="content-app">
 							<div class="icon-app-sg" style="text-align: center;">
-								<img src="public/images/<?php echo $key->Icon ?>" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
+								<img src="{{url($icon)}}" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
 							</div>
 							<div class="name-app-sg" style="margin-top: 10px; font-weight: bold; font-size: 18px; color: #000">
 								<?php  echo $key->NameApp ?>
@@ -102,7 +104,7 @@
 						</div>
 
 						<div class="icon-time" style="padding-left: 20px; margin-bottom: 5px">
-							<img src="public/images/morning.png" alt="" width="25px;" height="25px;">
+							<img src="{{url('public/images/morning.png')}}" alt="" width="25px;" height="25px;">
 						</div>
 						<div class="hello-time">
 
@@ -133,12 +135,13 @@
 
 								<?php 
 								foreach ($topdown as $key) {
-								$chitiet = 'home/chitiet/'. $key->IdApplication;	
+								$chitiet = 'home/chitiet/'. $key->IdApplication;
+								$icon = 'public/images/'.  $key->Icon;
 
 								?>
 								<li>
 								<a href="{{url($chitiet)}}">
-									<img src="public/images/<?php echo $key->Icon ?>"  alt="<?php  echo $key->NameApp ?>" class="img-responsive" width="35px" height="35px" style="display: inline-block;"> <?php echo $key->NameApp ?>
+									<img src="{{url($icon)}}"  alt="<?php  echo $key->NameApp ?>" class="img-responsive" width="35px" height="35px" style="display: inline-block;"> <?php echo $key->NameApp ?>
 								</a>
 								</li>
 
@@ -165,6 +168,7 @@
 					<?php
 						foreach ($data as $key) {
 						$chitiet = 'home/chitiet/'. $key->IdApplication;	
+						$icon = 'public/images/'.  $key->Icon;
 					 ?>
 
 					<div class="col-md-4 col-sm-4">
@@ -172,13 +176,13 @@
 							<div class="app">
 								<div class="app-background">
 									<div class="app-icon">
-										<img  style="display: inline-block;" src="public/images/<?php echo $key->Icon ?>"  alt="<?php echo $key->NameApp ?>" class="img-responsive">
+										<img  style="display: inline-block;" src="{{url($icon)}}"  alt="<?php echo $key->NameApp ?>" class="img-responsive">
 
 									</div>
 
 									<div class="app-detail">
 										<div class="name-app" style="font-size: 20px;">
-											<a href="chitiet?id=<?php echo $key->IdApplication ?>"> <?php echo $key->NameApp ?> </a>
+											<a href="{{url($chitiet)}}"> <?php echo $key->NameApp ?> </a>
 										</div>
 										<div class="detail">
 											<div class="tile-tyle">
@@ -289,9 +293,9 @@
 				<div class="col-md-3 col-sm-3 col-xs-6">
 
 					<ul class="list-dm">
-						<li><a href="search?type=16">Chiến lược</a></li>
-						<li><a href="search?type=17">Thể thao</a></li>
-						<li><a href="search?type=18">Hành động</a></li>
+						<li><a href="{{url('home/16')}}">Chiến lược</a></li>
+						<li><a href="{{url('home/17')}}">Thể thao</a></li>
+						<li><a href="{{url('home/18')}}">Hành động</a></li>
 
 					</ul>
 
@@ -339,7 +343,7 @@
 			<div class="col-md-4 col-sm-4 store" style="text-align: center;">
 
 				<a href="https://play.google.com/store">
-					<img src="public/images/googleplay.png" alt="google play" width="60px" height="60px">
+					<img src="{{url('public/images/googleplay.png')}}" alt="google play" width="60px" height="60px">
 
 					<div class="title-store">
 						Google play
@@ -352,7 +356,7 @@
 			<div class="col-md-4 col-sm-4 store" style="text-align: center;">
 				<a href="https://www.apple.com/ios/app-store/">
 
-					<img src="public/images/appstore.png" alt="google play" width="60px" height="60px">
+					<img src="{{url('public/images/appstore.png')}}" alt="google play" width="60px" height="60px">
 
 					<div class="title-store">
 						App store
@@ -366,7 +370,7 @@
 			<div class="col-md-4 col-sm-4 store" style="text-align: center;">
 
 				<a href="https://www.microsoft.com/en-us/store/appsvnext/windows">
-					<img src="public/images/Microsoft-icon.png" alt="google play" width="60px" height="60px">
+					<img src="{{url('public/images/Microsoft-icon.png')}}" alt="google play" width="60px" height="60px">
 
 					<div class="title-store">
 						Microsoft store
