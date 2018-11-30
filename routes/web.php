@@ -80,12 +80,10 @@ Route::post('banner/create', 'BannerController@store');
 Route::get('banner','BannerController@index');
 
 //đường dẫn đến form edit của banner
-Route::get('banner/{id}/editbanner','BannerController@getEdit');
+Route::get('banner/{id}/edit','BannerController@getEdit');
 
 //đường dẫn khi submit edit
-Route::post('banner/{id}/update', [
-    'as' => 'update.banner', 'uses' => 'BannerController@postEdit'
-]);
+Route::post('banner/{id}/update', 'BannerController@postEdit');
 
 //đường dẫn khi delete banner
 Route::get('banner/{id}/delete','BannerController@destroy');

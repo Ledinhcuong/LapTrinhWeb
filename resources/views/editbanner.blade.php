@@ -53,33 +53,24 @@
 
   <!-- Page Content -->
   <div class="container" style="padding: 120px 0px;">
-    <form action="{!! URL::Route('update.banner',$id) !!}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+    <form action="{{ URL::action('BannerController@postEdit', $getBannerById['IdBanner']) }}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
       <div class="form-group">
         <legend style="color: #009688">Sửa banner</legend>
       </div>
 
       <div class="form-group">
-        <label for="bannerid" class="col-sm-2 control-label">Banner ID</label>
+        <label for="ContentBanner" class="col-sm-2 control-label">Content </label>
         <div class="col-sm-10">
-          <input type="text" name="bannerid" id="bannerid" class="form-control" value="{{ old('NameUser',$getUserById['IdBanner']) }}">
+          <input type="text" name="ContentBanner" id="ContentBanner" class="form-control" value="{{ $getBannerById['ContentBanner'] }}">
           <span class="help-block"></span>
         </div>
       </div>
-
+      
       <div class="form-group">
-        <label for="content" class="col-sm-2 control-label">Content </label>
+        <label for="ImageBanner" class="col-sm-2 control-label">Image </label>
         <div class="col-sm-10">
-          <input type="text" name="content" id="content" class="form-control" value="{{ old('NameUser',$getUserById['ContentBanner']) }}">
-          <span class="help-block"></span>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="image1" class="col-sm-2 control-label">Image 1 </label>
-        <div class="col-sm-10">
-          <input type="file" id="image1" name="image1" class="form-control" style="opacity: 0.8" value="{{ old('NameUser',$getUserById['ImageBanner']) }}">
+          <input type="file" id="ImageBanner" name="ImageBanner" class="form-control" style="opacity: 0.8" value="{{ $getBannerById['ImageBanner'] }}">
           <span class="help-block"></span>
         </div>
       </div>
