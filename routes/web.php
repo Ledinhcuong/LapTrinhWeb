@@ -70,27 +70,22 @@ Route::post('type/{id}/update', [
 Route::get('type/{id}/delete','TypeController@destroy');
 
 //==================================================================================//
-//Banner
-//đường dẫn đến form của banner
-Route::get('banner/createbanner','BannerController@getCreate');
-
-//đường dẫn khi submit form thêm
-Route::post('banner/createbanner', [
-    'as' => 'create.banner', 'uses' => 'BannerController@postCreate'
-]);
+// Banner
 
 Route::get('banner','BannerController@index');
 
-//đường dẫn đến form edit của banner
-Route::get('banner/{id}/editbanner','BannerController@getEdit');
+//đường dẫn đến form của banner
+Route::get('banner/create','BannerController@create');
+//đường dẫn khi submit form thêm
+Route::post('banner/create', 'BannerController@store');
 
+//đường dẫn đến form edit của banner
+Route::get('banner/{id}/edit','BannerController@getEdit');
 //đường dẫn khi submit edit
-Route::post('banner/{id}/update', [
-    'as' => 'update.banner', 'uses' => 'BannerController@postEdit'
-]);
+Route::post('banner/{id}/update', 'BannerController@postEdit');
 
 //đường dẫn khi delete banner
-Route::get('banner/{id}/delete','BannerController@destroy');
+Route::get('banner/{id}/delete',['as' => 'banner.destroy', 'uses' =>'BannerController@destroy']);
 
 //====================================//
 Route::get('/', function () {

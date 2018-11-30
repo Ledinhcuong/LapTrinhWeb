@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Banners;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BannerController extends Controller {
 
@@ -35,16 +36,10 @@ class BannerController extends Controller {
 
 	public function postCreate(Request $request)
 	{
-		
 		$allRequest = $request->all();
-		$nameBanner = $allRequest['name'];
-		$dataInsertToDatabase = array(
-			'NameBanner' => $nameBanner
-		);
-
-	
+		$bannerContent = $allRequest['ContentBanner'];
 		
-		$objBanner = new Banner();
+		$objBanner = new Banners();
 		$objBanner->insert($dataInsertToDatabase);
 		return redirect()->route('admin.banner');
 	}
@@ -64,9 +59,34 @@ class BannerController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$allRequest = $request->all();
+		$bannerContent = $allRequest['ContentBanner'];
+		$result = true;
+		
+		$location = 'public/images/';
+		
+		// Xu ly file bannerImage
+		$bannerImage = $allRequest['ImageBanner'];
+
+		$namebannerImage = $bannerImage->getClientOriginalName();  // Lấy tên file
+		$bannerImagetype = $bannerImage->getClientOriginalExtension(); // Lấy đuôi file
+		$linkbannerImage = $bannerImage->getRealPath();
+
+		if (($bannerImagetype == "jpg"  OR $bannerImagetype == "png") AND $result != false) {
+			// Tiến hành di chuyển file vô thư mục
+			$bannerImage->move($location, $namebannerImage);
+		} else {
+			$result = false;
+			return  'File được chọn không đúng định dạng png hoặc jpg :(';
+		}
+		
+		$objBanner = new Banners();
+		$objBanner->ImageBanner = $namebannerImage;
+		$objBanner->ContentBanner = $bannerContent;
+		$objBanner->save();
+		return redirect()->route('admin.banner');
 	}
 
 	/**
@@ -82,23 +102,47 @@ class BannerController extends Controller {
 
 	public function getEdit($id)
 	{
-		
-		$objBanner = new  Banner();
+		return $id;
+		$objBanner = new  Banners();
 		$getBannerById = $objBanner->find($id)->toArray();
 		return view ('editbanner',array('id'=>$id))->with('getBannerById', $getBannerById);
 	}
 
 	public function postEdit($id,Request $request)
 	{
-		//
 		$allRequest = $request->all();
 		$idBanner = $id;
-		$nameBanner = $allRequest['name'];
+		$bannerContent = $allRequest['ContentBanner'];
+		$result = true;
 
-		$objBanner = new Banner();
-		$getBannerById = $objBanner->find($idBanner);
-		$getBannerById->NameBanner = $nameBanner;
-		$getBannerById->save();
+		$location = 'public/images/';
+		
+		// Xu ly file bannerImage
+		if ($request->hasFile('ImageBanner'))
+		{
+			$bannerImage = $allRequest['ImageBanner'];
+
+			$namebannerImage = $bannerImage->getClientOriginalName();  // Lấy tên file
+			$bannerImagetype = $bannerImage->getClientOriginalExtension(); // Lấy đuôi file
+			$linkbannerImage = $bannerImage->getRealPath();
+
+			if (($bannerImagetype == "jpg"  OR $bannerImagetype == "png") AND $result != false) {
+				// Tiến hành di chuyển file vô thư mục
+				$bannerImage->move($location, $namebannerImage);
+			} else {
+				$result = false;
+				return  'File được chọn không đúng định dạng png hoặc jpg :(';
+			}
+
+			
+		}
+		
+		$objBanner = Banners::find($id);
+		if ($request->hasFile('ImageBanner'))
+			$objBanner->ImageBanner = $namebannerImage;
+		$objBanner->ContentBanner = $bannerContent;
+		$objBanner->save();
+
 		return redirect()->route('admin.banner');
 	}
 
@@ -110,7 +154,9 @@ class BannerController extends Controller {
 	 */
 	public function edit($id)
 	{
-		return view("EditBanner");
+		$objBanner = new Banners();
+		$getBannerById = $objBanner->find($id)->toArray();
+		return view("editbanner")->with('getBannerById', $getBannerById);
 	}
 
 	/**
@@ -121,7 +167,7 @@ class BannerController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		return $id;
 	}
 
 	/**
@@ -132,7 +178,12 @@ class BannerController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+
+		$data = Banners::find($id);
+		$bannerImage = $data->ImageBanner;
+		Storage::delete($bannerImage);
+		$data->delete();
+		return redirect()->action('BannerController@index');
 	}
 
 }
