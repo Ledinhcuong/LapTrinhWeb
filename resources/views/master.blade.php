@@ -65,8 +65,8 @@
 								<li><i style="color: #5751D9"  class="fa fa-info-circle" aria-hidden="true"></i><a href="#">   Thông tin tài khoản</a></li>
 								<li><i style="color: #5751D9"   class="fa fa-sign-out" aria-hidden="true"></i><a href="{{ Auth::logout() }}"> Đăng xuất</a> </li>
 							@else
-							<li><i style="color: #5751D9"   class="fa fa-sign-in" aria-hidden="true"></i><a href="{{ Route('login') }}"> Đăng nhập</a> </li>
-							<li><i style="color: #5751D9"   class="fa fa-user-plus" aria-hidden="true"></i><a href="{{ Route('register') }}"> Đăng kí</a> </li>
+								<li><i style="color: #5751D9"   class="fa fa-sign-in" aria-hidden="true"></i><a href="{{ Route('login') }}"> Đăng nhập</a> </li>
+								<li><i style="color: #5751D9"   class="fa fa-user-plus" aria-hidden="true"></i><a href="{{ Route('register') }}"> Đăng kí</a> </li>
 							@endif
 						</ul>
 					</div>
