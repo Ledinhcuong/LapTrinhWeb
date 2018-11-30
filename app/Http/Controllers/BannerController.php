@@ -14,7 +14,7 @@ class BannerController extends Controller {
 	 */
 	public function index()
 	{
-		$data = Banners::paginate(30);
+		$data = Banners::simplePaginate(30);;
 		return view('bannertable', ['data'=>$data]);
 	}
 
@@ -23,7 +23,7 @@ class BannerController extends Controller {
 		$key = '%'. $request->key .'%';
 
 
-		$data = Banners::where('ContentBanner', 'like', $key)->paginate(30);
+		$data = Banners::where('ContentBanner', 'like', $key)->simplePaginate(30);
 		return view('bannertable', ['data'=>$data]);
 	}
 

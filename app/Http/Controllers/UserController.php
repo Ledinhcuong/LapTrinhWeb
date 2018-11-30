@@ -21,7 +21,7 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		$data = Users::paginate(30);
+		$data = Users::simplePaginate(30);
 		return view('usertable', ['data'=>$data]);
 	}
 
@@ -31,7 +31,7 @@ class UserController extends Controller {
 		$key = '%'. $request->key .'%';
 
 		$data = Users::where('NameUser', 'like', $key)
-		->orWhere('Email', 'like', $key)->get();
+		->orWhere('Email', 'like', $key)->simplePaginate(30);
 		return view('usertable', ['data'=>$data]);
 	}
 

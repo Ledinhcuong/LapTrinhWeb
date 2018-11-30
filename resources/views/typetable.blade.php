@@ -87,6 +87,8 @@
   </tbody>
 </table>
 
+  {!! $data->render() !!} 
+
 </div>
 
 <!-- Table end -->

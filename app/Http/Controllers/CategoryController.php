@@ -17,7 +17,7 @@ class CategoryController extends Controller {
 	public function index()
 	{
 
-		$data = Category::paginate(30);
+		$data = Category::simplePaginate(30);
 		return view('categorytable', ['data'=>$data]);
 	}
 
@@ -26,7 +26,7 @@ class CategoryController extends Controller {
 
 		$key = '%'. $request->key .'%';
 
-		$data = Category::where('NameCategory', 'like', $key)->get();
+		$data = Category::where('NameCategory', 'like', $key)->simplePaginate(30);
 		return view('categorytable', ['data'=>$data]);
 	}
 
