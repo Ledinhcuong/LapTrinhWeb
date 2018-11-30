@@ -37,10 +37,7 @@
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
-
-
 						<ul class="nav navbar-nav navbar-right">
-							
 							<!-- form tìm kiếm -->
 							<form action="{{url('home/search')}}" method="get" class="navbar-form navbar-left" role="search" onsubmit="return validateForm()">
 								<div class="form-group">
@@ -48,37 +45,32 @@
 								</div>
 								<button type="submit" class="btn btn-default" style="color: #4284F3"><i class="fa fa-search" aria-hidden="true"></i></button>
 							</form>
-
 							<!-- Các chỉ mục -->
 							<li><a href="{{url('/')}}" style="color: #5BC348"><i class="fa fa-android" aria-hidden="true"></i> Phần mềm</a></li>
 							<li><a href="game" style="color: #f44336"><i class="fa fa-gamepad"></i> Trò chơi</a></li>
 							<li><a href="#" style="color: #3B5998"><i class="fa fa-facebook-official" aria-hidden="true"></i> Face</a></li>
-							<li class="{{url('account')}}"><a href="login"><i class="fa fa-user"></i> Tài khoản</a></li>
-
-
+							<li class="account"><a href="#"><i class="fa fa-user"></i> Tài khoản</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</div>
+				
 				<div class="menu-account">
 					<div class="background-menu">
-
 						<div class="logo-menu" style="margin-bottom: 10px; text-align: center;">
 							<img src="{{url('public/images/mylogo.ico')}}" alt="logo">
 						</div>
-
-
 						<ul>
-							<li><i style="color: #5751D9" class="fa fa-user-o" aria-hidden="true"></i> Tên tài khoản</li>
-							<li><i style="color: #5751D9"  class="fa fa-info-circle" aria-hidden="true"></i><a href="#">   Thông tin tài khoản</a></li>
-							<li><i style="color: #5751D9"   class="fa fa-sign-out" aria-hidden="true"></i><a href="#"> Đăng xuất</a> </li>
+							@if (Auth::check())
+								<li><i style="color: #5751D9" class="fa fa-user-o" aria-hidden="true"></i> {{ Auth::user()->NameUser }}</li>
+								<li><i style="color: #5751D9"  class="fa fa-info-circle" aria-hidden="true"></i><a href="#">   Thông tin tài khoản</a></li>
+								<li><i style="color: #5751D9"   class="fa fa-sign-out" aria-hidden="true"></i><a href="{{ Route('logout') }}"> Đăng xuất</a> </li>
+							@else
+							  <li><i style="color: #5751D9"   class="fa fa-sign-in" aria-hidden="true"></i><a href="{{ Route('login') }}"> Đăng nhập</a> </li>
+							  <li><i style="color: #5751D9"   class="fa fa-register" aria-hidden="true"></i><a href="{{ Route('register') }}"> Đăng kí</a> </li>
+							@endif
 						</ul>
 					</div>
-
-				
-
-
 				</div>
-
 			</nav>
 		</header>
 
@@ -102,42 +94,33 @@
 							<li><a href="#">Thông tin về chúng tôi</a></li>
 							<li><a href="#">Bản quyền</a></li>
 							<li><a href="#">Tin tức công ty</a></li>
-
 						</ul>
-
 					</div>
 
 					<div class="col-md-4 col-sm-4">
 						<div class="title-footer">
 							Thông tin liên hệ
 						</div>
-
 						<ul style="list-style: none; padding-left: 0px">
 							<li><a href="#">Email: softwareworld@ldc.com</a></li>
 							<li><a href="#">SĐT: 012 444 4444</a></li>
 							<li><a href="#">Facebook: software</a></li>
 						</ul>
-
 					</div>
 
 					<div class="col-md-4 col-sm-4">
 						<div class="title-footer">
 							Trang web
 						</div>
-
 						<ul style="list-style: none; padding-left: 0px">
 							<li><a href="#">Báo cáo lỗi </a></li>
 							<li><a href="#">Hỗ trợ</a></li>
 							<li><a href="#">Hồ sơ tài khoản </a></li>
 						</ul>
-
 					</div>
-
 				</div>
 			</div>
-
 		</footer>
-
 
 		<div class="float-button">
 			<i class="fa fa-arrow-up" aria-hidden="true"></i>
