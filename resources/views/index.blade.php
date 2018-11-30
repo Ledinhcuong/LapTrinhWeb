@@ -1,6 +1,3 @@
-<?php
-
-?>
 
 @extends('master')
 @section('title', 'software')
@@ -14,33 +11,20 @@
 
 		<div class="slider-container">
 			<div class="slider">
-				<?php
-					foreach ($banner as $key) {
+				@foreach ($banner as $key)
+					@php
 					$imageslide = 'public/images/'. $key->ImageBanner;
-
-						
-					
-				 ?>
-
-				<img src="{{url($imageslide)}}" class="img-responsive" title="<?php echo $key->ContentBanner ?>" />
-
-				<?php
-			}
-				?>
+					@endphp
+					<img src="{{url($imageslide)}}" class="img-responsive" title="<?php echo $key->ContentBanner ?>" />
+				@endforeach
 			
 				<button type="button" onclick="getPrevImage()" class="btn" id="btnPrev">&lt;</button>
 				<button type="button" onclick="getNextImage()" class="btn" id="btnNext">&gt;</button>
 				<h1 id="titleSlider">Trang web chia sẽ ứng dụng hoàn toàn miễn phí</h1>
 			</div>
-
 		</div>
-
-
 	</div>
-
 </div>
-
-
 
 <!-- Đề xuất -->
 <div class="Suggestions">
@@ -51,12 +35,11 @@
 
 		<div class="content-suggest">
 			<div class="row">
-
-				<?php 
-				foreach ($randomApp as $key) {
+				@foreach ($randomApp as $key)
+				@php
 					$chitiet = 'home/chitiet/'. $key->IdApplication;	
 					$icon = 'public/images/' . $key->Icon;
-				?>
+				@endphp
 
 				<div class="col-md-2 col-sm-4 col-xs-6">
 					<a href="{{url($chitiet)}}">
@@ -74,11 +57,7 @@
 					</a>
 
 				</div>
-
-				<?php
-			}
-
-				?>
+				@endforeach
 	
 
 			</div>
@@ -89,7 +68,6 @@
 	</div>
 
 </div>
-
 
 <!-- content -->
 <div class="content">
@@ -130,46 +108,30 @@
 							Top download
 						</div>
 						<ul style="list-style: none; padding-left: 20px;">
-
-							
-
-								<?php 
-								foreach ($topdown as $key) {
+							@foreach ($topdown as $key)
+								@php
 								$chitiet = 'home/chitiet/'. $key->IdApplication;
 								$icon = 'public/images/'.  $key->Icon;
-
-								?>
+								@endphp
 								<li>
 								<a href="{{url($chitiet)}}">
-									<img src="{{url($icon)}}"  alt="<?php  echo $key->NameApp ?>" class="img-responsive" width="35px" height="35px" style="display: inline-block;"> <?php echo $key->NameApp ?>
+									<img src="{{url($icon)}}"  alt="{{ $key->NameApp }}" class="img-responsive" width="35px" height="35px" style="display: inline-block;"> <?php echo $key->NameApp ?>
 								</a>
 								</li>
-
-								<?php
-							}
-							?>
-
-							
-
+							@endforeach
 						</ul>
-
-
 					</div>
 				</div>
-
-
-
 			</div>
 
 			<!-- App -->
 			<div class="col-md-9 ">
 				<div class="row">
-
-					<?php
-						foreach ($data as $key) {
+					@foreach ($data as $key)
+					@php
 						$chitiet = 'home/chitiet/'. $key->IdApplication;	
 						$icon = 'public/images/'.  $key->Icon;
-					 ?>
+					@endphp
 
 					<div class="col-md-4 col-sm-4">
 						<a href="{{url($chitiet)}}">
@@ -198,36 +160,23 @@
 											<div class="motangan">
 												<?php echo $key->SortDescription ?>
 											</div>
-
 										</div>
-
 									</div>
 								</div>
 							</div>
-
 						</a>
 					</div>
-
-
-					<?
-				}
-				?>
-				
+					@endforeach
 				</div>
-
 			</div>
 		</div>
-
 	</div>
 </div>
 
 <!-- Padding -->
 <div class="padding">
 	<div class="container">
-
 		{!! $data->render() !!} 
-		
-
 	</div>
 </div>
 
