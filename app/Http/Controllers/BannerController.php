@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Banners;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BannerController extends Controller {
 
@@ -171,7 +172,7 @@ class BannerController extends Controller {
 
 		$data = Banners::find($id);
 		$bannerImage = $data->ImageBanner;
-		//File::delete('/public/images/'. $bannerImage);
+		Storage::delete($bannerImage);
 		$data->delete();
 		return redirect()->action('BannerController@index');
 	}
