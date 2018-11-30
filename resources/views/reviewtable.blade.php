@@ -28,7 +28,7 @@
             <?php
               foreach ($data as $key) {
                 
-
+                $delete = 'review/'. $key->IdApplication. '/'. $key->IdUser. '/delete' ;
             ?>
             <tr>
               <td>{{$key->NameApp}}</td>
@@ -37,7 +37,7 @@
               <td>{{$key->ContentReview}}</td>
               <td width="200">
                 <div>
-                  <a href="#" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
+                  <a href="{{url($delete)}}" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
                 </div>
                   
               </td>
@@ -52,6 +52,7 @@
            
           </tbody>
         </table>
+         {!! $data->render() !!} 
 
       </div>
 @endsection

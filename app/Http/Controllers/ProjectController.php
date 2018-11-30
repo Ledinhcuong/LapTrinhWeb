@@ -27,7 +27,7 @@ class ProjectController extends Controller {
 			// Lấy nội dung mới nhất hiển thị
 			$data = DB::table('Application')
 			->join('Types', 'Application.IdType', '=' , 'Types.IdType')
-			->select('Application.*', 'Types.NameType')->where('IdCategory', 1)->paginate(6);
+			->select('Application.*', 'Types.NameType')->where('IdCategory', 1)->paginate(9);
 
 
 			// Lay 4 banner moi nhat
@@ -83,34 +83,49 @@ class ProjectController extends Controller {
 		
 	}
 
-	// Lay thong tin mot ung dung
-	public function getChiTiet($IdApp){
-
-
-
-		$data = DB::table('Application')
-			->join('Types', 'Application.IdType', '=' , 'Types.IdType')
-			->select('Application.*', 'Types.NameType')->where('IdApplication', $IdApp)->first();
-			
-
-		return $data;
-		
-	}
-
+	
 
 	// Tim kiem ung dung theo ten
-	public function searchApp($key) {
+	public function searchApp(Request $request) {
 
-		$result = DB::table('Application')->where('NameApp', 'like', '%'.$key.'%')->simplePaginate(8);
-		return $result;
+		$key = '%'. $request->key. '%';
+		$data  = Application::where('NameApp', 'like', $key)
+		->orWhere('Developer', 'like', $key)
+		->paginate(10);
+
+
+		return view('search', ['data'=>$data, 'key'=>$request->key]);
 	}
+
 
 	// Loc ung dung theo loai
 	public function filterType($type) {
 
 
-		$result = DB::table('Application')->where('IdType', 'like', '%'.$type.'%')->simplePaginate(8);
-		return $result;
+			// Lấy nội dung mới nhất hiển thị
+		$data = DB::table('Application')
+		->join('Types', 'Application.IdType', '=' , 'Types.IdType')
+		->where('Application.IdType', $type)
+		->select('Application.*', 'Types.NameType')->paginate(9);
+
+
+			// Lay 4 banner moi nhat
+		$banner = DB::table('Banners')->limit(4)->get();
+
+
+			// Lay 10 ung dung tai nhieu nhat
+		$topdown =  DB::table('Application')->orderBy('NumberDownload', 'desc')->where('IdCategory', 1)->limit(10)->get();
+
+
+
+			// Lay 6 ung dung ngau nhien de de xuat
+		$randomApp = Application::all()->random(6);
+
+
+
+			//$data->setBaseUrl('myproject/public/index');
+		return view('index', ['data'=>$data, 'banner'=>$banner, 'topdown'=>$topdown, 'randomApp'=>$randomApp]);
+		
 
 	}
 
@@ -150,6 +165,11 @@ class ProjectController extends Controller {
 	public function show($id)
 	{
 		
+		$data = DB::table('Application')
+		->join('Types', 'Application.IdType', '=' , 'Types.IdType')
+		->select('Application.*', 'Types.NameType')->where('IdApplication', $id)->first();
+
+		return view('chitiet', ['data'=>$data]);
 	}
 
 	/**

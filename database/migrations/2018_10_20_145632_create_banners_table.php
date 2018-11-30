@@ -17,7 +17,6 @@ class CreateBannersTable extends Migration {
 
 			$table->increments('IdBanner');
 			$table->string('ContentBanner', 50);
-			$table->date('CreateDate');
 			$table->string('ImageBanner', 100);
 
 		});

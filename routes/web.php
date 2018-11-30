@@ -142,3 +142,21 @@ Route::post('register', 'RegisterController@postRegister');
 Route::get('application/{id}/delete', 'ApplicationController@destroy');
 
 Route::post('application/update', 'ApplicationController@update');
+
+Route::get('application/search', 'ApplicationController@search');
+
+Route::get('review/{IdApp}/{IdUser}/delete', 'ReviewController@destroy');
+
+Route::get('category/search', 'CategoryController@search');
+
+Route::get('banner/search', 'BannerController@search');
+
+Route::get('user/search', 'UserController@search');
+
+Route::get('type/search', 'TypeController@search');
+
+Route::get('home/search', 'ProjectController@searchApp');
+
+Route::get('home/chitiet/{id}', 'ProjectController@show');
+
+Route::get('home/{type}', 'ProjectController@filterType');

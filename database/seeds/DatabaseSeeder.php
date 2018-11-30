@@ -68,7 +68,6 @@ class DatabaseSeeder extends Seeder
 			'Image3'=>'edge3.jpg',
 			'LinkDownload'=>'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab',
 			'NumberDownload'=>5,
-			'DateSubmit'=>'2018/10/15',
 			'Version' => 1,
 			'Size' => 50,
 			'SortDescription'=> 'Lướt web nhanh hơn bao giờ hết'
@@ -85,7 +84,6 @@ class DatabaseSeeder extends Seeder
 			'Image3'=>'gesture3.png',
 			'LinkDownload'=>'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab',
 			'NumberDownload'=>10,
-			'DateSubmit'=>'2018/08/03',
 			'Version' => 1,
 			'Size' => 50,
 			'SortDescription'=> 'Điều hướng phong cách iphone x'
@@ -102,7 +100,6 @@ class DatabaseSeeder extends Seeder
 			'Image3'=>'volumeslide3.png',
 			'LinkDownload'=>'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab',
 			'NumberDownload'=>80,
-			'DateSubmit'=>'2018/10/20',
 			'Version' => 1,
 			'Size' => 50,
 			'SortDescription'=> 'Điều chỉnh âm lượng phong cách android 9'
@@ -119,7 +116,6 @@ class DatabaseSeeder extends Seeder
 			'Image3'=>'stickshare3.png',
 			'LinkDownload'=>'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab',
 			'NumberDownload'=>60,
-			'DateSubmit'=>'2018/10/7',
 			'Version' => 1,
 			'Size' => 50,
 			'SortDescription'=> 'Chụp nhanh màn hình'
@@ -136,7 +132,6 @@ class DatabaseSeeder extends Seeder
 			'Image3'=>'recentbar3.png',
 			'LinkDownload'=>'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab',
 			'NumberDownload'=>20,
-			'DateSubmit'=>'2018/10/20',
 			'Version' => 1,
 			'Size' => 50,
 			'SortDescription'=> 'Mở nhanh ứng dụng gần đây'
@@ -153,7 +148,6 @@ class DatabaseSeeder extends Seeder
 			'Image3'=>'edge4.jpg',
 			'LinkDownload'=>'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab',
 			'NumberDownload'=>15,
-			'DateSubmit'=>'2018/10/20',
 			'Version' => 1,
 			'Size' => 50,
 			'SortDescription'=> 'Biến màn hình điện thoại thành màn hình phụ'
@@ -170,7 +164,6 @@ class DatabaseSeeder extends Seeder
 			'Image3'=>'datally3.png',
 			'LinkDownload'=>'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab',
 			'NumberDownload'=>11,
-			'DateSubmit'=>'2018/10/20',
 			'Version' => 1,
 			'Size' => 50,
 			'SortDescription'=> 'Theo dõi lưu lượng sử dụng'
@@ -187,7 +180,6 @@ class DatabaseSeeder extends Seeder
 			'Image3'=>'filego3.png',
 			'LinkDownload'=>'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab',
 			'NumberDownload'=>95,
-			'DateSubmit'=>'2018/10/20',
 			'Version' => 1,
 			'Size' => 50,
 			'SortDescription'=> 'Quan ly file'
@@ -204,7 +196,6 @@ class DatabaseSeeder extends Seeder
 			'Image3'=>'justaline3.png',
 			'LinkDownload'=>'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab',
 			'NumberDownload'=>95,
-			'DateSubmit'=>'2018/10/20',
 			'Version' => 1,
 			'Size' => 50,
 			'SortDescription'=> 'Ứng dụng AR'
@@ -221,7 +212,6 @@ class DatabaseSeeder extends Seeder
 			'Image3'=>'forestlive3.png',
 			'LinkDownload'=>'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab',
 			'NumberDownload'=>95,
-			'DateSubmit'=>'2018/10/20',
 			'Version' => 1,
 			'Size' => 50,
 			'SortDescription'=> 'Ứng dụng AR'
@@ -238,7 +228,6 @@ class DatabaseSeeder extends Seeder
 			'Image3'=>'monster3.jpg',
 			'LinkDownload'=>'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab',
 			'NumberDownload'=>32,
-			'DateSubmit'=>'2018/10/20',
 			'Version' => 1,
 			'Size' => 50,
 			'SortDescription'=> 'Trò chơi nhập vai'
@@ -254,7 +243,6 @@ class DatabaseSeeder extends Seeder
 			'Image3'=>'pokemon3.png',
 			'LinkDownload'=>'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab',
 			'NumberDownload'=>65,
-			'DateSubmit'=>'2018/10/20',
 			'Version' => 1,
 			'Size' => 50,
 			'SortDescription'=> 'Game giải trí nhẹ nhàng'
@@ -271,7 +259,6 @@ class DatabaseSeeder extends Seeder
 			'Image3'=>'greenfarm3.jpg',
 			'LinkDownload'=>'https://www.microsoft.com/vi-vn/p/facebook/9wzdncrfj2wl?cid=msft_web_appsforwindows_chart#activetab=pivot:overviewtab',
 			'NumberDownload'=>65,
-			'DateSubmit'=>'2018/10/20',
 			'Version' => 1,
 			'Size' => 50,
 			'SortDescription'=> 'Game nông trại giải trí'
@@ -311,20 +298,16 @@ class DatabaseSeeder extends Seeder
 		// Thêm dữ liệu vào bảng banner
 		DB::table('Banners')->insert([
 			['ContentBanner'=>'Nơi đây tổng hợp các phần mềm hoàn toàn miễn phí',
-			'CreateDate'=>'2018/10/15',
 			'ImageBanner'=>'banner page.jpg'],
 
 			['ContentBanner'=>'Những trò chơi hay nhất đang đợi bạn',
-			'CreateDate'=>'2018/10/15',
 			'ImageBanner'=>'banner 2.jpg'],
 
 			['ContentBanner'=>'Hãy chia sẽ trang này cho bạn bè của bạn',
-			'CreateDate'=>'2018/10/15',
 			'ImageBanner'=>'banner 3.jpg'],
 
 
 			['ContentBanner'=>'Những ứng dụng mang đến trải nghiệm tốt nhất',
-			'CreateDate'=>'2018/10/15',
 			'ImageBanner'=>'banner 4.jpg']
 
 

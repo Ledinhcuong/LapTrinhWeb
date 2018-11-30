@@ -1,15 +1,15 @@
-<?php
-use App\Http\Controllers\ProjectController;
-$control = new ProjectController();
-
-$id = $_GET['id'];
-$data = $control->getChiTiet($id);
-
-?>
 
 @extends('master')
 @section('title', 'chitiet')
 @section('content')
+
+<?php
+$icon = 'public/images/'. $data->Icon;
+$image1 = 'public/images/'. $data->Image1;
+$image2 = 'public/images/'. $data->Image2;
+$image3 = 'public/images/'. $data->Image3;
+
+?>
 
 <div class="chitiet-app">
 	<div class="container">
@@ -19,7 +19,7 @@ $data = $control->getChiTiet($id);
 			
 			<div class="col-md-3 col-sm-3">
 				<div class="icon-app">
-					<img src="public/images/<?php echo $data->Icon ?>" alt="<?php echo $data->NameApp ?>" width="128x" height="128px">
+					<img src="{{url($icon)}}" alt="<?php echo $data->NameApp ?>" width="128x" height="128px">
 
 				</div>
 
@@ -94,15 +94,15 @@ $data = $control->getChiTiet($id);
 				<div class="row">
 					
 					<div class="col-md-3 col-sm-3 col-xs-3" >
-						<img src="public/images/<?php echo $data->Image1 ?>" alt="edg1" class="img-responsive">
+						<img src="{{url($image1)}}" alt="edg1" class="img-responsive">
 					</div>
 
 					<div class="col-md-3 col-sm-3 col-xs-3">
-						<img src="public/images/<?php  echo $data->Image2 ?>" alt="edg2" class="img-responsive">
+						<img src="{{url($image2)}}" alt="edg2" class="img-responsive">
 					</div>
 
 					<div class="col-md-3 col-sm-3 col-xs-3">
-						<img src="public/images/<?php echo $data->Image3 ?>" alt="edg3" class="img-responsive">
+						<img src="{{url($image3)}}" alt="edg3" class="img-responsive">
 					</div>
 
 				
@@ -142,14 +142,6 @@ $data = $control->getChiTiet($id);
 				</div>
 
 				<div class="col-md-3 col-sm-3">
-
-					<div class="title-bs">
-						Ngày phát hành
-					</div>
-
-					<div class="content-bs">
-						<?php echo $data->DateSubmit ?>
-					</div>
 
 
 					<div class="title-bs">

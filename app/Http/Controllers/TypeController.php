@@ -14,7 +14,15 @@ class TypeController extends Controller {
 	 */
 	public function index()
 	{
-		$data = Types::paginate(30);
+		$data = Types::simplePaginate(30);
+		return view('typetable', ['data'=>$data]);
+	}
+
+	public function search(Request $request) {
+
+		$key = '%'. $request->key . '%';
+
+		$data = Types::where('NameType', 'like', $key)->simplePaginate(30);
 		return view('typetable', ['data'=>$data]);
 	}
 

@@ -24,7 +24,7 @@ class ReviewController extends Controller {
 		$data =  DB::table('Reviews')
 		->join('Application', 'Reviews.IdApplication', '=', 'Application.IdApplication')
 		->join('Users', 'Reviews.IdUser', '=', 'Users.IdUser')
-		->select('Reviews.*', 'Application.NameApp', 'Users.NameUser')->get();
+		->select('Reviews.*', 'Application.NameApp', 'Users.NameUser')->simplePaginate(50);
 
 
 		return view('reviewtable', ['data'=>$data]);
@@ -89,9 +89,10 @@ class ReviewController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($IdApp, $IdUser)
 	{
-		//
+		 Reviews::where('IdApplication', $IdApp)->where('IdUser', $IdUser)->delete();
+		 return redirect()->action('ReviewController@index');
 	}
 
 }

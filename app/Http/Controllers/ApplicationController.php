@@ -26,7 +26,23 @@ class ApplicationController extends Controller {
 		$data = DB::table('Application')
 		->join('Category', 'Application.IdCategory', '=', 'Category.IdCategory')
 		->join('Types', 'Application.IdType', '=', 'Types.IdType')
-		->select('Application.*', 'Types.NameType', 'Category.NameCategory')->get();
+		->select('Application.*', 'Types.NameType', 'Category.NameCategory')->simplePaginate(30);
+
+		return view('apptable', ['data'=>$data]);
+	}
+
+
+	public function search(Request $request) {
+
+		$key = '%'. $request->key. '%';
+
+		$data = DB::table('Application')
+		->join('Category', 'Application.IdCategory', '=', 'Category.IdCategory')
+		->join('Types', 'Application.IdType', '=', 'Types.IdType')
+		->where('NameApp', 'like', $key)
+		->orWhere('NameType', 'like', $key)
+		->orWhere('NameCategory', 'like', $key)
+		->select('Application.*', 'Types.NameType', 'Category.NameCategory')->simplePaginate(30);
 
 		return view('apptable', ['data'=>$data]);
 	}
