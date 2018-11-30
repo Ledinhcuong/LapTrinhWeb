@@ -36,7 +36,6 @@ class CreateApplicationTable extends Migration {
 			$table->string('LinkDownload');
 			$table->integer('NumberDownload');
 
-			$table->date('DateSubmit');
 			$table->float('Version', 8, 2);
 			$table->float('Size', 8, 2);
 			$table->string('SortDescription');
