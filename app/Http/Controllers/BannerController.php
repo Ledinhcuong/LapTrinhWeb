@@ -168,7 +168,12 @@ class BannerController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+
+		$data = Banners::find($id);
+		$bannerImage = $data->ImageBanner;
+		//File::delete('/public/images/'. $bannerImage);
+		$data->delete();
+		return redirect()->action('BannerController@index');
 	}
 
 }

@@ -40,7 +40,7 @@
                     <a href="banner/{{ $key->IdBanner }}/edit" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
                   </div>
                   <div>
-                    <a href="banner/{{ $key->IdBanner }}/delete" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
+                    <a href="{{ route('banner.destroy', [$key->IdBanner]) }}" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
                   </div> 
                 </td>
               </tr>
