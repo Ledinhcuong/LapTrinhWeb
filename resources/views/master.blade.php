@@ -30,7 +30,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index"><img src="public/images/mylogo.ico" alt="">
+					<a class="navbar-brand" href="{{url('/')}}"><img src="{{url('public/images/mylogo.ico')}}" alt="">
 						<b>Software</b></a>
 
 					</div>
@@ -40,8 +40,9 @@
 
 
 						<ul class="nav navbar-nav navbar-right">
+							
 							<!-- form tìm kiếm -->
-							<form action="search" method="get" class="navbar-form navbar-left" role="search" onsubmit="return validateForm()">
+							<form action="{{url('home/search')}}" method="get" class="navbar-form navbar-left" role="search" onsubmit="return validateForm()">
 								<div class="form-group">
 									<input type="text" name="key" id="search" class="form-control" placeholder="Nhập tên phần mềm">
 								</div>
@@ -145,10 +146,10 @@
 
 		<script type="text/javascript" src="{{url('public/js/slider.js')}}"></script>
 		<script>
-        var indexCurrent = 1;      // Chỉ số hình đầu tiên hiển thị ở slide
-        var loop = true;  // Bật lặp slide 
-        var showbutton =true;  // Hiện 2 button điều hướng
-        var duration = 4000;   // Thời gian chờ chuyển hình (tính theo đơn vị milisecond)
+        var indexCurrent = 1;      
+        var loop = true;  
+        var showbutton =true; 
+        var duration = 4000;  
 
         initSlider();
     </script>

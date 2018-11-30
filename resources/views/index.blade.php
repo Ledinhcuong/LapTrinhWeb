@@ -16,6 +16,7 @@
 			<div class="slider">
 				<?php
 					foreach ($banner as $key) {
+
 						
 					
 				 ?>
@@ -52,11 +53,11 @@
 
 				<?php 
 				foreach ($randomApp as $key) {
-					
+					$chitiet = 'home/chitiet/'. $key->IdApplication;	
 				?>
 
 				<div class="col-md-2 col-sm-4 col-xs-6">
-					<a href="chitiet?id=<?php echo $key->IdApplication ?>">
+					<a href="{{url($chitiet)}}">
 						<div class="content-app">
 							<div class="icon-app-sg" style="text-align: center;">
 								<img src="public/images/<?php echo $key->Icon ?>" alt="" class="img-responsive" style="max-width: 120px; max-height: 120px;">
@@ -132,11 +133,11 @@
 
 								<?php 
 								foreach ($topdown as $key) {
-								
+								$chitiet = 'home/chitiet/'. $key->IdApplication;	
 
 								?>
 								<li>
-								<a href="chitiet?id=<?php echo $key->IdApplication ?>">
+								<a href="{{url($chitiet)}}">
 									<img src="public/images/<?php echo $key->Icon ?>"  alt="<?php  echo $key->NameApp ?>" class="img-responsive" width="35px" height="35px" style="display: inline-block;"> <?php echo $key->NameApp ?>
 								</a>
 								</li>
@@ -163,10 +164,11 @@
 
 					<?php
 						foreach ($data as $key) {
+						$chitiet = 'home/chitiet/'. $key->IdApplication;	
 					 ?>
 
 					<div class="col-md-4 col-sm-4">
-						<a href="chitiet?id=<?php echo $key->IdApplication ?>">
+						<a href="{{url($chitiet)}}">
 							<div class="app">
 								<div class="app-background">
 									<div class="app-icon">
@@ -221,22 +223,6 @@
 
 		{!! $data->render() !!} 
 		
-		<!--
-		<tr>
-			<td><a href="#">
-				<span class="background-p" > 1 </span>
-			</a></td>
-
-			<td><a href="#">
-				<span class="background-p" > 2 </span>
-			</a></td>
-
-			<td><a href="#">
-				<span class="background-p" > 3 </span>
-			</a></td>
-
-		</tr>
-	-->
 
 	</div>
 </div>
@@ -254,10 +240,10 @@
 				<div class="col-md-3 col-sm-3 col-xs-6">
 
 					<ul class="list-dm">
-						<li><a href="search?type=1">Năng xuất</a></li>
-						<li><a href="search?type=2">Xã hội</a></li>
-						<li><a href="search?type=3">Tin tức</a></li>
-						<li><a href="search?type=4">Sức khỏe</a></li>
+						<li><a href="{{url('home/1')}}">Năng xuất</a></li>
+						<li><a href="{{url('home/2')}}">Xã hội</a></li>
+						<li><a href="{{url('home/3')}}">Tin tức</a></li>
+						<li><a href="{{url('home/4')}}">Sức khỏe</a></li>
 
 					</ul>
 
@@ -266,10 +252,10 @@
 				<div class="col-md-3 col-sm-3 col-xs-6">
 
 					<ul class="list-dm">
-						<li><a href="search?type=5">Bản đồ</a></li>
-						<li><a href="search?type=6">Các nhân hóa</a></li>
-						<li><a href="search?type=7">Sách</a></li>
-						<li><a href="search?type=8">Giải trí</a></li>
+						<li><a href="{{url('home/5')}}">Bản đồ</a></li>
+						<li><a href="{{url('home/6')}}">Các nhân hóa</a></li>
+						<li><a href="{{url('home/7')}}">Sách</a></li>
+						<li><a href="{{url('home/8')}}">Giải trí</a></li>
 
 					</ul>
 
@@ -277,10 +263,10 @@
 
 				<div class="col-md-3 col-sm-3 col-xs-6">
 					<ul class="list-dm">
-						<li><a href="search?type=9">Ảnh </a></li>
-						<li><a href="search?type=10">Video</a></li>
-						<li><a href="search?type=11">Nhạc</a></li>
-						<li><a href="search?type=12">Bảo mật</a></li>
+						<li><a href="{{url('home/9')}}">Ảnh </a></li>
+						<li><a href="{{url('home/10')}}">Video</a></li>
+						<li><a href="{{url('home/11')}}">Nhạc</a></li>
+						<li><a href="{{url('home/12')}}">Bảo mật</a></li>
 
 					</ul>
 
@@ -288,9 +274,9 @@
 
 				<div class="col-md-3 col-sm-3 col-xs-6">
 					<ul class="list-dm">
-						<li><a href="search?type=13">Giáo dục</a></li>
-						<li><a href="search?type=14">Thời tiết</a></li>
-						<li><a href="search?type=15">Mua sắm</a></li>
+						<li><a href="{{url('home/13')}}">Giáo dục</a></li>
+						<li><a href="{{url('home/14')}}">Thời tiết</a></li>
+						<li><a href="{{url('home/15')}}">Mua sắm</a></li>
 					</ul>
 
 				</div>

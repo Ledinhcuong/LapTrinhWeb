@@ -159,3 +159,9 @@ Route::get('banner/search', 'BannerController@search');
 Route::get('user/search', 'UserController@search');
 
 Route::get('type/search', 'TypeController@search');
+
+Route::get('home/search', 'ProjectController@searchApp');
+
+Route::get('home/chitiet/{id}', 'ProjectController@show');
+
+Route::get('home/{type}', 'ProjectController@filterType');

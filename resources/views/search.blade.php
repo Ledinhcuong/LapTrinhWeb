@@ -1,20 +1,3 @@
-<?php
-use App\Http\Controllers\ProjectController;
-$control = new ProjectController();
-
-if(isset($_GET['type']) == true) {
-	$key = $_GET['type'];
-	$data = $control-> filterType($key);
-	$key = ' thể loại ' .$control->getNameType($key)->NameType;
-
-
-} else {
-	$key = $_GET['key'];
-	$data = $control-> searchApp($key);
-}
-
-
-?>
 
 		@extends('master')
 		@section('title', 'Search')
@@ -35,15 +18,19 @@ if(isset($_GET['type']) == true) {
 
 				<div class="row">
 					<?php
+
 					foreach ($data as $key) {
+						$chitiet = 'home/chitiet/'. $key->IdApplication;	
+
+						$image = 'public/images/'. $key->Icon;
 						
 					?>
 					<div class="col-md-3 col-sm-4 col-xs-6 app-result">
-						<a href="chitiet?id=<?php echo $key->IdApplication  ?>">
+						<a href="{{url($chitiet)}}">
 							<div class="background-result">
 
 								<div class="image-app">
-									<img class="imge-resize" src="public/images/<?php echo $key->Icon ?>" alt="<?php echo $key->NameApp ?>">
+									<img class="imge-resize" src="{{url($image)}}" alt="<?php echo $key->NameApp ?>">
 								</div>
 
 								<span class="name-app-search">
