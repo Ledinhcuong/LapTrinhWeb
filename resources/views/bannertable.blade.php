@@ -5,17 +5,13 @@
       <div class="content-table"> <!-- Table begin -->
 
         <div class="nameTB">
-
           Bảng Banner
-
         </div>
 
         <div class="tool">
-          <a href="banner/create" class="btn-tool"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
-
+          <a href="banner/create" class="btn-tool">
+          <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Dữ Liệu</a>
         </div>
-
-        
 
         <table class="table table-bordered">
           <thead>
@@ -25,9 +21,9 @@
               <th>Create Date</th>
               <th>Image</th>
               <th>Control</th>
-
             </tr>
           </thead>
+          
           <tbody>
             @foreach ($data as $key)
               @php
