@@ -15,12 +15,13 @@ use Session;
 class LoginController extends Controller
 {
 	//
-	public function getLogin(){
+	public function getLogin()
+	{
 		return view('login');
 	}
 
-	public function postLogin(Request $request){
-
+	public function postLogin(Request $request)
+	{
 		$users = new users;
 		$rules = [
     		'email' =>'required|email',

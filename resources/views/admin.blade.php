@@ -44,7 +44,7 @@
             <a class="nav-link" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ Route('logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+            <a class="nav-link" href="{{ Auth::logout() }}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
           </li>
         </ul>
       </div>
