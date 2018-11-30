@@ -90,7 +90,12 @@
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
+
 					</div>
+					<div  class="wrap-input100 validate-input">
+						<input type="checkbox" value="remember" name="remember"> Remember me
+					</div>	
+
 					{!! csrf_field() !!}
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">

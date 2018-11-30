@@ -26,6 +26,7 @@ Route::resource('admin/application','ApplicationController');
 //====================================================================================//
 //Category
 //đường dẫn đến form của category
+Route::group(['prefix' => '','middleware'=>'auth'],function(){
 Route::get('category/createcategory','CategoryController@getCreate');
 
 //đường dẫn khi submit form thêm
@@ -120,7 +121,7 @@ Route::post('users/{id}/update', [
 
 //đường dẫn khi delete user
 Route::get('users/{id}/delete','UserController@destroy');
-
+});
 
 //====================================================================//
 Route::patch('admin/category',['as' => 'admin.category','uses' => 'CategoryController@index']);

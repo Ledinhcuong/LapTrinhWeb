@@ -26,6 +26,7 @@ class LoginController extends Controller
             'password.required' => 'Mật khẩu là trường bắt buộc',
             'password.min' => 'Mật khẩu phải chứa ít nhất 6 ký tự',
         ];
+        $remember = $request->has('remember') ? true : false;
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
@@ -34,13 +35,9 @@ class LoginController extends Controller
         }else{
             $Email['Email'] = $request->input('Email');
             $password['password'] = $request->input('password');
-            if( Auth::attempt(['Email' => $Email['Email'], 'password' =>$password['password'],'TypeUser'=>1])) {
+            if( Auth::attempt(['Email' => $Email['Email'], 'password' =>$password['password']],$remember)) {
                 return redirect()->intended('/admin');
-            }
-            else if( Auth::attempt(['Email' => $Email['Email'], 'password' =>$password['password'],'TypeUser'=>0])) {
-                return redirect()->intended('/');
-            }
-             else {
+            } else {
                 $errors = new MessageBag(['errorlogin' => 'Email hoặc mật khẩu không đúng']);
                 return redirect()->back()->withInput()->withErrors($errors);
                // return redirect()->back();
