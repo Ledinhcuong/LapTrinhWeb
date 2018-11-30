@@ -31,9 +31,9 @@
 
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-
+          @if(isset($user_login))
           <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Xin chao admin
+            <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> {{$user_login->name}}
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -44,8 +44,9 @@
             <a class="nav-link" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+            <a class="nav-link" href="admin/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
           </li>
+          @endif
         </ul>
       </div>
     </div>

@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Auth;
+use App\users;
 
 class Controller extends BaseController
 {
@@ -20,7 +21,7 @@ class Controller extends BaseController
     function DangNhap(){
     	if(Auth::check())
     	{
-    		view()->share('user_login',Auth::users());
+    		view()->share('user_login',Auth::user());
     	}
     }
 }

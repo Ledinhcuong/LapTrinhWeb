@@ -33,16 +33,25 @@ class LoginController extends Controller
             return redirect()->back()->withErrors($validator);
         }else{
             $Email['Email'] = $request->input('Email');
-            $password['paasword'] = $request->input('password');
-
-            if( Auth::attempt(['Email' => $Email['Email'], 'password' =>$password['paasword']])) {
+            $password['password'] = $request->input('password');
+            if( Auth::attempt(['Email' => $Email['Email'], 'password' =>$password['password'],'TypeUser'=>1])) {
                 return redirect()->intended('/admin');
-            } else {
+            }
+            else if( Auth::attempt(['Email' => $Email['Email'], 'password' =>$password['password'],'TypeUser'=>0])) {
+                return redirect()->intended('/');
+            }
+             else {
                 $errors = new MessageBag(['errorlogin' => 'Email hoặc mật khẩu không đúng']);
                 return redirect()->back()->withInput()->withErrors($errors);
                // return redirect()->back();
             }
 
         }
+    }
+
+    public function getLogoutAdmin()
+    {
+        Auth::logout();
+        return redirect('login');
     }
 }

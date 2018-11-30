@@ -139,6 +139,7 @@ Route::patch('admin/user',['as' => 'admin.user','uses' => 'UserController@index'
 Route::get('login','LoginController@getLogin');
 Route::post('login','LoginController@postLogin');
 Route::get('','HomeController@getIndex');
+Route::get('admin/Logout','LoginController@getLogoutAdmin');
 
 // Đăng ký thành viên
 Route::get('register', 'RegisterController@getRegister');
