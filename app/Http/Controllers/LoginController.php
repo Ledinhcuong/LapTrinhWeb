@@ -36,7 +36,7 @@ class LoginController extends Controller
             $Email['Email'] = $request->input('Email');
             $password['password'] = $request->input('password');
             if( Auth::attempt(['Email' => $Email['Email'], 'password' =>$password['password']],$remember)) {
-                return redirect()->intended('/admin');
+                return redirect()->intended('/');
             } else {
                 $errors = new MessageBag(['errorlogin' => 'Email hoặc mật khẩu không đúng']);
                 return redirect()->back()->withInput()->withErrors($errors);
