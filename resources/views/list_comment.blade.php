@@ -8,81 +8,37 @@
 <body>
 <div class="all-comment">
 	<div class="row">
+
+		<?php 
+			foreach ($data as $key ) {
+			
+
+		?>
 		<div class="col-md-6">
 			<div class="comment" style="padding: 10px 0; margin: 5px 0;">
 				<div class="name-user" style="font-weight: bold; font-size: 18px; margin-bottom: 8px">
-					Đình Cường
+					{{$data->NameUser}}
 				</div>
 
 				<div class="date">
-					22/12/2018
+					{{$data->ReviewDate}}
 				</div>
 
 				<div class="review">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus illum quo, molestias excepturi quibusdam sunt amet provident ratione, consectetur laboriosam iusto, asperiores minus libero porro facilis recusandae maiores tenetur, tempora.
+					{{$data->ContentReview}}
 				</div>
-
-
 
 			</div>
 		</div>
 
-		<div class="col-md-6">
-			<div class="comment" style="padding: 10px 0; margin: 5px 0;">
-				<div class="name-user" style="font-weight: bold; font-size: 18px; margin-bottom: 8px">
-					Đình Cường
-				</div>
+		<?php
+	}
 
-				<div class="date">
-					22/12/2018
-				</div>
+		?>
 
-				<div class="review">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus illum quo, molestias excepturi quibusdam sunt amet provident ratione, consectetur laboriosam iusto, asperiores minus libero porro facilis recusandae maiores tenetur, tempora.
-				</div>
+	
 
-
-
-			</div>
-		</div>
-
-		<div class="col-md-6">
-			<div class="comment" style="padding: 10px 0; margin: 5px 0;">
-				<div class="name-user" style="font-weight: bold; font-size: 18px; margin-bottom: 8px">
-					Đình Cường
-				</div>
-
-				<div class="date">
-					22/12/2018
-				</div>
-
-				<div class="review">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus illum quo, molestias excepturi quibusdam sunt amet provident ratione, consectetur laboriosam iusto, asperiores minus libero porro facilis recusandae maiores tenetur, tempora.
-				</div>
-
-
-
-			</div>
-		</div>
-
-		<div class="col-md-6">
-			<div class="comment" style="padding: 10px 0; margin: 5px 0;">
-				<div class="name-user" style="font-weight: bold; font-size: 18px; margin-bottom: 8px">
-					Đình Cường
-				</div>
-
-				<div class="date">
-					22/12/2018
-				</div>
-
-				<div class="review">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus illum quo, molestias excepturi quibusdam sunt amet provident ratione, consectetur laboriosam iusto, asperiores minus libero porro facilis recusandae maiores tenetur, tempora.
-				</div>
-
-
-
-			</div>
-		</div>
+		
 	</div>
 
 </div>

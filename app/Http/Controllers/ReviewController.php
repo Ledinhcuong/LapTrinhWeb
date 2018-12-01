@@ -58,7 +58,12 @@ class ReviewController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+
+		$data = DB::table('Reviews')
+		->where('IdApplication', $id)->get();
+
+		return var_dump($data);
+		//return view('list_comment', ['data' => $data]);
 	}
 
 	/**
