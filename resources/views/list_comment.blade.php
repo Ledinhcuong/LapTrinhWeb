@@ -17,15 +17,15 @@
 		<div class="col-md-6">
 			<div class="comment" style="padding: 10px 0; margin: 5px 0;">
 				<div class="name-user" style="font-weight: bold; font-size: 18px; margin-bottom: 8px">
-					{{$data->NameUser}}
+					<?php echo $key->NameUser ?>
 				</div>
 
 				<div class="date">
-					{{$data->ReviewDate}}
+					<?php echo $key->ReviewDate ?>
 				</div>
 
 				<div class="review">
-					{{$data->ContentReview}}
+					<?php  echo $key->ContentReview ?>
 				</div>
 
 			</div>
