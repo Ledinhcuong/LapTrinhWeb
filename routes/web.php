@@ -133,6 +133,7 @@ Route::patch('admin/user',['as' => 'admin.user','uses' => 'UserController@index'
 Route::get('login','LoginController@getLogin');
 Route::post('login','LoginController@postLogin');
 Route::get('','HomeController@getIndex');
+Route::get('logout', 'LoginController@logout');
 
 // Đăng ký thành viên
 Route::get('register', 'RegisterController@getRegister');
@@ -162,3 +163,6 @@ Route::get('home/chitiet/{id}', 'ProjectController@show');
 Route::get('home/{type}', 'ProjectController@filterType');
 
 Route::get('review/{IdApp}', 'ReviewController@show');
+
+
+Route::get('/home', 'HomeController@index')->name('home');

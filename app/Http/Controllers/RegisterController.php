@@ -15,20 +15,21 @@ use App\users;
 
 class RegisterController extends Controller
 {
-	//
+	
 	public function getRegister() 
     {
         return view('register');
     }
 
 	public function postRegister(Request $request) {
+
         $this->validate($request,
         [
             'name' => 'required|string|min:3',
             'email' => 'required|email|unique:users,email',
-            //'password' => 'required|string|min:6|confirmed',
-            'password' => 'required|min:6|max:32',
-            're_password' => 'required|same:password'
+            'password' => 'required|string|min:6|confirmed',
+            //'password' => 'required|min:6|max:32',
+            //'re_password' => 'required|same:password'
 
         ],
         [
@@ -43,11 +44,12 @@ class RegisterController extends Controller
             're_password.same' => 'Xác nhận mật khẩu không đúng',
             're_password.required' => 'bạn chưa nhập lại mất khẩu',
         ]);
-        $users = new users;
+
+        $users = new Users;
         $users->NameUser = $request->name;
         $users->Email = $request->email;
         $users->password = $request->password;
-        $users->TypeUser = 0;
+        $users->TypeUser = 2;
         $users -> save();
 
         return redirect('/')->with('','dk thanh cong');
