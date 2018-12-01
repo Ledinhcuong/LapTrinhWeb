@@ -162,7 +162,8 @@ Route::get('home/chitiet/{id}', 'ProjectController@show');
 
 Route::get('home/{type}', 'ProjectController@filterType');
 
-Route::get('review/{IdApp}', 'ReviewController@show');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('review/{IdApp}', 'ReviewController@show');
