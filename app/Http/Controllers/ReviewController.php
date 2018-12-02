@@ -58,7 +58,14 @@ class ReviewController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+
+		$data = DB::table('Reviews')
+		->where('IdApplication', $id)
+		->join('Users', 'Reviews.IdUser', '=', 'Users.IdUser')
+		->get();
+
+	
+		return view('list_comment', ['data' => $data]);
 	}
 
 	/**

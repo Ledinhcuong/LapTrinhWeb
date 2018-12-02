@@ -4,6 +4,7 @@
 @section('content')
 
 <?php
+$idapp = 'review/'. $data->IdApplication;
 $icon = 'public/images/'. $data->Icon;
 $image1 = 'public/images/'. $data->Image1;
 $image2 = 'public/images/'. $data->Image2;
@@ -198,7 +199,7 @@ $image3 = 'public/images/'. $data->Image3;
 				
 			</form>
 
-			<iframe src="list_comment" width="100%" height="600px" frameborder="0">
+			<iframe src="{{url($idapp)}}" width="100%" height="600px" frameborder="0">
 				
 			</iframe>
 			
