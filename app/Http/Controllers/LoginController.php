@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\users;
+use App\User;
 use Illuminate\Support\MessageBag;
 
 use Illuminate\Support\Facades\Validator;
@@ -17,12 +18,14 @@ class LoginController extends Controller
 	//
 	public function getLogin()
 	{
+		return "getlogin";
 		return view('login');
 	}
 
 	public function postLogin(Request $request)
 	{
-		$users = new users;
+
+		$users = new Users;
 		$rules = [
     		'email' =>'required|email',
     		'password' => 'required|min:6'
@@ -42,11 +45,18 @@ class LoginController extends Controller
     		$password = $request->input('password');
 
     		if( Auth::attempt(['email' => $Email, 'password' => $password])) {
+				// Lưu thông tin đăng nhập vào session
+				Session::put('user', Auth::user());
+				Session::save();
     			return redirect()->intended('/');
     		} else {
     			$errors = new MessageBag(['errorlogin' => 'Email hoặc mật khẩu không đúng']);
     			return redirect()->back()->withInput()->withErrors($errors);
     		}
-    	}
+		}
+	}
+
+	public function logout() {
+		Session::forget('user');
 	}
 }

@@ -59,7 +59,7 @@
 					<img src="public/images/img-01.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" action="{{url('login')}}" method="POST" role="form">
+				<form class="login100-form validate-form" action="{{ route('login') }}" method="POST" role="form">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<span class="login100-form-title">
 						Member Login
@@ -93,7 +93,7 @@
 					</div>
 					{!! csrf_field() !!}
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="submit" class="login100-form-btn">
 							Login
 						</button>
 					</div>

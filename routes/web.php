@@ -130,10 +130,11 @@ Route::patch('admin/user',['as' => 'admin.user','uses' => 'UserController@index'
 //=============== trang dang nhap====================================
 
 
-Route::get('login','LoginController@getLogin');
+Route::get('login','LoginController@getLogin')->name('login');
 Route::post('login','LoginController@postLogin');
+//Route::post('logintest','TestController@check');
 Route::get('','HomeController@getIndex');
-Route::get('logout', 'LoginController@logout');
+//Route::get('logout', 'LoginController@logout');
 
 // Đăng ký thành viên
 Route::get('register', 'RegisterController@getRegister');
@@ -162,7 +163,7 @@ Route::get('home/chitiet/{id}', 'ProjectController@show');
 
 Route::get('home/{type}', 'ProjectController@filterType');
 
-
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 

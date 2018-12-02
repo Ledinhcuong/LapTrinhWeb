@@ -17,11 +17,11 @@
 	
 </head>
 <body>
+	
 	<!-- Header -->
 	<header>
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="container">
-				
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -60,13 +60,13 @@
 							<img src="{{url('public/images/mylogo.ico')}}" alt="logo">
 						</div>
 						<ul>
-							@if (Auth::check())
-								<li><i style="color: #5751D9" class="fa fa-user-o" aria-hidden="true"></i> {{ Auth::user()->NameUser }}</li>
+							@if (Session::get('user')) {{-- (Auth::check()) --}}
+								<li><i style="color: #5751D9" class="fa fa-user-o" aria-hidden="true"></i> {{ Session::get('user')->NameUser }}{{-- Auth::user()->NameUser --}}</li>
 								<li><i style="color: #5751D9"  class="fa fa-info-circle" aria-hidden="true"></i><a href="#">   Thông tin tài khoản</a></li>
-								<li><i style="color: #5751D9"   class="fa fa-sign-out" aria-hidden="true"></i><a href="{{ Auth::logout() }}"> Đăng xuất</a> </li>
+								<li><i style="color: #5751D9"   class="fa fa-sign-out" aria-hidden="true"></i><a href="{{ Session::forget('user') }}"> Đăng xuất</a> </li>
 							@else
-								<li><i style="color: #5751D9"   class="fa fa-sign-in" aria-hidden="true"></i><a href="{{ Route('login') }}"> Đăng nhập</a> </li>
-								<li><i style="color: #5751D9"   class="fa fa-user-plus" aria-hidden="true"></i><a href="{{ Route('register') }}"> Đăng kí</a> </li>
+								<li><i style="color: #5751D9"   class="fa fa-sign-in" aria-hidden="true"></i><a href="{{ url('login') }}"> Đăng nhập</a> </li>
+								<li><i style="color: #5751D9"   class="fa fa-user-plus" aria-hidden="true"></i><a href="{{ url('register') }}"> Đăng kí</a> </li>
 							@endif
 						</ul>
 					</div>
