@@ -6,8 +6,8 @@ class Users extends Model {
 
 	protected $table = 'Users';
 	protected $primaryKey = 'IdUser';
-	//protected $Email = 'Email';
-	//protected $password = 'password';
+	protected $Email = 'Email';
+	protected $password = 'password';
 	public $timestamps = false;
 
 	public function Reviews() {
