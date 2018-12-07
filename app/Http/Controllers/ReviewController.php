@@ -23,8 +23,8 @@ class ReviewController extends Controller {
 
 		$data =  DB::table('Reviews')
 		->join('Application', 'Reviews.IdApplication', '=', 'Application.IdApplication')
-		->join('Users', 'Reviews.IdUser', '=', 'Users.IdUser')
-		->select('Reviews.*', 'Application.NameApp', 'Users.NameUser')->simplePaginate(50);
+		->join('Users', 'Reviews.IdUser', '=', 'Users.id')
+		->select('Reviews.*', 'Application.NameApp', 'Users.name')->simplePaginate(50);
 
 
 		return view('reviewtable', ['data'=>$data]);

@@ -53,24 +53,22 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Id User</th>
-        <th>Name User</th>
+        <th>User id</th>
+        <th>User name</th>
         <th>Email</th>
-        <th>TypeUser</th>
+        <th>User type</th>
         <th>Control</th>
 
       </tr>
     </thead>
     <tbody>
-      <?php 
-      foreach ($data as $key) {    
-        ?>
+      @foreach ($data as $key)
         <tr>
-          <td> {{$key->IdUser}}</td>
-          <td> {{$key->NameUser}}</td>
-          <td> {{$key->Email}}</td>
+          <td> {{$key->id}}</td>
+          <td> {{$key->name}}</td>
+          <td> {{$key->email}}</td>
           <td> 
-            @if($key->TypeUser==1)
+            @if($key->level==1)
             {{"Admin"}}
             @else
             {{"Thuong"}}
@@ -86,10 +84,7 @@
 
         </td>
       </tr>
-      <?php 
-
-    }
-    ?>
+      @endforeach
   </tbody>
 </table>
 
