@@ -32,7 +32,7 @@
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Xin chao @if(Auth::check()) {{ Auth::user()->name }} @endif
+            <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Xin chao @if(Auth::check()) {{ Auth::user()->name }} @else Admin @endif
               <span class="sr-only">(current)</span>
             </a>
           </li>
