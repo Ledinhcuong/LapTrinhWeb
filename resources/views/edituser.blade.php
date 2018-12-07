@@ -76,11 +76,11 @@
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<div class="form-group">
 					<label>Name</label>
-					<input type="text" class="form-control" name="name" placeholder="Nhap ten nguoi dung"  value="{{ old('NameUser',$getUserById['NameUser']) }}">
+					<input type="text" class="form-control" name="name" placeholder="Nhap ten nguoi dung"  value="{{ old('name',$getUserById['name']) }}">
 				</div>
 				<div class="form-group">
 					<label>Email</label>
-					<input type="email" class="form-control" name="email" placeholder="Nhap dia chi email"  value="{{ old('Email',$getUserById['Email']) }}">
+					<input type="email" class="form-control" name="email" placeholder="Nhap dia chi email"  value="{{ old('email',$getUserById['email']) }}">
 				</div>
 				<div class="form-group">
 					<label>Password</label>
