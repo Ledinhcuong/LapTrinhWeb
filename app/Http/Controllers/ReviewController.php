@@ -45,9 +45,24 @@ class ReviewController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$allRequest = $request->all();
+		$appid = $allRequest['appid'];
+		$username = $allRequest['username'];
+		$date = new \DateTime();
+		$comment = $allRequest['user-comment'];
+
+		$dataInsertToDatabase = array(
+			'IdApplication' => $appid,
+			'IdUser' => $username,
+			'ReviewDate' => $date,
+			'ContentReview' => $comment
+		);
+
+		$objReview = new Reviews();
+		$objReview->insert($dataInsertToDatabase);
+		return back();
 	}
 
 	/**
