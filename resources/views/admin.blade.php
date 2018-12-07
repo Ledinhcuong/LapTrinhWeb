@@ -32,7 +32,7 @@
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Xin chao  {{ Session::get('user')->NameUser }}{{-- Auth::user()->NameUser --}}
+            <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Xin chao {{ Auth::user()->name }}
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -43,7 +43,7 @@
             <a class="nav-link" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ Session::forget('user') }}{{-- Auth::logout() --}}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+            <a class="nav-link" href="{{ Auth::logout() }}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
           </li>
         </ul>
       </div>

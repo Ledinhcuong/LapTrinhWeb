@@ -12,6 +12,7 @@
 */
 
 
+Auth::routes();
 
 Route::get('{page?}', 'ProjectController@index');
 
@@ -130,15 +131,15 @@ Route::patch('admin/user',['as' => 'admin.user','uses' => 'UserController@index'
 //=============== trang dang nhap====================================
 
 
-Route::get('login','LoginController@getLogin')->name('login');
-Route::post('login','LoginController@postLogin');
+//Route::get('login','LoginController@getLogin')->name('login');
+//Route::post('login','LoginController@postLogin');
 //Route::post('logintest','TestController@check');
-Route::get('','HomeController@getIndex');
+//Route::get('','HomeController@getIndex');
 //Route::get('logout', 'LoginController@logout');
 
 // Đăng ký thành viên
-Route::get('register', 'RegisterController@getRegister');
-Route::post('register', 'RegisterController@postRegister');
+//Route::get('register', 'RegisterController@getRegister');
+//Route::post('register', 'RegisterController@postRegister');
 
 /*------------------------- Application -----------*/
 Route::get('application/{id}/delete', 'ApplicationController@destroy');
@@ -167,4 +168,3 @@ Route::get('home/{type}', 'ProjectController@filterType');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('review/{IdApp}', 'ReviewController@show');
