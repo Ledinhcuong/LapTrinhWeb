@@ -7,6 +7,8 @@ class Reviews extends Model {
 	protected $table = 'Reviews';
 	public $timestamps = false;
 	
+	protected $fillable = ['ReviewDate', 'ContentReview'];
+	
 	public function Users() {
 		return $this->belongsto('App\Users');
 	}

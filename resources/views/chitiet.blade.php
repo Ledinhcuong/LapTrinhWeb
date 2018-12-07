@@ -186,21 +186,34 @@ $image3 = 'public/images/'. $data->Image3;
 			</div>
 			<button style="margin-bottom: 5px;"> <i class="fa fa-pencil"></i> Viết đánh giá</button>
 
-			<form method="post" name="form-comment" action="#" >
-
-				
+			<form method="post" name="form-comment" action="{{URL::action('ReviewController@store')}}" >
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<input type="hidden" name="username" value="@if (Auth::check()) {{ Auth::user()->name }} @else 0 @endif">
+				<input type="hidden" name="appid" value="{{ $data->IdApplication }}">
+				<div class="form-group">
 					<label for="edt_comment" >Nhập đánh giá của bạn </label>
-
 					<input  type="text" name="user-comment" id="edt_comment" class="form-control">
 					<span class="help-block"></span>
+				</div>
+				<div class="form-group">
 					<button type="submit" class="btn btn-primary">Đăng</button>
-					
-				
+				</div>
 			</form>
 
-			<iframe src="list_comment" width="100%" height="600px" frameborder="0">
+			@foreach ($reviewdata as $key)
+			<div>
+				{{ $key->IdUser }}
+			</div>
+			<div>
+				{{ $key->ReviewDate }}
+			</div>
+			<div>
+				{{ $key->ContentReview }}
+			</div>
+			@endforeach
+			{{-- <iframe src="list_comment" width="100%" height="600px" frameborder="0">
 				
-			</iframe>
+			</iframe> --}}
 			
 
 		</div>

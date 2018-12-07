@@ -162,14 +162,17 @@ class ProjectController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($appid)
 	{
 		
 		$data = DB::table('Application')
 		->join('Types', 'Application.IdType', '=' , 'Types.IdType')
-		->select('Application.*', 'Types.NameType')->where('IdApplication', $id)->first();
+		->select('Application.*', 'Types.NameType')->where('IdApplication', $appid)->first();
 
-		return view('chitiet', ['data'=>$data]);
+		$reviewdata =  DB::table('Reviews')
+		->where('Reviews.IdApplication', $appid)->take(5)->get();
+
+		return view('chitiet', ['data'=>$data, 'reviewdata'=>$reviewdata]);
 	}
 
 	/**
