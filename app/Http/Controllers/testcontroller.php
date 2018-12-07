@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Session;
 
 class testcontroller extends Controller
 {
@@ -18,8 +17,8 @@ class testcontroller extends Controller
      
         
     	if(Auth::attempt($data)){
-            Session::put('user', Auth::user());
-    		return "yes";
+			return Auth::user()->name;
+			return "yes";
     	}else{
     		return "no";
     	}
