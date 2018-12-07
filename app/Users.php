@@ -5,13 +5,13 @@ use Illuminate\Database\Eloquent\Model;
 class Users extends Model {
 
 	protected $table = 'Users';
-	protected $primaryKey = 'IdUser';
-	protected $Email = 'Email';
+	protected $primaryKey = 'id';
+	protected $Email = 'email';
 	protected $password = 'password';
 	public $timestamps = false;
 
 	public function Reviews() {
-		return $this->hasMany('App\Reviews', 'IdUser');
+		return $this->hasMany('App\Reviews', 'id');
 	}
 
 }

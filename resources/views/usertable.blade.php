@@ -76,10 +76,10 @@
           </td>
           <td>
             <div>
-             <a href="{{ url('users/'.$key->IdUser.'/edituser') }}" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
+             <a href="{{ url('users/'.$key->id.'/edituser') }}" style="background: #00c853;" class="btn-control"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Sửa</a>
            </div>
            <div>
-            <a href="{{ url('users/'.$key->IdUser.'/delete') }}" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
+            <a href="{{ url('users/'.$key->id.'/delete') }}" style="background: #ff3d00;" class="btn-control"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa </a>
           </div>
 
         </td>
