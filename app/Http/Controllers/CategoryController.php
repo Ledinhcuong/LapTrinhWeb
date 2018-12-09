@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Category;
+use App\Application;
 use Illuminate\Routing\Redirector;
 
 use Illuminate\Http\Request;
@@ -117,7 +118,9 @@ class CategoryController extends Controller {
 
 	public function destroy($id)
 	{
-		//
+		// Xóa dữ liệu bảng liên quan trước
+		Application::where('IdCategory', $id)->delete();
+
 		Category::find($id)->delete();
 		return redirect()->action('CategoryController@index');
 	}

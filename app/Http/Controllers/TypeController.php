@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Types;
+use App\Application;
 use Illuminate\Http\Request;
 
 class TypeController extends Controller {
@@ -111,7 +112,10 @@ class TypeController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		// Xóa dữ liệu bảng liên quan trước
+		Application::where('IdApplication', $id)->delete();
+
+		//Xóa file trong lưu trữ
 		Types::find($id)->delete();
 		return redirect()->action('TypeController@index');
 	}
