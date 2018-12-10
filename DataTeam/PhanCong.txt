@@ -1,8 +1,0 @@
-Phần này phụ thuộc vào sự phân công và thống nhất của mọi người nói chung mọi người phải thực hiện các thao tác sau:
-+ Thực hiện hiển thị dữ liệu các bảng
-+ Thực hiện thêm dữ liệu đương nhiên phải có một giao diện xử lý 
-+ Thực hiện xóa thì dễ
-+ Thực hiện sửa
-+ Thực hiện tìm kiếm
-
-Để thực hiện được các thao tác này mọi người cần có kiến thức về Elequent, Model, Form request ...
