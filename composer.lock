@@ -214,12 +214,12 @@
             "version": "2.1.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/egulias/EmailValidator.git",
+                "url": "https://github.com/egulias/emailValidator.git",
                 "reference": "0578b32b30b22de3e8664f797cf846fc9246f786"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/0578b32b30b22de3e8664f797cf846fc9246f786",
+                "url": "https://api.github.com/repos/egulias/emailValidator/zipball/0578b32b30b22de3e8664f797cf846fc9246f786",
                 "reference": "0578b32b30b22de3e8664f797cf846fc9246f786",
                 "shasum": ""
             },
@@ -243,7 +243,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Egulias\\EmailValidator\\": "EmailValidator"
+                    "Egulias\\emailValidator\\": "emailValidator"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -256,7 +256,7 @@
                 }
             ],
             "description": "A library for validating emails against several RFCs",
-            "homepage": "https://github.com/egulias/EmailValidator",
+            "homepage": "https://github.com/egulias/emailValidator",
             "keywords": [
                 "email",
                 "emailvalidation",

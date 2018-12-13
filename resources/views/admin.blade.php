@@ -22,7 +22,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Administrator</a>
+      <a class="navbar-brand" href="index">Index</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -42,9 +42,14 @@
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ Auth::logout() }}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
-          </li>
+          <li><a class="nav-link" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+            <i class="fa fa-sign-out" aria-hidden="true"></i> {{ __('Logout') }}
+          </a></li>
+           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
         </ul>
       </div>
     </div>
@@ -79,6 +84,21 @@
     </div>
 
     <div class="col-md-3 table">
+      <a href="{{url('admin/banner')}}" style="text-decoration: none;">
+  
+        <div class="block-table">
+          <div class="background-card">
+           <img src="vendor/image/Banner.png" alt="">
+         </div>
+         <div class="name-table">
+          Table Banners
+        </div>
+  
+      </div>
+  
+    </a>
+  </div>
+    <div class="col-md-3 table">
 
       <a href="{{url('admin/category')}}" style="text-decoration: none;">
 
@@ -97,23 +117,34 @@
   </div>
 
   <div class="col-md-3 table">
-    <a href="{{url('admin/banner')}}" style="text-decoration: none;">
-
+    <a href="{{url('admin/review')}}" style="text-decoration: none;">
       <div class="block-table">
         <div class="background-card">
-         <img src="vendor/image/Banner.png" alt="">
+         <img src="vendor/image/review.png" alt="">
        </div>
        <div class="name-table">
-        Table Banners
+        Table Review
       </div>
-
+  
     </div>
-
   </a>
-</div>
+  </div>
+  
+  <div class="col-md-3 table">
+    <a href="{{url('admin/type')}}" style="text-decoration: none;">
+      <div class="block-table">
+        <div class="background-card">
+         <img src="vendor/image/type.png" alt="">
+       </div>
+       <div class="name-table">
+        Table Type
+      </div>
+    </div>
+  </a>
+  </div>
 
 <div class="col-md-3 table">
-  <a href="{{url('admin/user')}}" style="text-decoration: none;">
+  <a href="{{url('admin/users')}}" style="text-decoration: none;">
     <div class="block-table">
       <div class="background-card">
        <img src="vendor/image/User.png" alt="">
@@ -126,32 +157,9 @@
 
 </div>
 
-<div class="col-md-3 table">
-  <a href="{{url('admin/type')}}" style="text-decoration: none;">
-    <div class="block-table">
-      <div class="background-card">
-       <img src="vendor/image/type.png" alt="">
-     </div>
-     <div class="name-table">
-      Table Type
-    </div>
-  </div>
-</a>
-</div>
 
-<div class="col-md-3 table">
-  <a href="{{url('admin/review')}}" style="text-decoration: none;">
-    <div class="block-table">
-      <div class="background-card">
-       <img src="vendor/image/review.png" alt="">
-     </div>
-     <div class="name-table">
-      Table Review
-    </div>
 
-  </div>
-</a>
-</div>
+
 
 </div>
 </div>

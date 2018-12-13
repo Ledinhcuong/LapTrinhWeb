@@ -59,6 +59,21 @@ class ApplicationController extends Controller {
 		return view('addapplication', ['type'=>$type, 'category'=>$category]);
 	}
 
+	public function handleFile($image2, $location, $idapp = "") {
+		$nameimage2 = $image2->getClientOriginalName();  // Lấy tên file
+		$image2type = $image2->getClientOriginalExtension(); // Lấy đuôi file
+		$linkimage2 = $image2->getRealPath();
+	
+		if ($image2type == "jpg"  OR $image2type == "png") {
+			// Tiến hành di chuyển file vô thư mục
+			$image2->move($location, $nameimage2);
+			Application::where('IdApplication', $idapp)->update(['Image2'=>$nameimage2]);
+			return $nameimage2;
+		} else {
+			return view('file_error');
+		}
+	}
+
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -123,52 +138,22 @@ class ApplicationController extends Controller {
 		// Xu ly file image 1
 		$image1 = $allRequest['image1'];
 
-		$nameimage1 = $image1->getClientOriginalName();  // Lấy tên file
-		$image1type = $image1->getClientOriginalExtension(); // Lấy đuôi file
-		$linkimage1 = $image1->getRealPath();
-
-
-		if (($image1type == "jpg"  OR $image1type == "png") AND $result != false) {
-			// Tiến hành di chuyển file vô thư mục
-			$image1->move($location, $nameimage1);
-		} else {
-			$result = false;
-			return  'Bạn chọn file image1 không phải là hình ảnh :(';
-		}
-
-
-
-		// Xu ly file image 2
-		$image2 = $allRequest['image2'];
-
-		$nameimage2 = $image2->getClientOriginalName();  // Lấy tên file
-		$image2type = $image2->getClientOriginalExtension(); // Lấy đuôi file
-		$linkimage2 = $image2->getRealPath();
-
-		if (($image2type == "jpg"  OR $image2type == "png") AND $result != false) {
-			// Tiến hành di chuyển file vô thư mục
-			$image2->move($location, $nameimage2);
-		} else {
-			$result = false;
-			return 'Bạn chọn image2 không phải là hình ảnh :(';
+		$nameimage1 = $this->handleFile($image1, $location);
+		$nameimage2 = "";
+		$nameimage3 = "";
+		if ($request->hasFile('image2')) {
+			// Xu ly file image 2
+			$image2 = $allRequest['image2'];
+			$nameimage2 = $this->handleFile($image2, $location);
 		}
 
 
 		// Xu ly file image 3
-		$image3 = $allRequest['image3'];
-
-		$nameimage3 = $image3->getClientOriginalName();  // Lấy tên file
-		$image3type = $image3->getClientOriginalExtension(); // Lấy đuôi file
-		$linkimage3 = $image3->getRealPath();
-
-
-		if (($image3type == "jpg"  OR $image3type == "png") AND $result != false) {
-			// Tiến hành di chuyển file vô thư mục
-			$image3->move($location, $nameimage3);
-		} else {
-			$result = false;
-			return 'Bạn chọn image 3 không phải là hình ảnh :(';
+		if ($request->hasFile('image3')) {
+			$image3 = $allRequest['image3'];
+			$nameimage3 = $this->handleFile($image3, $location);
 		}
+		
 
 		// Tiến hành thêm dữ liệu vào cơ sở dữ liệu
 		if ($result == true) {
@@ -193,12 +178,12 @@ class ApplicationController extends Controller {
 
 		return redirect()->action('ApplicationController@index');
 
+		}
+
+		return 'Đã xảy ra sự cố ngoài ý muốn :)';
 	}
 
-
-
-	return 'Đã xảy ra sự cố ngoài ý muốn :)';
-}
+	
 
 	/**
 	 * Display the specified resource.
@@ -262,27 +247,9 @@ class ApplicationController extends Controller {
 		
 		// Xu ly file icon nếu người dùng chọn
 		if ($request->hasFile('icon'))
-		{
-			
+		{		
 			$icon = $allRequest['icon'];
-
-			$nameicon = $icon->getClientOriginalName();  // Lấy tên file
-			$icontype = $icon->getClientOriginalExtension(); // Lấy đuôi file
-			$linkicon = $icon->getRealPath();
-
-			if ($icontype == "jpg"  OR $icontype == "png") {
-
-				// Tiến hành di chuyển file vô thư mục
-				$icon->move($location, $nameicon);
-
-				// Thực hiện thay đổi
-				Application::where('IdApplication', $idapp)->update(['Icon'=>$nameicon]);
-				
-			} else {
-				return 'Bạn chọn một file icon không phải là một ảnh :( ';
-			}
-
-
+			$this->handleFile($icon);
 		}
 
 
@@ -291,62 +258,28 @@ class ApplicationController extends Controller {
 		if ($request->hasFile('image1')) {
 			
 			$image1 = $allRequest['image1'];
-
-		$nameimage1 = $image1->getClientOriginalName();  // Lấy tên file
-		$image1type = $image1->getClientOriginalExtension(); // Lấy đuôi file
-		$linkimage1 = $image1->getRealPath();
-
-		if ($image1type == "jpg"  OR $image1type == "png") {
-			// Tiến hành di chuyển file vô thư mục
-			$image1->move($location, $nameimage1);
-			Application::where('IdApplication', $idapp)->update(['Image1'=>$nameimage1]);
-
-		} else {
-			return 'Bạn đã chọn image 1 không phải là một ảnh :(';
-		}
-	}
-
-
-
-		// Xu ly file image 2
-	if ($request->hasFile('image2')) {
-
-		$image2 = $allRequest['image2'];
-
-		$nameimage2 = $image2->getClientOriginalName();  // Lấy tên file
-		$image2type = $image2->getClientOriginalExtension(); // Lấy đuôi file
-		$linkimage2 = $image2->getRealPath();
-
-		if ($image2type == "jpg"  OR $image2type == "png") {
-			// Tiến hành di chuyển file vô thư mục
-			$image2->move($location, $nameimage2);
-			Application::where('IdApplication', $idapp)->update(['Image2'=>$nameimage2]);
-
-		} else {
-			return 'Bạn đã chọn image 2 không là hình ảnh :(';
-		}
-	}
-
-
-		// Xu ly file image 3
-	if ($request->hasFile('image3')) {
-		
-		$image3 = $allRequest['image3'];
-
-		$nameimage3 = $image3->getClientOriginalName();  // Lấy tên file
-		$image3type = $image3->getClientOriginalExtension(); // Lấy đuôi file
-		$linkimage3 = $image3->getRealPath();
-
-		if ($image3type == "jpg"  OR $image3type == "png") {
-			// Tiến hành di chuyển file vô thư mục
-			$image3->move($location, $nameimage3);
-			Application::where('IdApplication', $idapp)->update(['Image3'=>$nameimage3]);
-
-		} else {
-			return 'Bạn đã chọn image 3 không phải là một ảnh :(';
+			$this->handleFile($image1);
 		}
 
-	}
+
+
+			// Xu ly file image 2
+		if ($request->hasFile('image2')) {
+
+			$image2 = $allRequest['image2'];
+
+			$this->handleFile($image2);
+			
+		}
+
+			// Xu ly file image 3
+		if ($request->hasFile('image3')) {
+			
+			$image3 = $allRequest['image3'];
+
+			$this->handleFile($image3);
+
+		}
 
 		// Tiến hành cập nhật các thành phần còn lại vào cơ sở dữ liệu
 
@@ -366,13 +299,10 @@ class ApplicationController extends Controller {
 
 		return redirect()->action('ApplicationController@index');
 
-	
-
-
-
-	
 
 }
+
+
 
 	/**
 	 * Remove the specified resource from storage.

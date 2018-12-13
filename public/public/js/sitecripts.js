@@ -15,15 +15,10 @@ $(document).ready(function(){
 	});
 
 	$(".account").click(function() {
-		$('.menu-account').slideToggle(500);
-
-	});
-
-
-	
+		$('.menu-account').slideToggle(200);
+	});	
 	
 });
-
 
 
 function validateForm() {

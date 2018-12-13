@@ -32,16 +32,16 @@ SortDescription
 
 Users
 ------------------
-IdUser
-TypeUser
-NameUser
-Email
+id
+level
+name
+email
 password
 
 Reviews
 -------------------------
 IdApplication
-IdUser
+id
 ReviewDate
 ContentReview
 

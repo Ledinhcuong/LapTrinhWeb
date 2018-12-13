@@ -175,7 +175,7 @@
       <div class="form-group">
         <label for="image1" class="col-sm-2 control-label">Image 1 </label>
         <div class="col-sm-10">
-          <input type="file" id="image1" name="image1" class="form-control" style="opacity: 0.8" required="true">
+          <input type="file" id="image1" name="image1" class="form-control" style="opacity: 0.8">
           <span class="help-block"></span>
         </div>
       </div>
@@ -184,7 +184,7 @@
       <div class="form-group">
         <label for="image2" class="col-sm-2 control-label">Image 2 </label>
         <div class="col-sm-10">
-          <input type="file" id="image2" name="image2" class="form-control" style="opacity: 0.8" required="true">
+          <input type="file" id="image2" name="image2" class="form-control" style="opacity: 0.8" >
           <span class="help-block"></span>
         </div>
       </div>
@@ -193,7 +193,7 @@
       <div class="form-group">
         <label for="image3" class="col-sm-2 control-label">Image 3 </label>
         <div class="col-sm-10">
-          <input type="file" id="image3" name="image3" class="form-control" style="opacity: 0.8" required="true">
+          <input type="file" id="image3" name="image3" class="form-control" style="opacity: 0.8">
           <span class="help-block"></span>
         </div>
       </div>

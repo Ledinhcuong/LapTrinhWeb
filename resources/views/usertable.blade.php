@@ -55,7 +55,7 @@
       <tr>
         <th>User id</th>
         <th>User name</th>
-        <th>Email</th>
+        <th>email</th>
         <th>User type</th>
         <th>Control</th>
 

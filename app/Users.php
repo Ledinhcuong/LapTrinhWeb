@@ -6,7 +6,7 @@ class Users extends Model {
 
 	protected $table = 'Users';
 	protected $primaryKey = 'id';
-	protected $Email = 'email';
+	protected $email = 'email';
 	protected $password = 'password';
 	public $timestamps = false;
 

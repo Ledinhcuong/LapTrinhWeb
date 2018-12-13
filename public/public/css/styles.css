@@ -14,7 +14,7 @@ body {
 /* --------------------------------- Header -------------------------------------------*/
 .navbar-default {
 	border-radius: 0px;
-	border: none;
+	border: 1px solid grey;
 	background: #fff;
 	position: fixed;
 	top: 0px;
@@ -22,6 +22,7 @@ body {
 	right: 0px;
 	z-index: 999;
 	display: block;
+	background: rgb(182, 211, 255);
 }
 
 .navbar-brand>img {
@@ -117,6 +118,7 @@ body {
 	padding-left: 8px;
 	padding-right: 8px;
 	padding-bottom: 8px;
+	height: 400px;
 }
 
 .app-background {
@@ -250,14 +252,13 @@ body {
 
 /*---------------------------------------------- footer ------------------------------------------------*/
 footer {
-	
 	margin-top:  20px;
+	border: 1px solid grey;
+	background: rgb(182, 211, 255);
 }
 
 footer .container {
-	padding: 40px 0;
-
-	
+	padding: 40px 0px;
 }
 
 .title-footer {
@@ -299,29 +300,46 @@ footer li>a {
 
 /*---------------- Menu --------------------------*/
 .menu-account {
-	padding: 40px 40px;
-	background: #e0e0e0;
-	display: inline-block;
+	padding: 10px;
+	background: rgb(221, 237, 252);
+	width: 400px;
+	right: 0px;
 	position: absolute;
-	right: 18%;
+	display: inline-block;
 	display: none;
+}
+
+.background-menu {
+	
 }
 
 .background-menu >ul {
 	list-style: none;
-	padding-left: 0px;
 	font-size: 20px;
 }
 
 .background-menu >ul >li {
-	margin: 10px 0;
+	/* padding: 5px 20px; */
+}
+
+ul {
+	padding-inline-start: 0px;
+}
+
+.background-menu >ul >li:hover {
+	background: rgb(207, 193, 235);
 }
 
 .background-menu >ul >li>a {
 	text-decoration: none;
-	color: #000;
+	color: rgb(63, 54, 114);
+	display: block;
+	padding: 5px 10px;
 }
 
+.background-menu li :hover {
+	color: rgb(35, 0, 131);
+}
 /*----------------------------------------------- Css trang tri tiet ------------------------------------------*/
 
 .chitiet-app {
@@ -500,4 +518,10 @@ footer li>a {
 		max-height: 64px;
 	}
 
+}
+
+.border {
+	border: 1px solid grey;
+	padding: 20px;
+	margin: 5px;
 }

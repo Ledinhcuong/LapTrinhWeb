@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Repair User</title>
+	<title>Edit User</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
@@ -32,7 +32,7 @@
 	<div id="page-wrapper">
 	<div class="container-fluid" style="background: gold;">
 		<div class="col-lg-12">
-			<h1 class="page-header">Repair User
+			<h1 class="page-header">Edit User
 				<small></small>
 			</h1>
 		</div>
@@ -79,7 +79,7 @@
 					<input type="text" class="form-control" name="name" placeholder="Nhap ten nguoi dung"  value="{{ old('name',$getUserById['name']) }}">
 				</div>
 				<div class="form-group">
-					<label>Email</label>
+					<label>email</label>
 					<input type="email" class="form-control" name="email" placeholder="Nhap dia chi email"  value="{{ old('email',$getUserById['email']) }}">
 				</div>
 				<div class="form-group">
@@ -87,7 +87,7 @@
 					<input type="password" class="form-control" name="password" placeholder="Nhap mat khau"  value="{{ old('password',$getUserById['password']) }}">
 				</div>
 				
-				<button type="submit" class="btn btn-default" style="background: grey">Repair</button>
+				<button type="submit" class="btn btn-default" style="background: grey">Update</button>
 				<button type="reset" class="btn btn-default" style="background: grey">Reset</button>
 			</form>
 		</div>

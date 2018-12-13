@@ -32,7 +32,7 @@
             ?>
             <tr>
               <td>{{$key->NameApp}}</td>
-              <td>{{$key->NameUser}}</td>
+              <td>{{$key->name}}</td>
               <td>{{$key->ReviewDate}}</td>
               <td>{{$key->ContentReview}}</td>
               <td width="200">

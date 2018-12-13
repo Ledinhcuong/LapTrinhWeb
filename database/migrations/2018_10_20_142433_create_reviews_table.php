@@ -19,8 +19,8 @@ class CreateReviewsTable extends Migration {
 			$table->integer('IdApplication')->unsigned();
 			$table->foreign('IdApplication')->references('IdApplication')->on('Application');
 
-			$table->integer('IdUser')->unsigned();
-			$table->foreign('IdUser')->references('IdUser')->on('Users');
+			$table->integer('id')->unsigned();
+			$table->foreign('id')->references('id')->on('Users');
 
 			$table->date('ReviewDate');
 

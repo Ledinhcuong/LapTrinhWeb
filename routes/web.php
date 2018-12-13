@@ -14,15 +14,29 @@
 
 Auth::routes();
 
-Route::get('{page?}', 'ProjectController@index');
+//====================================================================//
+Route::group(['middleware'=>'auth'], function () {
+    Route::get('cart', ['middleware'=>'check-permission:user|admin', 'uses' =>'ProjectController@getcart']);
+    Route::get('cart/{appid}', ['middleware'=>'check-permission:user|admin','uses' => 'ProjectController@postcart']);
+    Route::get('cart/{id}/delete',['as' => 'cart.destroy', 'uses' =>'ProjectController@cartremove']);
+    Route::get('admin', ['middleware'=>'check-permission:admin', 'uses' => 'ProjectController@viewadmin']);
+    Route::get('admin/application',['middleware'=>'check-permission:admin','as' => 'admin.application','uses' => 'ApplicationController@index']);
+    Route::get('admin/banner',['middleware'=>'check-permission:admin','as' => 'admin.banner','uses' => 'BannerController@index']);
+    Route::get('admin/category',['middleware'=>'check-permission:admin','as' => 'admin.category','uses' => 'CategoryController@index']);
+    Route::get('admin/review',['middleware'=>'check-permission:admin','as' => 'admin.type','uses' => 'ReviewController@index']);
+    Route::get('admin/type',['middleware'=>'check-permission:admin','as' => 'admin.type','uses' => 'TypeController@index']);
+    Route::get('admin/users',['middleware'=>'check-permission:admin','as' => 'admin.users','uses' => 'UserController@index']);
+});
 
-Route::resource('admin/banner','BannerController');
-Route::resource('admin/user','UserController');
-Route::resource('admin/category','CategoryController');
-Route::resource('admin/type','TypeController');
-Route::resource('admin/users','TypeController');
-Route::resource('admin/review','ReviewController');
-Route::resource('admin/application','ApplicationController');
+// Route::resource('admin/banner','BannerController');
+// Route::resource('admin/user','UserController');
+// Route::resource('admin/category','CategoryController');
+// Route::resource('admin/type','TypeController');
+// Route::resource('admin/users','TypeController');
+// Route::resource('admin/review','ReviewController');
+// Route::resource('admin/application','ApplicationController');
+
+
 //====================================================================================//
 //Category
 //đường dẫn đến form của category
@@ -88,11 +102,6 @@ Route::post('banner/{id}/update', 'BannerController@postEdit');
 //đường dẫn khi delete banner
 Route::get('banner/{id}/delete',['as' => 'banner.destroy', 'uses' =>'BannerController@destroy']);
 
-//====================================//
-Route::get('/', function () {
-    return view('welcome');
-
-});
 
 //==================================================================================//
 //user
@@ -117,14 +126,6 @@ Route::post('users/{id}/update', [
 Route::get('users/{id}/delete','UserController@destroy');
 
 
-//====================================================================//
-Route::patch('admin/category',['as' => 'admin.category','uses' => 'CategoryController@index']);
-
-Route::patch('admin/type',['as' => 'admin.type','uses' => 'TypeController@index']);
-
-Route::patch('admin/banner',['as' => 'admin.banner','uses' => 'BannerController@index']);
-
-Route::patch('admin/user',['as' => 'admin.user','uses' => 'UserController@index']);
 
 
 
@@ -135,7 +136,10 @@ Route::patch('admin/user',['as' => 'admin.user','uses' => 'UserController@index'
 //Route::post('login','LoginController@postLogin');
 //Route::post('logintest','TestController@check');
 //Route::get('','HomeController@getIndex');
-//Route::get('logout', 'LoginController@logout');
+//Route::get('logout', 'Auth\LoginController@getLogout');
+//Route::get('auth/logout', 'Auth\AuthController@getLogout');
+//Route::post('logout', 'LoginController@logout')->name('logout');
+//Route::post('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 
 // Đăng ký thành viên
 //Route::get('register', 'RegisterController@getRegister');
@@ -148,7 +152,7 @@ Route::post('application/update', 'ApplicationController@update');
 
 Route::get('application/search', 'ApplicationController@search');
 
-Route::get('review/{IdApp}/{IdUser}/delete', 'ReviewController@destroy');
+Route::get('review/{IdApp}/{id}/delete', 'ReviewController@destroy');
 
 Route::get('category/search', 'CategoryController@search');
 
@@ -162,8 +166,14 @@ Route::get('home/search', 'ProjectController@searchApp');
 
 Route::get('home/chitiet/{id}', 'ProjectController@show');
 
+//Route::post('home/chitiet/{id}', 'ProjectController@postcart');
+
 Route::get('home/{type}', 'ProjectController@filterType');
 
 //Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
+
+Route::post('/home', 'ReviewController@store');
+
+Route::get('{page?}', 'ProjectController@index');

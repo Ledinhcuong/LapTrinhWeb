@@ -15,7 +15,7 @@
 					@php
 					$imageslide = 'public/images/'. $key->ImageBanner;
 					@endphp
-					<img src="{{url($imageslide)}}" class="img-responsive" title="<?php echo $key->ContentBanner ?>" />
+					<img src="{{url($imageslide)}}" class="img-responsive" title="{{ $key->ContentBanner  }}" />
 				@endforeach
 			
 				<button type="button" onclick="getPrevImage()" class="btn" id="btnPrev">&lt;</button>

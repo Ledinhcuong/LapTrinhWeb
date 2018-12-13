@@ -30,8 +30,8 @@ class UserController extends Controller {
 
 		$key = '%'. $request->key .'%';
 
-		$data = Users::where('NameUser', 'like', $key)
-		->orWhere('Email', 'like', $key)->simplePaginate(30);
+		$data = Users::where('name', 'like', $key)
+		->orWhere('email', 'like', $key)->simplePaginate(30);
 		return view('usertable', ['data'=>$data]);
 	}
 
@@ -60,23 +60,23 @@ class UserController extends Controller {
         [
             'name.required' => 'Họ và tên là trường bắt buộc',
             'name.max' => 'Họ và tên ít nhất có 3 ký tự',
-            'email.required' => 'Email là trường bắt buộc',
-            'email.email' => 'Email không đúng định dạng',
-            'email.max' => 'Email không quá 255 ký tự',
-            'email.unique' => 'Email đã tồn tại',
+            'email.required' => 'email là trường bắt buộc',
+            'email.email' => 'email không đúng định dạng',
+            'email.max' => 'email không quá 255 ký tự',
+            'email.unique' => 'email đã tồn tại',
             'password.required' => 'Mật khẩu là trường bắt buộc',
             'password.min' => 'Mật khẩu phải chứa ít nhất 6 ký tự',
             're_password.same' => 'Xác nhận mật khẩu không đúng',
             're_password.required' => 'bạn chưa nhập lại mất khẩu',
         ]);
         $users = new users;
-        $users->NameUser = $request->name;
-        $users->Email = $request->email;
+        $users->name = $request->name;
+        $users->email = $request->email;
         $users->password = $request->password;
-        $users->TypeUser = $request->rdoStatus;
+        $users->level = $request->rdoStatus;
         $users -> save();
 
-        return redirect()->route('admin.user');
+        return redirect()->route('admin.users');
 	}
 
 	public function getEdit($id)
@@ -97,13 +97,13 @@ class UserController extends Controller {
 	public function postEdit($id,Request $request)
 	{
 		$users = Users::find($id);
-        $users->NameUser = $request->name;
-        $users->Email = $request->email;
+        $users->name = $request->name;
+        $users->email = $request->email;
         $users->password = $request->password;
-        //$users->TypeUser = $request->rdoStatus;
+        //$users->level = $request->rdoStatus;
         $users -> save();
 
-        return redirect()->route('admin.user');
+        return redirect()->route('admin.users');
     }
 
 	/**

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Thêm Type</title>
+	<title>Thêm người dùng</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
@@ -79,7 +79,7 @@
 					<input type="text" class="form-control" name="name" placeholder="Nhập tên người dùng">
 				</div>
 				<div class="form-group">
-					<label>Email</label>
+					<label>email</label>
 					<input type="email" class="form-control" name="email" placeholder="Nhập địa chỉ email">
 				</div>
 				<div class="form-group">

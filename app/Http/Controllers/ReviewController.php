@@ -49,15 +49,17 @@ class ReviewController extends Controller {
 	{
 		$allRequest = $request->all();
 		$appid = $allRequest['appid'];
-		$username = $allRequest['username'];
+		$userid = $allRequest['userid'];
 		$date = new \DateTime();
 		$comment = $allRequest['user-comment'];
+		$voting = $allRequest['voting-value'];
 
 		$dataInsertToDatabase = array(
 			'IdApplication' => $appid,
-			'IdUser' => $username,
+			'IdUser' => $userid,
 			'ReviewDate' => $date,
-			'ContentReview' => $comment
+			'ContentReview' => $comment,
+			'voting' => $voting,
 		);
 
 		$objReview = new Reviews();
@@ -104,9 +106,9 @@ class ReviewController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($IdApp, $IdUser)
+	public function destroy($IdApp, $id)
 	{
-		 Reviews::where('IdApplication', $IdApp)->where('IdUser', $IdUser)->delete();
+		 Reviews::where('IdApplication', $IdApp)->where('IdUser', $id)->delete();
 		 return redirect()->action('ReviewController@index');
 	}
 

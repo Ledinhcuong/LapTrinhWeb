@@ -225,7 +225,7 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 
 CREATE TABLE IF NOT EXISTS `Reviews` (
   `IdApplication` int(10) unsigned NOT NULL,
-  `IdUser` int(10) unsigned NOT NULL,
+  `id` int(10) unsigned NOT NULL,
   `ReviewDate` date NOT NULL,
   `ContentReview` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

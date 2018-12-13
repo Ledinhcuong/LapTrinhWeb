@@ -33,7 +33,7 @@
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Xin chao admin
+            <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Xin chao @if(Auth::check()) {{ Auth::user()->name }} @else Admin @endif
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -43,9 +43,14 @@
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
-          </li>
+          <li><a class="nav-link" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+            <i class="fa fa-sign-out" aria-hidden="true"></i> {{ __('Logout') }}
+          </a></li>
+           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
         </ul>
       </div>
     </div>
@@ -57,30 +62,14 @@
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-          <a href="/admin">
-            Home Administrator
-          </a>
-        </li>
-        <li>
-          <a href="{{url('admin/application')}}">Application Table</a>
-        </li>
-        <li>
-          <a href="{{url('admin/users')}}">User Table </a>
-        </li>
-        <li>
-          <a href="{{url('admin/review')}}">Review Table</a>
-        </li>
-        <li>
-          <a href="{{url('admin/category')}}">Category Table</a>
-        </li>
-        <li>
-          <a href="{{url('admin/type')}}">Type Table</a>
-        </li>
-        <li>
-          <a href="{{url('admin/banner')}}">Banner Table</a>
-        </li>
-
+        <li class="sidebar-brand"><a href="/admin">Home Administrator</a></li>
+        <li><a href="{{url('admin/application')}}">Application Table</a></li>
+        <li><a href="{{url('admin/banner')}}">Banner Table</a></li>
+        <li><a href="{{url('admin/category')}}">Category Table</a></li>
+        <li><a href="{{url('admin/review')}}">Review Table</a></li>
+        <li><a href="{{url('admin/type')}}">Type Table</a></li>
+        <li><a href="{{url('admin/users')}}">User Table </a></li>
+        
       </ul>
     </div>
     <!-- /#sidebar-wrapper -->

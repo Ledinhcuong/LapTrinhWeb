@@ -10,7 +10,7 @@
 
 				<div class="content-search">
 					<div class="total-result">
-						Có tổng cộng <?php echo sizeof($data) ?> kết quả trả về
+						Có tổng cộng <?php echo sizeof($total) ?> kết quả trả về
 					</div>
 
 
@@ -39,22 +39,17 @@
 								<div class="name-company">
 									<?php echo $key->Developer ?>
 								</div>
-								
-							</div>
-							
-							
+							</div>	
 						</a>
 					</div>	
 
 					<?php
 						}
 					?>	
-
 				</div>
 
-
 				{!! $data->render() !!}
-
+				
 
 			</div>
 		</div>
